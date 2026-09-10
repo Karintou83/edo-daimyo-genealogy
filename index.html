@@ -181,17 +181,19 @@
   .node.stub image {
     filter: grayscale(1) opacity(.9);
   }
-  .node.stub .initial {
-    fill: var(--stub-stroke);
+  .node.stub .name-label {
+    fill: #5c574c;
   }
-  .node .initial {
-    font-size: 13px;
+  .node .name-label {
+    font-size: 12px;
     font-weight: 700;
     fill: #fff;
     text-anchor: middle;
-    dominant-baseline: central;
     pointer-events: none;
     user-select: none;
+  }
+  .node .name-label tspan {
+    dominant-baseline: central;
   }
   .node.selected .ring {
     stroke: #1b1b1b;
@@ -271,10 +273,34 @@
     .domain(hanList)
     .range(hanList.length <= categorical.length ? categorical : palette);
 
-  const NODE_R = 20;
-  const STUB_R = 15;
+  // 漢字6文字程度の氏名でも○枠内に収まるサイズにする(2行に折り返して収める)
+  const NODE_R = 40;
+  const STUB_R = 36;
   const radiusOf = d => d.is_stub ? STUB_R : NODE_R;
   const colorOf = d => d.is_stub ? null : hanColor(d.han);
+  const LINE_HEIGHT = 13;
+
+  // 氏名を最大2行に折り返す(3文字以下は1行、それ以上はほぼ半分ずつの2行)
+  function wrapName(name) {
+    const chars = Array.from(name || '');
+    if (chars.length <= 3) return [chars.join('')];
+    const mid = Math.ceil(chars.length / 2);
+    return [chars.slice(0, mid).join(''), chars.slice(mid).join('')];
+  }
+
+  // 氏名テキストを中央寄せで描画する(肖像画像がある場合は使わない。画像優先で名前は表示しない)。
+  function layoutNameText(textSel, d) {
+    const lines = wrapName(d.name);
+    const blockHeight = (lines.length - 1) * LINE_HEIGHT;
+    const startY = -blockHeight / 2;
+    textSel.selectAll('tspan').remove();
+    lines.forEach((line, i) => {
+      textSel.append('tspan')
+        .attr('x', 0)
+        .attr('y', startY + i * LINE_HEIGHT)
+        .text(line);
+    });
+  }
 
   // --- SVG setup ---
   const svg = d3.select('#graph')
@@ -306,10 +332,10 @@
 
   // --- Force simulation ---
   const simulation = d3.forceSimulation(nodes)
-    .force('link', d3.forceLink(links).id(d => d.id).distance(90).strength(0.6))
-    .force('charge', d3.forceManyBody().strength(-260))
+    .force('link', d3.forceLink(links).id(d => d.id).distance(165).strength(0.6))
+    .force('charge', d3.forceManyBody().strength(-460))
     .force('center', d3.forceCenter(width() / 2, height() / 2))
-    .force('collide', d3.forceCollide().radius(d => radiusOf(d) + 14));
+    .force('collide', d3.forceCollide().radius(d => radiusOf(d) + 18));
 
   const link = linkLayer.selectAll('line')
     .data(links)
@@ -329,28 +355,36 @@
     .attr('fill', d => d.is_stub ? null : colorOf(d))
     .attr('stroke', d => d.is_stub ? null : d3.color(colorOf(d)).darker(0.6));
 
-  node.append('text')
-    .attr('class', 'initial')
-    .text(d => (d.name || '?').charAt(0));
+  // 氏名テキスト: 肖像画像がある人物には表示しない(画像を優先)。画像が無い、または
+  // 読み込みに失敗した人物にのみ、○枠中央に表示する。
+  const nameText = node.append('text')
+    .attr('class', 'name-label')
+    .each(function (d) {
+      if (!d.image_url) layoutNameText(d3.select(this), d);
+    });
 
+  // 肖像画像(あれば○枠いっぱいに表示する。この場合は氏名テキストは表示しない)
   node.filter(d => !!d.image_url).each(function (d) {
     const g = d3.select(this);
+    const r = radiusOf(d);
     const clipId = 'clip-' + d.id;
     defs.append('clipPath')
       .attr('id', clipId)
       .append('circle')
-        .attr('r', radiusOf(d));
+        .attr('r', r);
     g.append('image')
       .attr('href', d.image_url)
-      .attr('x', -radiusOf(d))
-      .attr('y', -radiusOf(d))
-      .attr('width', radiusOf(d) * 2)
-      .attr('height', radiusOf(d) * 2)
+      .attr('x', -r)
+      .attr('y', -r)
+      .attr('width', r * 2)
+      .attr('height', r * 2)
       .attr('preserveAspectRatio', 'xMidYMid slice')
       .attr('clip-path', `url(#${clipId})`)
       .on('error', function () {
-        // 画像の取得に失敗した場合は非表示にし、下地の色/イニシャル表示にフォールバックする
+        // 画像の取得に失敗した場合は非表示にし、氏名を中央寄せで表示するフォールバックにする
+        const parent = d3.select(this.parentNode);
         d3.select(this).remove();
+        layoutNameText(parent.select('text.name-label'), d);
       });
   });
 
