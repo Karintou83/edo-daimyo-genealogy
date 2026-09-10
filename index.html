@@ -155,6 +155,22 @@
     font-weight: 700;
     margin: 0 0 12px;
   }
+  #detail-panel .positions {
+    list-style: none;
+    margin: 0 0 12px;
+    padding: 0;
+    font-size: 12px;
+  }
+  #detail-panel .positions li {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 3px 0;
+    border-bottom: 1px dashed var(--border, #e0dccf);
+  }
+  #detail-panel .positions li:last-child { border-bottom: none; }
+  #detail-panel .positions .pos-label { font-weight: 600; }
+  #detail-panel .positions .pos-years { color: var(--muted); white-space: nowrap; }
   #detail-panel a.wiki-link {
     display: inline-block;
     font-size: 13px;
@@ -234,6 +250,7 @@
     <button class="close-btn" aria-label="閉じる">✕</button>
     <p class="role"></p>
     <p class="name"></p>
+    <ul class="positions"></ul>
     <a class="wiki-link" href="#" target="_blank" rel="noopener">Wikipediaで見る</a>
   </div>
 
@@ -262,8 +279,11 @@
     .map(e => Object.assign({}, e, { source: e.parent_id, target: e.child_id }));
 
   // --- 色分け: is_stub:false のノードのみ han ごとに色を割り当てる ---
+  // positions が複数ある人物(徳川吉宗など)の代表色は、positions[0] の han を使う
+  // (複数色併記にするかはフェーズ3実装時の未確定事項。CLAUDE.md参照)。
+  const primaryHan = d => (d.positions && d.positions[0]) ? d.positions[0].han : null;
   const hanList = Array.from(new Set(
-    nodes.filter(d => !d.is_stub && d.han).map(d => d.han)
+    nodes.filter(d => !d.is_stub && primaryHan(d)).map(primaryHan)
   )).sort();
   const palette = d3.quantize(d3.interpolateRainbow, Math.max(hanList.length, 3) + 1).slice(0, -1);
   // d3.schemeTableau10 reads better for a small number of categories; fall back to
@@ -277,7 +297,7 @@
   const NODE_R = 40;
   const STUB_R = 36;
   const radiusOf = d => d.is_stub ? STUB_R : NODE_R;
-  const colorOf = d => d.is_stub ? null : hanColor(d.han);
+  const colorOf = d => d.is_stub ? null : hanColor(primaryHan(d));
   const LINE_HEIGHT = 13;
 
   // 氏名を最大2行に折り返す(3文字以下は1行、それ以上はほぼ半分ずつの2行)
@@ -444,8 +464,26 @@
   const panel = document.getElementById('detail-panel');
   const roleEl = panel.querySelector('.role');
   const nameEl = panel.querySelector('.name');
+  const positionsEl = panel.querySelector('.positions');
   const linkEl = panel.querySelector('.wiki-link');
   panel.querySelector('.close-btn').addEventListener('click', () => selectNode(null));
+
+  // 「○○藩○代目」の形の役職ラベル(家系図上のノードラベルと共通のフォーマット)
+  function formatPositionLabel(p) {
+    const han = p.han || '藩名不明';
+    const gen = (p.generation != null) ? `${p.generation}代目` : '';
+    return `${han}${gen}`;
+  }
+
+  // 在位年の表示(year_start/year_endのどちらかが欠けている場合も考慮する)
+  function formatPositionYears(p) {
+    const hasStart = p.year_start != null;
+    const hasEnd = p.year_end != null;
+    if (!hasStart && !hasEnd) return '在位年不明';
+    const startText = hasStart ? `${p.year_start}年` : '?';
+    const endText = hasEnd ? `${p.year_end}年` : '?';
+    return `${startText} - ${endText}`;
+  }
 
   let selected = null;
   function selectNode(d) {
@@ -455,13 +493,31 @@
       panel.classList.remove('open');
       return;
     }
+    const positions = d.positions || [];
     if (d.is_stub) {
-      const hanNote = d.han ? d.han : '藩名不明';
-      roleEl.textContent = `${d.han ? d.han + '主' : '藩主'}ではない(参考: ${hanNote})`;
+      const hanNote = positions[0] ? positions[0].han : null;
+      roleEl.textContent = `${hanNote ? hanNote + '主' : '藩主'}ではない(参考: ${hanNote || '藩名不明'})`;
       roleEl.classList.add('stub-role');
+      positionsEl.innerHTML = '';
     } else {
-      roleEl.textContent = `${d.han}${d.generation}代目`;
+      // positions の各要素を「・」で連結する(例:「紀州藩5代目・将軍8代目」)
+      roleEl.textContent = positions.length
+        ? positions.map(formatPositionLabel).join('・')
+        : '役職不明';
       roleEl.classList.remove('stub-role');
+      // 家系図上のノードラベルには出さない在位年は、役職ごとにここで表示する
+      positionsEl.innerHTML = '';
+      positions.forEach(p => {
+        const li = document.createElement('li');
+        const label = document.createElement('span');
+        label.className = 'pos-label';
+        label.textContent = formatPositionLabel(p);
+        const years = document.createElement('span');
+        years.className = 'pos-years';
+        years.textContent = formatPositionYears(p);
+        li.append(label, years);
+        positionsEl.appendChild(li);
+      });
     }
     nameEl.textContent = d.name;
     if (d.wikipedia_url) {

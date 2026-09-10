@@ -1,0 +1,253 @@
+{
+  "generated_by": "scripts/fetch_daimyo_data.py",
+  "han": "薩摩藩",
+  "slug": "satsuma",
+  "template": "Template:薩摩藩主",
+  "daimyo": [
+    {
+      "id": "Q1185372",
+      "name": "島津忠恒",
+      "positions": [
+        {
+          "han": "薩摩藩",
+          "generation": 1,
+          "year_start": 1601,
+          "year_end": 1638
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E5%BF%A0%E6%81%92",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shimazu_Tadatsune.jpg?width=200",
+      "father_id": "Q1156288",
+      "is_stub": false
+    },
+    {
+      "id": "Q1156288",
+      "name": "島津義弘",
+      "positions": [
+        {
+          "han": "薩摩藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E7%BE%A9%E5%BC%98",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shimazu_Yoshihiro.jpg?width=200",
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q11246514",
+      "name": "島津光久",
+      "positions": [
+        {
+          "han": "薩摩藩",
+          "generation": 2,
+          "year_start": 1638,
+          "year_end": 1687
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E5%85%89%E4%B9%85",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shimadzu-mitsuhisa.jpg?width=200",
+      "father_id": "Q1185372",
+      "is_stub": false
+    },
+    {
+      "id": "Q11245334",
+      "name": "島津綱貴",
+      "positions": [
+        {
+          "han": "薩摩藩",
+          "generation": 3,
+          "year_start": 1687,
+          "year_end": 1704
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E7%B6%B1%E8%B2%B4",
+      "image_url": null,
+      "father_id": "Q11245310",
+      "is_stub": false
+    },
+    {
+      "id": "Q11245310",
+      "name": "島津綱久",
+      "positions": [
+        {
+          "han": "薩摩藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E7%B6%B1%E4%B9%85",
+      "image_url": null,
+      "father_id": "Q11246514",
+      "is_stub": true
+    },
+    {
+      "id": "Q11246537",
+      "name": "島津吉貴",
+      "positions": [
+        {
+          "han": "薩摩藩",
+          "generation": 4,
+          "year_start": 1704,
+          "year_end": 1721
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E5%90%89%E8%B2%B4",
+      "image_url": null,
+      "father_id": "Q11245334",
+      "is_stub": false
+    },
+    {
+      "id": "Q11245289",
+      "name": "島津継豊",
+      "positions": [
+        {
+          "han": "薩摩藩",
+          "generation": 5,
+          "year_start": 1721,
+          "year_end": 1746
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E7%B6%99%E8%B1%8A",
+      "image_url": null,
+      "father_id": "Q11246537",
+      "is_stub": false
+    },
+    {
+      "id": "Q11246653",
+      "name": "島津宗信",
+      "positions": [
+        {
+          "han": "薩摩藩",
+          "generation": 6,
+          "year_start": 1746,
+          "year_end": 1749
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E5%AE%97%E4%BF%A1",
+      "image_url": null,
+      "father_id": "Q11245289",
+      "is_stub": false
+    },
+    {
+      "id": "Q11476823",
+      "name": "島津重年",
+      "positions": [
+        {
+          "han": "薩摩藩",
+          "generation": 7,
+          "year_start": 1749,
+          "year_end": 1755
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E9%87%8D%E5%B9%B4",
+      "image_url": null,
+      "father_id": "Q11245289",
+      "is_stub": false
+    },
+    {
+      "id": "Q8013051",
+      "name": "島津重豪",
+      "positions": [
+        {
+          "han": "薩摩藩",
+          "generation": 8,
+          "year_start": 1755,
+          "year_end": 1787
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E9%87%8D%E8%B1%AA",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/%E5%B3%B6%E6%B4%A5%E9%87%8D%E8%B1%AA.jpg?width=200",
+      "father_id": "Q11476823",
+      "is_stub": false
+    },
+    {
+      "id": "Q8514648",
+      "name": "島津斉宣",
+      "positions": [
+        {
+          "han": "薩摩藩",
+          "generation": 9,
+          "year_start": 1787,
+          "year_end": 1809
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E6%96%89%E5%AE%A3",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Narinbu_shimadzu.jpg?width=200",
+      "father_id": "Q8013051",
+      "is_stub": false
+    },
+    {
+      "id": "Q1016994",
+      "name": "島津斉興",
+      "positions": [
+        {
+          "han": "薩摩藩",
+          "generation": 10,
+          "year_start": 1809,
+          "year_end": 1851
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E6%96%89%E8%88%88",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Narioki_shimadzu.jpg?width=200",
+      "father_id": "Q8514648",
+      "is_stub": false
+    },
+    {
+      "id": "Q1143856",
+      "name": "島津斉彬",
+      "positions": [
+        {
+          "han": "薩摩藩",
+          "generation": 11,
+          "year_start": 1851,
+          "year_end": 1858
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E6%96%89%E5%BD%AC",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shiro_Ichiki%2C_Portrait_of_Nariakira_Shimazu%2C_1857.jpg?width=200",
+      "father_id": "Q1016994",
+      "is_stub": false
+    },
+    {
+      "id": "Q1005245",
+      "name": "島津忠義",
+      "positions": [
+        {
+          "han": "薩摩藩",
+          "generation": 12,
+          "year_start": 1858,
+          "year_end": 1869
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E5%BF%A0%E7%BE%A9",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shimazu_Tadayoshi.jpg?width=200",
+      "father_id": "Q656135",
+      "is_stub": false
+    },
+    {
+      "id": "Q656135",
+      "name": "島津久光",
+      "positions": [
+        {
+          "han": "薩摩藩",
+          "generation": null,
+          "year_start": 1869,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E4%B9%85%E5%85%89",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shimazu_Hisamitsu_%E5%B3%B6%E6%B4%A5%E4%B9%85%E5%85%89.jpg?width=200",
+      "father_id": "Q1016994",
+      "is_stub": true
+    }
+  ],
+  "warnings": [
+    "[薩摩藩] リンクを含まない一覧項目をスキップしました: '*版籍奉還'",
+    "『島津義弘』: 父をさらに5世代遡っても藩主に行き着かなかったため、この人物だけをスタブノードとして表示します(途中の世代は表示しません)。",
+    "QID Q656135: WikidataのP39(役職)に開始日/終了日を持つ候補が複数あり、在位年の対応が一意に決まりませんでした。最初の候補を採用します。"
+  ]
+}

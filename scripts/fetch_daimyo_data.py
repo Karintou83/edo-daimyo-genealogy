@@ -16,6 +16,9 @@
   Infobox側で父が特定できなかった場合は、P22の値を採用しつつ理由付きの警告を残す
   (サイレントに上書きしない)。P22が未登録の場合のみInfoboxの「父母」パラメータからの
   抽出結果をフォールバックとして使う(この場合もリンク先の記事からQIDを解決する)。
+- 各役職の在位年(year_start/year_end)は、テンプレート内の年数表記(例:「1590-1601」)を
+  優先して抽出し、なければWikidataのP39(役職)の開始日・終了日(P580/P582)を
+  フォールバックとして使う。どちらも取れなければ両方Noneにする。
 - 肖像画像はWikidataのP18(image)からCommonsのファイル名を取得し、
   https://commons.wikimedia.org/wiki/Special:FilePath/<ファイル名>?width=200 の形で
   image_url を組み立てる(P18が未登録なら None)。藩主・スタブノードの双方に持たせる。
@@ -24,13 +27,20 @@
 - 対象藩の藩主一覧に含まれない父はスタブノードとして追加し、そこから先は遡らない。
 - 出力は藩ごとに独立したファイルに分ける。対象藩を増やしても既存の藩のファイルには
   影響を与えず、新しい藩のファイルだけが追加・更新される。
+- テンプレートから拾った候補リンクが実在の藩主かどうかは、藩主マスターリスト
+  (Category:藩別の大名 配下の全「○○藩主」カテゴリから構築したID集合。初回実行時に構築し
+  data/cache/daimyo_master_list.json にキャッシュして使い回す)に含まれているかで判定する。
+  マスターリストにない候補(旧国名など。例: 佐倉藩テンプレート内の「常陸国」)は除外し、
+  理由付きの警告を出す。詳細は build_daimyo_master_list() を参照。
 
 実行方法:
-    python scripts/fetch_daimyo_data.py            # TARGET_HANS の全藩を取得
-    python scripts/fetch_daimyo_data.py 米沢藩      # 藩名(またはスラッグ)を指定して一部だけ取得
+    python scripts/fetch_daimyo_data.py                      # TARGET_HANS の全藩を取得
+    python scripts/fetch_daimyo_data.py 米沢藩                # 藩名(またはスラッグ)を指定して一部だけ取得
+    python scripts/fetch_daimyo_data.py --refresh-master-list # 藩主マスターリストを再取得してから実行
 
 出力:
     data/raw/<藩の英語表記スラッグ>.json  (例: data/raw/yonezawa.json, data/raw/kaga.json)
+    data/cache/daimyo_master_list.json    (藩主マスターリストのキャッシュ)
 """
 
 from __future__ import annotations
@@ -43,6 +53,7 @@ import urllib.parse
 import urllib.request
 import urllib.error
 from dataclasses import dataclass, field, asdict
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 
@@ -64,9 +75,21 @@ REQUEST_INTERVAL_SEC = 1.0  # 連続リクエストの間隔(エンドポイン�
 P_FATHER = "P22"
 # Wikidataの「画像」プロパティ
 P_IMAGE = "P18"
+# Wikidataの「役職」プロパティ(在位年のフォールバック取得に使う)
+P_POSITION_HELD = "P39"
+# 「役職」の修飾子: 開始日・終了日
+P_START_TIME = "P580"
+P_END_TIME = "P582"
 
 # image_url に付けるサムネイル幅(px)
 IMAGE_WIDTH = 200
+
+# スタブノードの父をさらに遡って探索する最大世代数。
+# 対象藩の藩主一覧に載らない人物(スタブ)が現れた場合、その人物自身を含めて最大この世代数まで
+# 父を遡り、既知の藩主(対象藩の一覧、または既に取得済みの他藩の藩主一覧)に行き着けば
+# そこで連鎖を止めて接続する。この世代数まで遡っても藩主に行き着かなければ、そこで遡るのを
+# やめる(=それ以上は追わず、系図上その先は孤立した扱いのままにする)。
+MAX_STUB_ANCESTOR_DEPTH = 5
 
 # 対象藩: 藩名 -> {"template": 継承テンプレート名, "slug": 出力ファイル名に使う英語表記スラッグ}
 # 藩を追加するときはここに1行足すだけでよい(既存の藩の出力ファイルには影響しない)。
@@ -74,10 +97,18 @@ TARGET_HANS: dict[str, dict[str, str]] = {
     "米沢藩": {"template": "Template:米沢藩主", "slug": "yonezawa"},
     "加賀藩": {"template": "Template:加賀藩主", "slug": "kaga"},
     "仙台藩": {"template": "Template:仙台藩主", "slug": "sendai"},
+    "薩摩藩": {"template": "Template:薩摩藩主", "slug": "satsuma"},
+    "長州藩": {"template": "Template:長州藩主", "slug": "choushuu"},
+    "佐倉藩": {"template": "Template:佐倉藩主", "slug": "sakura"},
 }
 
 # 出力先ディレクトリ。藩ごとに <slug>.json を作る。
 OUTPUT_DIR = Path(__file__).resolve().parent.parent / "data" / "raw"
+
+# 藩主マスターリストの取得元カテゴリと、キャッシュファイルの保存先。
+# build_daimyo_master_list() を参照。
+MASTER_LIST_CATEGORY = "Category:藩別の大名"
+MASTER_LIST_CACHE_PATH = Path(__file__).resolve().parent.parent / "data" / "cache" / "daimyo_master_list.json"
 
 # Infoboxとして扱うテンプレート名のプレフィックス(表記揺れに対応するため前方一致で判定)
 # 「基礎情報 武士」系が中心だが、明治以降に華族・政治家として活動した人物(例: 最後の藩主)は
@@ -261,6 +292,68 @@ def get_image_url_from_wikidata(node_id: str) -> Optional[str]:
     return None
 
 
+def _first_qualifier_year(qualifiers: dict, prop: str) -> Optional[int]:
+    """statementのqualifiersから、指定プロパティ(P580/P582)の年(西暦)を取り出す。"""
+    for q in qualifiers.get(prop, []):
+        if q.get("snaktype") != "value":
+            continue
+        value = q.get("datavalue", {}).get("value")
+        if isinstance(value, dict) and "time" in value:
+            m = re.match(r"([+-]\d+)-\d\d-\d\dT", value["time"])
+            if m:
+                try:
+                    return int(m.group(1))
+                except ValueError:
+                    return None
+    return None
+
+
+def get_wikidata_tenure_years(qid: str, context_label: Optional[str]) -> tuple[Optional[int], Optional[int]]:
+    """
+    WikidataのP39(役職)の開始日・終了日(P580/P582)から在位年をフォールバック取得する。
+    1人が複数のP39を持つ場合(他の役職も含む)、role(値のQID)の日本語ラベルに
+    context_label(藩名または藩名ヒント。例: '米沢藩')が含まれるものを優先する。
+    見つからない、またはcontext_labelがない場合は、開始日/終了日を持つ最初の候補を使い、
+    候補が複数あれば一意に決まらなかった旨を警告する。
+    """
+    claims = get_wikidata_claims(qid)
+    if not claims:
+        return None, None
+    statements = claims.get(P_POSITION_HELD)
+    if not statements:
+        return None, None
+
+    candidates: list[tuple[tuple[Optional[int], Optional[int]], Optional[str]]] = []
+    for stmt in statements:
+        mainsnak = stmt.get("mainsnak", {})
+        if mainsnak.get("snaktype") != "value":
+            continue
+        value = mainsnak.get("datavalue", {}).get("value")
+        position_qid = value.get("id") if isinstance(value, dict) and value.get("entity-type") == "item" else None
+        qualifiers = stmt.get("qualifiers", {})
+        year_start = _first_qualifier_year(qualifiers, P_START_TIME)
+        year_end = _first_qualifier_year(qualifiers, P_END_TIME)
+        if year_start is None and year_end is None:
+            continue
+        label = get_entity_ja_info(position_qid)[0] if position_qid else None
+        candidates.append(((year_start, year_end), label))
+
+    if not candidates:
+        return None, None
+
+    if context_label:
+        for years, label in candidates:
+            if label and context_label in label:
+                return years
+
+    if len(candidates) > 1:
+        warn(
+            f"QID {qid}: WikidataのP39(役職)に開始日/終了日を持つ候補が複数あり、"
+            f"在位年の対応が一意に決まりませんでした。最初の候補を採用します。"
+        )
+    return candidates[0][0]
+
+
 def get_entity_ja_info(qid: str) -> tuple[Optional[str], Optional[str]]:
     """
     WikidataエンティティのQIDから、日本語ラベルと日本語版Wikipediaの記事タイトル(sitelink)を取得する。
@@ -306,40 +399,257 @@ def build_url(title: str) -> str:
 
 WIKILINK_RE = re.compile(r"\[\[([^\]|#]+)(?:\|[^\]]*)?\]\]")
 
+# 箇条書き行の中の年数レンジ表記(例: '1590-1601', '1590年 - 1601年', '1590〜1601')
+YEAR_RANGE_RE = re.compile(r"(\d{3,4})\s*年?\s*[-–—〜~]\s*(\d{3,4})\s*年?")
 
-def extract_ordered_daimyo_from_template(wikitext: str, han_name: str) -> list[str]:
+
+@dataclass
+class TemplateEntry:
+    title: str
+    year_start: Optional[int]
+    year_end: Optional[int]
+
+
+def _extract_year_range_from_line(line: str, link_span: tuple[int, int]) -> tuple[Optional[int], Optional[int]]:
     """
-    Navboxのlist1= 以下から、各行(*で始まる箇条書き)の先頭のwikilinkを順番どおりに抽出する。
-    リンクを含まない行(例: *廃藩置県)はスキップする。
+    箇条書き行から年数レンジ(例: '1590-1601')を抽出する。wikilink自体の文字列
+    (記事名に数字を含む場合の誤検出を避けるため)は検索対象から除く。
     """
-    # list1= から次の「|」区切り(次のNavboxパラメータ)または閉じ括弧までを取り出す
-    m = re.search(r"\|\s*list1\s*=\s*(.*?)(?=\n\|\s*[A-Za-z0-9_]+\s*=|\n\}\}|\Z)", wikitext, re.S)
+    search_text = line[:link_span[0]] + " " + line[link_span[1]:]
+    m = YEAR_RANGE_RE.search(search_text)
     if not m:
-        warn(f"[{han_name}] テンプレートから list1= セクションを見つけられませんでした。手動確認が必要です。")
+        return None, None
+    try:
+        return int(m.group(1)), int(m.group(2))
+    except ValueError:
+        return None, None
+
+
+# list1=, list2=, list3=, ... のように番号付きで複数のリストセクションに分かれている
+# ことがある(藩主家が交代する藩に多い。例: 佐倉藩、古河藩)。番号の昇順で全セクションを
+# 走査する。
+LIST_SECTION_RE = re.compile(
+    r"\|\s*(list(\d+))\s*=\s*(.*?)(?=\n\|\s*[A-Za-z0-9_]+\s*=|\n\}\}|\Z)", re.S
+)
+
+
+# ---------------------------------------------------------------------------
+# 藩主マスターリスト(Category:藩別の大名 配下から構築)
+# ---------------------------------------------------------------------------
+#
+# 実装前の構造調査(2026-09時点、ブラウザでCategory:藩別の大名およびその下位カテゴリを
+# 実際に確認して判明した事実):
+#   - Category:藩別の大名 自体は、下位カテゴリ(Category:○○藩主。328件)のみを持ち、
+#     直属の記事ページは持たない。
+#   - 各「○○藩主」カテゴリは、その藩の藩主全員(藩主家が交代した場合、交代前後の家も
+#     すべて含む)を直属ページとして持つ。会津藩主(蒲生氏→加藤氏→保科氏→松平氏の全員)、
+#     宇和島藩主、上田藩主など、家の交代がある藩を含む複数の藩で確認済み。
+#   - 一部の著名な藩主は、自分の名前を冠したトピックカテゴリ(例: Category:保科正之)を
+#     別途持つことがあるが、これは関連する寺社・郷土料理・古文書なども含む雑多な
+#     トピック集であり藩主ではない項目を含む。かつ、その藩主自身は既に親の「○○藩主」
+#     カテゴリに直属ページとして含まれているため、このサブカテゴリへ再帰しても取得漏れの
+#     防止にはならず、ノイズが増えるだけ。**よって「○○藩主」カテゴリ配下のさらに下位の
+#     カテゴリへは再帰しない(1階層のみ: 藩別の大名 → ○○藩主 → 直属ページ)**。
+#   - 「○○藩主」カテゴリの直属ページには Template:○○藩主 自体が混ざることがあるため、
+#     標準名前空間(ns=0)のみに絞って取得する。
+
+
+def fetch_subcategories(category_title: str) -> list[str]:
+    """指定カテゴリの下位カテゴリ(Category:名前空間)のタイトル一覧を取得する(継続対応)。"""
+    titles: list[str] = []
+    params: dict[str, str] = {
+        "action": "query",
+        "list": "categorymembers",
+        "cmtitle": category_title,
+        "cmtype": "subcat",
+        "cmlimit": "500",
+    }
+    while True:
+        data = api_get(API_ENDPOINT, params)
+        for member in data.get("query", {}).get("categorymembers", []):
+            title = member.get("title")
+            if title:
+                titles.append(title)
+        cont = data.get("continue", {}).get("cmcontinue")
+        if not cont:
+            break
+        params["cmcontinue"] = cont
+    return titles
+
+
+def fetch_direct_page_qids(category_title: str) -> set[str]:
+    """
+    指定カテゴリ(例: Category:○○藩主)に直属する標準名前空間(ns=0)のページのIDを
+    まとめて取得する(継続対応)。generatorを使い、1回(継続時は複数回)のAPI呼び出しで
+    ページ一覧とWikidataのQID(pageprops経由)を同時に取得する。
+    QIDが未登録のページは記事タイトルをフォールバックIDとして使う(get_qidが
+    QID未登録時に記事名をIDとして使うのと同じ扱いに揃えるため)。
+    取得したタイトル→QIDの対応は _qid_cache にも書き込み、以降の個別のget_qid呼び出しで
+    同じ人物について重複してAPIを叩かずに済むようにする。
+    """
+    ids: set[str] = set()
+    params: dict[str, str] = {
+        "action": "query",
+        "generator": "categorymembers",
+        "gcmtitle": category_title,
+        "gcmnamespace": "0",
+        "gcmlimit": "500",
+        "prop": "pageprops",
+        "ppprop": "wikibase_item",
+    }
+    while True:
+        data = api_get(API_ENDPOINT, params)
+        pages = data.get("query", {}).get("pages", {})
+        for page in pages.values():
+            if "missing" in page:
+                continue
+            # gcmnamespace=0 をリクエストしているが、念のためレスポンス側でも標準名前空間
+            # (ns=0)のページのみを採用する(Template:○○藩主 等の混入を防ぐ安全策)。
+            if page.get("ns") != 0:
+                continue
+            title = resolve_title(page.get("title", ""))
+            if not title:
+                continue
+            qid = page.get("pageprops", {}).get("wikibase_item")
+            person_id = qid or title
+            ids.add(person_id)
+            _qid_cache[title] = qid
+        cont = data.get("continue", {}).get("gcmcontinue")
+        if not cont:
+            break
+        params["gcmcontinue"] = cont
+    return ids
+
+
+def build_daimyo_master_list(force_refresh: bool = False) -> set[str]:
+    """
+    藩主マスターリスト(実在の藩主として確認できる人物のID集合)を構築する。
+
+    MASTER_LIST_CATEGORY(Category:藩別の大名)の下位カテゴリ(Category:○○藩主)を
+    すべて取得し、各カテゴリに直属する記事(ns=0)のIDを集めて統合する。
+    1階層のみを辿る(理由は本セクション冒頭のコメントを参照)。
+
+    一度構築した結果は MASTER_LIST_CACHE_PATH にキャッシュし、次回以降のスクリプト実行では
+    再取得せずにそのまま使い回す(force_refresh=True、またはコマンドラインで
+    --refresh-master-list を指定した場合のみ再取得する)。
+    """
+    if not force_refresh and MASTER_LIST_CACHE_PATH.exists():
+        try:
+            cached = json.loads(MASTER_LIST_CACHE_PATH.read_text(encoding="utf-8"))
+            ids = set(cached["ids"])
+            print(
+                f"[藩主マスターリスト] キャッシュ({MASTER_LIST_CACHE_PATH})から{len(ids)}件のIDを"
+                f"読み込みました(生成日時: {cached.get('generated_at', '不明')})。"
+                f"再取得するには --refresh-master-list を指定してください。"
+            )
+            return ids
+        except (json.JSONDecodeError, OSError, KeyError) as e:
+            warn(f"[藩主マスターリスト] キャッシュの読み込みに失敗したため再取得します: {e!r}")
+
+    print(f"[藩主マスターリスト] {MASTER_LIST_CATEGORY} の下位カテゴリを取得中...")
+    subcats = fetch_subcategories(MASTER_LIST_CATEGORY)
+    print(
+        f"[藩主マスターリスト] 下位カテゴリ{len(subcats)}件を検出しました。"
+        f"各カテゴリの直属ページを取得します(1件あたり約{REQUEST_INTERVAL_SEC:.0f}秒、"
+        f"合計で数分かかります)..."
+    )
+
+    all_ids: set[str] = set()
+    for i, subcat_title in enumerate(subcats, start=1):
+        ids = fetch_direct_page_qids(subcat_title)
+        all_ids |= ids
+        if i % 20 == 0 or i == len(subcats):
+            print(f"  [{i}/{len(subcats)}] {subcat_title} まで処理済み(累計{len(all_ids)}件)")
+
+    MASTER_LIST_CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    cache_data = {
+        "generated_by": "scripts/fetch_daimyo_data.py:build_daimyo_master_list",
+        "source_category": MASTER_LIST_CATEGORY,
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "subcategory_count": len(subcats),
+        "id_count": len(all_ids),
+        "ids": sorted(all_ids),
+    }
+    with MASTER_LIST_CACHE_PATH.open("w", encoding="utf-8") as f:
+        json.dump(cache_data, f, ensure_ascii=False, indent=2)
+    print(f"[藩主マスターリスト] {len(all_ids)}件のIDを {MASTER_LIST_CACHE_PATH} にキャッシュしました。")
+
+    return all_ids
+
+
+def is_candidate_in_master_list(title: str, master_ids: set[str]) -> bool:
+    """
+    テンプレートの一覧から拾った候補リンクが、藩主マスターリスト
+    (Category:藩別の大名 配下から構築。build_daimyo_master_list参照)に含まれているかを判定する。
+    QIDが解決できればQIDで、解決できなければ記事タイトル(フォールバックID)で照合する
+    (get_qidがQID未登録時に記事名をIDとして使うのと同じ扱いに揃えるため。
+    build_daimyo_master_list側も同じ規則でフォールバックIDを登録している)。
+    """
+    qid = get_qid(title)
+    candidate_id = qid or title
+    return candidate_id in master_ids
+
+
+def extract_ordered_daimyo_from_template(
+    wikitext: str, han_name: str, master_ids: set[str]
+) -> list[TemplateEntry]:
+    """
+    Navboxの list1=, list2=, list3=, ... を番号順にすべて読み込み、各行(*で始まる箇条書き)の
+    先頭のwikilinkを順番どおりに抽出する(藩主家が交代する藩ではリストが複数に分かれることが
+    あるため、存在するセクションを1つも取りこぼさず、代数はセクションをまたいで通し番号にする。
+    藩主家が交代してもリセットしない)。リンクを含まない行(例: *廃藩置県)はスキップする。
+    行内に年数レンジ表記(例: '1590-1601')があれば、在位年(year_start/year_end)として
+    合わせて抽出する(見つからなければ両方None。その場合はWikidataのP39からのフォールバックで
+    埋める)。
+    候補として拾ったリンクは、藩主マスターリスト(master_ids。Category:藩別の大名から構築)に
+    含まれているかを確認してから採用する。旧国名など藩主ではないリンク(例: 佐倉藩テンプレート内の
+    「常陸国」)はマスターリストに含まれないため除外し、理由付きの警告を出す。
+    """
+    list_matches = sorted(LIST_SECTION_RE.finditer(wikitext), key=lambda m: int(m.group(2)))
+    if not list_matches:
+        warn(f"[{han_name}] テンプレートから list1=, list2=, ... のセクションを見つけられませんでした。手動確認が必要です。")
         return []
 
-    list_block = m.group(1)
-    names: list[str] = []
-    for line in list_block.splitlines():
-        line = line.strip()
-        if not line.startswith("*"):
-            continue
-        link_match = WIKILINK_RE.search(line)
-        if not link_match:
-            # 例: 「*廃藩置県」のようなリンクを持たない行は代数に含めない
-            if line.strip("* ").strip():
-                warn(f"[{han_name}] リンクを含まない一覧項目をスキップしました: {line!r}")
-            continue
-        title = resolve_title(link_match.group(1))
-        if title in names:
-            warn(f"[{han_name}] 一覧内に重複したリンクがありました: {title!r}(2回目以降は無視)")
-            continue
-        names.append(title)
+    if len(list_matches) > 1:
+        section_names = "、".join(m.group(1) for m in list_matches)
+        print(f"  [{han_name}] 複数のlistセクションを検出しました({section_names})。すべて順に読み込み、代数は通しで数えます。")
 
-    if not names:
+    entries: list[TemplateEntry] = []
+    seen_titles: set[str] = set()
+    for list_match in list_matches:
+        section_name = list_match.group(1)
+        list_block = list_match.group(3)
+        for line in list_block.splitlines():
+            line = line.strip()
+            if not line.startswith("*"):
+                continue
+            link_match = WIKILINK_RE.search(line)
+            if not link_match:
+                # 例: 「*廃藩置県」のようなリンクを持たない行は代数に含めない
+                if line.strip("* ").strip():
+                    warn(f"[{han_name}] ({section_name}) リンクを含まない一覧項目をスキップしました: {line!r}")
+                continue
+            title = resolve_title(link_match.group(1))
+            if title in seen_titles:
+                warn(f"[{han_name}] ({section_name}) 一覧内に重複したリンクがありました: {title!r}(2回目以降は無視)")
+                continue
+
+            if not is_candidate_in_master_list(title, master_ids):
+                warn(
+                    f"[{han_name}] ({section_name}) リンク『{title}』は藩主マスターリスト"
+                    f"(Category:藩別の大名 配下、{len(master_ids)}件)に含まれていないため、"
+                    f"藩主候補から除外しました: {line!r}"
+                )
+                continue
+
+            seen_titles.add(title)
+            year_start, year_end = _extract_year_range_from_line(line, link_match.span())
+            entries.append(TemplateEntry(title=title, year_start=year_start, year_end=year_end))
+
+    if not entries:
         warn(f"[{han_name}] 藩主を1人も抽出できませんでした。テンプレートの形式を確認してください。")
 
-    return names
+    return entries
 
 
 # ---------------------------------------------------------------------------
@@ -554,11 +864,18 @@ def extract_han_hint(infobox: Optional[InfoboxBlock]) -> Optional[str]:
 class DaimyoNode:
     id: str  # WikidataのQID。QIDが取得できない場合のみWikipedia記事名で代用する
     name: str
-    han: Optional[str]
-    generation: Optional[int]
+    # 役職の一覧。{"han": 藩名(または疑似藩名), "generation": 代数,
+    # "year_start": 在位開始年, "year_end": 在位終了年}の配列。
+    # 対象藩の藩主(is_stub=False)は現状1要素の配列になる(他の藩でも見つかった場合の
+    # 統合はフェーズ2=build_tree.pyで行う)。スタブノードは、藩名ヒントが取得できれば
+    # [{"han": ヒント, "generation": None, "year_start": ..., "year_end": ...}]、
+    # 取得できなければ空配列[]にする。year_start/year_endはテンプレート内の年数表記を
+    # 優先し、なければWikidataのP39(役職)の開始日・終了日をフォールバックにする
+    # (どちらも取れなければNone)。
+    positions: list[dict]
     wikipedia_url: Optional[str]
     image_url: Optional[str]  # WikidataのP18(image)由来。画像がなければNone
-    father_id: Optional[str]  # is_stubがTrueの場合は常にNone(さらに遡らないため)
+    father_id: Optional[str]  # is_stubがTrueの場合でも、既知の藩主に接続できればセットされる
     is_stub: bool
 
 
@@ -601,52 +918,203 @@ def determine_father(title: str, infobox: Optional[InfoboxBlock], node_id: str) 
     return None
 
 
-def add_stub_node(father_id: str, all_nodes: dict[str, DaimyoNode]) -> None:
-    """father_id(QIDまたは記事名フォールバック)からスタブノードの情報を解決して登録する。"""
+@dataclass
+class ResolvedPerson:
+    """スタブノード候補1名分の解決済み情報(まだall_nodesには登録していない状態)。"""
+    id: str
+    name: str
+    wikipedia_url: Optional[str]
+    han_hint: Optional[str]
+    image_url: Optional[str]
+    article_title: Optional[str]
+    infobox: Optional[InfoboxBlock]
+
+
+def resolve_person_info(person_id: str) -> ResolvedPerson:
+    """QID(または記事名フォールバック)から、名前・Wikipediaリンク・藩ヒント・画像・Infoboxを解決する。"""
     name: Optional[str] = None
     wikipedia_url: Optional[str] = None
     han_hint: Optional[str] = None
     article_title: Optional[str] = None
+    infobox: Optional[InfoboxBlock] = None
 
-    if is_qid(father_id):
-        label, jawiki_title = get_entity_ja_info(father_id)
+    if is_qid(person_id):
+        label, jawiki_title = get_entity_ja_info(person_id)
         if jawiki_title:
             article_title = jawiki_title
             name = jawiki_title
         elif label:
             name = label
-            warn(f"QID {father_id}: 対応する日本語版Wikipedia記事(sitelink)が見つからなかったため、Wikidataのラベルを名前として使用します(Wikipediaリンクなし)。")
+            warn(f"QID {person_id}: 対応する日本語版Wikipedia記事(sitelink)が見つからなかったため、Wikidataのラベルを名前として使用します(Wikipediaリンクなし)。")
         else:
-            name = father_id
-            warn(f"QID {father_id}: 名前(ラベル)も日本語版記事も取得できませんでした。QIDをそのまま名前として使用します。")
+            name = person_id
+            warn(f"QID {person_id}: 名前(ラベル)も日本語版記事も取得できませんでした。QIDをそのまま名前として使用します。")
     else:
-        # QIDが取得できなかった稀なケース: father_idは記事名そのもの
-        article_title = father_id
-        name = father_id
+        # QIDが取得できなかった稀なケース: person_idは記事名そのもの
+        article_title = person_id
+        name = person_id
 
     if article_title:
         wikipedia_url = build_url(article_title)
-        father_wikitext = fetch_wikitext(article_title)
-        father_infobox = extract_infobox(father_wikitext, article_title) if father_wikitext else None
-        han_hint = extract_han_hint(father_infobox)
+        wikitext = fetch_wikitext(article_title)
+        infobox = extract_infobox(wikitext, article_title) if wikitext else None
+        han_hint = extract_han_hint(infobox)
 
-    all_nodes[father_id] = DaimyoNode(
-        id=father_id,
-        name=name or father_id,
-        han=han_hint,
-        generation=None,
+    return ResolvedPerson(
+        id=person_id,
+        name=name or person_id,
         wikipedia_url=wikipedia_url,
-        image_url=get_image_url_from_wikidata(father_id),
-        father_id=None,  # スタブノードはさらに遡らない
+        han_hint=han_hint,
+        image_url=get_image_url_from_wikidata(person_id),
+        article_title=article_title,
+        infobox=infobox,
+    )
+
+
+def find_ancestor_chain_to_known_daimyo(
+    start_id: str,
+    known_daimyo_ids: set[str],
+    all_nodes: dict[str, DaimyoNode],
+    max_generations: int,
+) -> tuple[list[ResolvedPerson], Optional[str]]:
+    """
+    start_id から父を最大 max_generations 世代分たどり、known_daimyo_ids(対象藩の藩主一覧、
+    または既に取得済みの他藩の藩主一覧)、または既に all_nodes に登録済みの人物に
+    行き着く経路を探す。
+
+    戻り値は (chain, matched_id)。
+      - 見つかった場合: chain は start_id から(行き着いた人物の手前までの)世代の若い順の
+        ResolvedPerson のリスト、matched_id は行き着いた既知の藩主のID。
+      - max_generations 世代たどっても見つからなかった場合: matched_id は None。
+        chain には少なくとも start_id 自身(1人目)のResolvedPersonが入っている
+        (呼び出し側が再度APIを叩かずに済むように、既に解決済みの情報として返す)。
+    """
+    chain: list[ResolvedPerson] = []
+    current_id = start_id
+    for _ in range(max_generations):
+        person = resolve_person_info(current_id)
+        chain.append(person)
+
+        next_father_id = (
+            determine_father(person.article_title, person.infobox, current_id)
+            if person.article_title else None
+        )
+        if next_father_id and (next_father_id in known_daimyo_ids or next_father_id in all_nodes):
+            return chain, next_father_id
+        if not next_father_id:
+            break
+        current_id = next_father_id
+
+    return chain, None
+
+
+def resolve_stub_tenure_years(person: "ResolvedPerson") -> tuple[Optional[int], Optional[int]]:
+    """
+    スタブノードの在位年をベストエフォートで解決する。スタブは対象藩のテンプレートに
+    載っていない人物なので年数表記の取得元がなく、藩名ヒント(han_hint)が取れている場合のみ
+    WikidataのP39(役職)からのフォールバックを試みる。取れなければ(None, None)。
+    """
+    if not person.han_hint or not is_qid(person.id):
+        return None, None
+    return get_wikidata_tenure_years(person.id, person.han_hint)
+
+
+def add_stub_node(
+    father_id: str,
+    all_nodes: dict[str, DaimyoNode],
+    known_daimyo_ids: set[str],
+    max_generations: int,
+) -> None:
+    """
+    father_id(QIDまたは記事名フォールバック)からスタブノードを登録する。
+
+    father_idの父をさらに最大max_generations世代分たどり、既知の藩主(known_daimyo_ids、
+    または既にall_nodesに登録済みの人物)に行き着く経路が見つかった場合のみ、
+    father_idからその手前までの人物すべてをスタブノードの連鎖として追加し、
+    最後の人物のfather_idを行き着いた藩主のIDに設定する。
+    行き着かなかった場合は、中間の世代は一切追加せず、father_id自身だけを
+    (father_id=Noneの)単独のスタブノードとして追加する(=父親だけを表示する)。
+    """
+    if father_id in all_nodes:
+        return
+
+    chain, matched_id = find_ancestor_chain_to_known_daimyo(
+        father_id, known_daimyo_ids, all_nodes, max_generations
+    )
+
+    if matched_id:
+        print(
+            f"    -> {chain[0].name}の祖先が既知の藩主({matched_id})まで{len(chain)}世代でつながったため、"
+            f"経路上の{len(chain)}名をスタブノードとして追加します"
+        )
+        for i, person in enumerate(chain):
+            next_id = chain[i + 1].id if i + 1 < len(chain) else matched_id
+            year_start, year_end = resolve_stub_tenure_years(person)
+            all_nodes[person.id] = DaimyoNode(
+                id=person.id,
+                name=person.name,
+                positions=(
+                    [{"han": person.han_hint, "generation": None, "year_start": year_start, "year_end": year_end}]
+                    if person.han_hint
+                    else []
+                ),
+                wikipedia_url=person.wikipedia_url,
+                image_url=person.image_url,
+                father_id=next_id,
+                is_stub=True,
+            )
+        return
+
+    # max_generations世代たどっても藩主に行き着かなかった。中間の世代は表示せず、
+    # 父親(father_id)だけを単独のスタブノードとして追加する。
+    person = chain[0]  # 既に解決済みなので再取得はしない
+    warn(
+        f"『{person.name}』: 父をさらに{max_generations}世代遡っても藩主に行き着かなかったため、"
+        f"この人物だけをスタブノードとして表示します(途中の世代は表示しません)。"
+    )
+    stub_year_start, stub_year_end = resolve_stub_tenure_years(person)
+    all_nodes[father_id] = DaimyoNode(
+        id=person.id,
+        name=person.name,
+        positions=(
+            [{"han": person.han_hint, "generation": None, "year_start": stub_year_start, "year_end": stub_year_end}]
+            if person.han_hint
+            else []
+        ),
+        wikipedia_url=person.wikipedia_url,
+        image_url=person.image_url,
+        father_id=None,
         is_stub=True,
     )
 
 
-def process_han(han_name: str, template_title: str) -> dict[str, DaimyoNode]:
+def load_known_daimyo_ids_from_raw_files() -> set[str]:
+    """
+    data/raw/*.json (既に取得済みの他藩のファイル)から、is_stub=falseの人物のQID一覧を集める。
+    スタブノードの父をさらに遡る際、対象藩以外の既知の藩主に行き着いた場合にも連鎖を
+    止められるようにするために使う。ファイルが存在しない/壊れている場合は無視する。
+    """
+    known_ids: set[str] = set()
+    if not OUTPUT_DIR.exists():
+        return known_ids
+    for path in OUTPUT_DIR.glob("*.json"):
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            continue
+        for record in data.get("daimyo", []):
+            if not record.get("is_stub", True):
+                known_ids.add(record["id"])
+    return known_ids
+
+
+def process_han(han_name: str, template_title: str, master_ids: set[str]) -> dict[str, DaimyoNode]:
     """
     1つの藩を処理し、その藩の藩主ノードと(その藩の藩主一覧に載らない実父の)スタブノードを
     まとめた辞書を返す。藩ごとに独立した辞書を作るため、他の藩の処理結果には影響しない
     (同じ人物が複数の藩のファイルに現れることはあるが、その重複排除はフェーズ2で行う)。
+    master_idsは藩主マスターリスト(build_daimyo_master_list参照)。テンプレートから拾った
+    候補が実在の藩主かどうかの判定に使う。
     """
     print(f"=== {han_name} ({template_title}) ===")
     all_nodes: dict[str, DaimyoNode] = {}
@@ -656,7 +1124,8 @@ def process_han(han_name: str, template_title: str) -> dict[str, DaimyoNode]:
         warn(f"[{han_name}] テンプレートを取得できなかったためスキップします")
         return all_nodes
 
-    ordered_names = extract_ordered_daimyo_from_template(template_wikitext, han_name)
+    ordered_entries = extract_ordered_daimyo_from_template(template_wikitext, han_name, master_ids)
+    ordered_names = [e.title for e in ordered_entries]
     print(f"  代数順の藩主一覧({len(ordered_names)}名): {', '.join(ordered_names)}")
 
     # 先にこの藩の一覧全員分のQIDを解決しておく(父がこの一覧に含まれるかどうかの判定に使うため)
@@ -665,8 +1134,12 @@ def process_han(han_name: str, template_title: str) -> dict[str, DaimyoNode]:
         qid = get_qid(name)
         title_to_id[name] = qid or name
     id_set = set(title_to_id.values())
+    # 対象藩の一覧に加え、既に取得済みの他藩の藩主一覧も「既知の藩主」として扱う
+    # (スタブの父をさらに遡った先が他藩の藩主だった場合にも連鎖を止められるようにする)
+    known_daimyo_ids = id_set | load_known_daimyo_ids_from_raw_files()
 
-    for idx, name in enumerate(ordered_names, start=1):
+    for idx, entry in enumerate(ordered_entries, start=1):
+        name = entry.title
         node_id = title_to_id[name]
         if node_id in all_nodes and not all_nodes[node_id].is_stub:
             # 既に別の藩の一覧として処理済み(通常は起きない想定だが念のため)
@@ -680,11 +1153,15 @@ def process_han(han_name: str, template_title: str) -> dict[str, DaimyoNode]:
 
         father_id = determine_father(name, infobox, node_id)
 
+        # 在位年: テンプレート内の年数表記を優先し、なければWikidataのP39(役職)をフォールバックにする
+        year_start, year_end = entry.year_start, entry.year_end
+        if year_start is None and year_end is None and is_qid(node_id):
+            year_start, year_end = get_wikidata_tenure_years(node_id, han_name)
+
         all_nodes[node_id] = DaimyoNode(
             id=node_id,
             name=name,
-            han=han_name,
-            generation=idx,
+            positions=[{"han": han_name, "generation": idx, "year_start": year_start, "year_end": year_end}],
             wikipedia_url=build_url(name),
             image_url=get_image_url_from_wikidata(node_id),
             father_id=father_id,
@@ -692,9 +1169,10 @@ def process_han(han_name: str, template_title: str) -> dict[str, DaimyoNode]:
         )
 
         # 父が対象藩の藩主一覧に含まれない場合はスタブノードとして追加
+        # (スタブノード側でも、既知の藩主に行き着くまで最大MAX_STUB_ANCESTOR_DEPTH世代分は遡る)
         if father_id and father_id not in id_set and father_id not in all_nodes:
             print(f"    -> 父({father_id})は{han_name}主一覧に含まれないため、スタブノードとして追加します")
-            add_stub_node(father_id, all_nodes)
+            add_stub_node(father_id, all_nodes, known_daimyo_ids, MAX_STUB_ANCESTOR_DEPTH)
 
     return all_nodes
 
@@ -740,13 +1218,20 @@ def select_target_hans(args: list[str]) -> dict[str, dict[str, str]]:
 
 
 def main() -> None:
-    targets = select_target_hans(sys.argv[1:])
+    raw_args = sys.argv[1:]
+    force_refresh_master = "--refresh-master-list" in raw_args
+    args = [a for a in raw_args if a != "--refresh-master-list"]
+
+    targets = select_target_hans(args)
+
+    # 藩主マスターリストは全藩共通で1度だけ構築する(藩ごとの処理の前に済ませる)。
+    master_ids = build_daimyo_master_list(force_refresh=force_refresh_master)
 
     written: list[tuple[str, Path, int]] = []
     for han_name, conf in targets.items():
         # 警告も藩ごとのファイルに分けて記録するため、藩の処理ごとにリセットする
         reset_warnings()
-        nodes = process_han(han_name, conf["template"])
+        nodes = process_han(han_name, conf["template"], master_ids)
         output_path = write_han_file(han_name, conf["slug"], conf["template"], nodes)
         written.append((han_name, output_path, len(nodes)))
         with_image = sum(1 for n in nodes.values() if n.image_url)

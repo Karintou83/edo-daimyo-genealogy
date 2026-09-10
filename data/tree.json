@@ -3,8 +3,14 @@
     {
       "id": "Q1186742",
       "name": "前田利長",
-      "han": "加賀藩",
-      "generation": 1,
+      "positions": [
+        {
+          "han": "加賀藩",
+          "generation": 1,
+          "year_start": 1601,
+          "year_end": 1605
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E5%88%A9%E9%95%B7",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Maeda_Toshinaga.jpg?width=200",
       "is_stub": false
@@ -12,8 +18,7 @@
     {
       "id": "Q1196817",
       "name": "前田利家",
-      "han": null,
-      "generation": null,
+      "positions": [],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E5%88%A9%E5%AE%B6",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Maeda_Toshiie.jpg?width=200",
       "is_stub": true
@@ -21,8 +26,14 @@
     {
       "id": "Q587204",
       "name": "前田利常",
-      "han": "加賀藩",
-      "generation": 2,
+      "positions": [
+        {
+          "han": "加賀藩",
+          "generation": 2,
+          "year_start": 1605,
+          "year_end": 1639
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E5%88%A9%E5%B8%B8",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Maeda_Toshitsune.png?width=200",
       "is_stub": false
@@ -30,8 +41,14 @@
     {
       "id": "Q6729106",
       "name": "前田光高",
-      "han": "加賀藩",
-      "generation": 3,
+      "positions": [
+        {
+          "han": "加賀藩",
+          "generation": 3,
+          "year_start": 1639,
+          "year_end": 1645
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E5%85%89%E9%AB%98",
       "image_url": null,
       "is_stub": false
@@ -39,8 +56,14 @@
     {
       "id": "Q841837",
       "name": "前田綱紀",
-      "han": "加賀藩",
-      "generation": 4,
+      "positions": [
+        {
+          "han": "加賀藩",
+          "generation": 4,
+          "year_start": 1645,
+          "year_end": 1723
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E7%B6%B1%E7%B4%80",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Maeda_Tsunanori.jpg?width=200",
       "is_stub": false
@@ -48,8 +71,14 @@
     {
       "id": "Q6729131",
       "name": "前田吉徳",
-      "han": "加賀藩",
-      "generation": 5,
+      "positions": [
+        {
+          "han": "加賀藩",
+          "generation": 5,
+          "year_start": 1723,
+          "year_end": 1745
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E5%90%89%E5%BE%B3",
       "image_url": null,
       "is_stub": false
@@ -57,8 +86,14 @@
     {
       "id": "Q6729107",
       "name": "前田宗辰",
-      "han": "加賀藩",
-      "generation": 6,
+      "positions": [
+        {
+          "han": "加賀藩",
+          "generation": 6,
+          "year_start": 1745,
+          "year_end": 1746
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E5%AE%97%E8%BE%B0",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Maeda_Munetoki.jpg?width=200",
       "is_stub": false
@@ -66,8 +101,14 @@
     {
       "id": "Q8189385",
       "name": "前田重煕",
-      "han": "加賀藩",
-      "generation": 7,
+      "positions": [
+        {
+          "han": "加賀藩",
+          "generation": 7,
+          "year_start": 1746,
+          "year_end": 1753
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E9%87%8D%E7%85%95",
       "image_url": null,
       "is_stub": false
@@ -75,8 +116,14 @@
     {
       "id": "Q8189350",
       "name": "前田重靖",
-      "han": "加賀藩",
-      "generation": 8,
+      "positions": [
+        {
+          "han": "加賀藩",
+          "generation": 8,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E9%87%8D%E9%9D%96",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Maeda_Shigenobu.jpg?width=200",
       "is_stub": false
@@ -84,8 +131,14 @@
     {
       "id": "Q6729112",
       "name": "前田重教",
-      "han": "加賀藩",
-      "generation": 9,
+      "positions": [
+        {
+          "han": "加賀藩",
+          "generation": 9,
+          "year_start": 1753,
+          "year_end": 1771
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E9%87%8D%E6%95%99",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Maeda_Shigemichi.jpg?width=200",
       "is_stub": false
@@ -93,8 +146,14 @@
     {
       "id": "Q6729094",
       "name": "前田治脩",
-      "han": "加賀藩",
-      "generation": 10,
+      "positions": [
+        {
+          "han": "加賀藩",
+          "generation": 10,
+          "year_start": 1771,
+          "year_end": 1802
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E6%B2%BB%E8%84%A9",
       "image_url": null,
       "is_stub": false
@@ -102,8 +161,14 @@
     {
       "id": "Q6729104",
       "name": "前田斉広",
-      "han": "加賀藩",
-      "generation": 11,
+      "positions": [
+        {
+          "han": "加賀藩",
+          "generation": 11,
+          "year_start": 1802,
+          "year_end": 1822
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E6%96%89%E5%BA%83",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Maeda_Narinaga.jpg?width=200",
       "is_stub": false
@@ -111,8 +176,14 @@
     {
       "id": "Q6729110",
       "name": "前田斉泰",
-      "han": "加賀藩",
-      "generation": 12,
+      "positions": [
+        {
+          "han": "加賀藩",
+          "generation": 12,
+          "year_start": 1822,
+          "year_end": 1866
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E6%96%89%E6%B3%B0",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Maeda_Nariyasu.JPG?width=200",
       "is_stub": false
@@ -120,17 +191,753 @@
     {
       "id": "Q6729123",
       "name": "前田慶寧",
-      "han": "加賀藩",
-      "generation": 13,
+      "positions": [
+        {
+          "han": "加賀藩",
+          "generation": 13,
+          "year_start": 1866,
+          "year_end": 1871
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E6%85%B6%E5%AF%A7",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Maeda_Yoshiyasu.jpg?width=200",
       "is_stub": false
     },
     {
+      "id": "Q1133267",
+      "name": "武田信吉",
+      "positions": [
+        {
+          "han": "佐倉藩",
+          "generation": 1,
+          "year_start": 1593,
+          "year_end": 1602
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%AD%A6%E7%94%B0%E4%BF%A1%E5%90%89",
+      "image_url": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q171977",
+      "name": "徳川家康",
+      "positions": [],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E5%AE%B6%E5%BA%B7",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tokugawa_Ieyasu2.JPG?width=200",
+      "is_stub": true
+    },
+    {
+      "id": "Q837867",
+      "name": "松平忠輝",
+      "positions": [
+        {
+          "han": "佐倉藩",
+          "generation": 2,
+          "year_start": 1602,
+          "year_end": 1603
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E5%BF%A0%E8%BC%9D",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Matsudaira_Tadateru.jpg?width=200",
+      "is_stub": false
+    },
+    {
+      "id": "Q10860025",
+      "name": "小笠原吉次",
+      "positions": [
+        {
+          "han": "佐倉藩",
+          "generation": 3,
+          "year_start": 1606,
+          "year_end": 1608
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%AC%A0%E5%8E%9F%E5%90%89%E6%AC%A1",
+      "image_url": null,
+      "is_stub": false
+    },
+    {
+      "id": "小笠原長隆 (三河小笠原氏)",
+      "name": "小笠原長隆 (三河小笠原氏)",
+      "positions": [],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%AC%A0%E5%8E%9F%E9%95%B7%E9%9A%86_%28%E4%B8%89%E6%B2%B3%E5%B0%8F%E7%AC%A0%E5%8E%9F%E6%B0%8F%29",
+      "image_url": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q1042428",
+      "name": "土井利勝",
+      "positions": [
+        {
+          "han": "佐倉藩",
+          "generation": 4,
+          "year_start": 1610,
+          "year_end": 1633
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%9C%9F%E4%BA%95%E5%88%A9%E5%8B%9D",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Doi_Toshikatu.jpg?width=200",
+      "is_stub": false
+    },
+    {
+      "id": "Q871566",
+      "name": "水野信元",
+      "positions": [],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%B0%B4%E9%87%8E%E4%BF%A1%E5%85%83",
+      "image_url": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q11585808",
+      "name": "石川忠総",
+      "positions": [
+        {
+          "han": "佐倉藩",
+          "generation": 5,
+          "year_start": 1633,
+          "year_end": 1634
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E7%9F%B3%E5%B7%9D%E5%BF%A0%E7%B7%8F",
+      "image_url": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q8081570",
+      "name": "大久保忠隣",
+      "positions": [
+        {
+          "han": "小田原藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E4%B9%85%E4%BF%9D%E5%BF%A0%E9%9A%A3",
+      "image_url": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q5368670",
+      "name": "松平家信",
+      "positions": [
+        {
+          "han": "佐倉藩",
+          "generation": 6,
+          "year_start": 1635,
+          "year_end": 1638
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E5%AE%B6%E4%BF%A1",
+      "image_url": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q11239164",
+      "name": "松平家忠 (形原松平家)",
+      "positions": [],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E5%AE%B6%E5%BF%A0_%28%E5%BD%A2%E5%8E%9F%E6%9D%BE%E5%B9%B3%E5%AE%B6%29",
+      "image_url": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q8515117",
+      "name": "松平康信",
+      "positions": [
+        {
+          "han": "佐倉藩",
+          "generation": 7,
+          "year_start": 1638,
+          "year_end": 1640
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E5%BA%B7%E4%BF%A1",
+      "image_url": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q1631219",
+      "name": "堀田正盛",
+      "positions": [
+        {
+          "han": "佐倉藩",
+          "generation": 8,
+          "year_start": 1642,
+          "year_end": 1651
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%A0%80%E7%94%B0%E6%AD%A3%E7%9B%9B",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hotta_Masamori.png?width=200",
+      "is_stub": false
+    },
+    {
+      "id": "Q11427634",
+      "name": "堀田正吉",
+      "positions": [],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%A0%80%E7%94%B0%E6%AD%A3%E5%90%89",
+      "image_url": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q1631220",
+      "name": "堀田正信",
+      "positions": [
+        {
+          "han": "佐倉藩",
+          "generation": 9,
+          "year_start": 1651,
+          "year_end": 1660
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%A0%80%E7%94%B0%E6%AD%A3%E4%BF%A1",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hotta_Masanobu.jpg?width=200",
+      "is_stub": false
+    },
+    {
+      "id": "Q10855050",
+      "name": "改易",
+      "positions": [
+        {
+          "han": "佐倉藩",
+          "generation": 10,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%94%B9%E6%98%93",
+      "image_url": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q10729463",
+      "name": "松平乗久",
+      "positions": [
+        {
+          "han": "佐倉藩",
+          "generation": 11,
+          "year_start": 1661,
+          "year_end": 1678
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E4%B9%97%E4%B9%85",
+      "image_url": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q6788057",
+      "name": "松平乗寿",
+      "positions": [
+        {
+          "han": "岩村藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E4%B9%97%E5%AF%BF",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Matsudaira_Norinaga.jpg?width=200",
+      "is_stub": true
+    },
+    {
+      "id": "Q8081578",
+      "name": "大久保忠朝",
+      "positions": [
+        {
+          "han": "佐倉藩",
+          "generation": 12,
+          "year_start": 1678,
+          "year_end": 1686
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E4%B9%85%E4%BF%9D%E5%BF%A0%E6%9C%9D",
+      "image_url": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q11432012",
+      "name": "大久保教隆",
+      "positions": [],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E4%B9%85%E4%BF%9D%E6%95%99%E9%9A%86",
+      "image_url": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q3530227",
+      "name": "戸田忠昌",
+      "positions": [
+        {
+          "han": "佐倉藩",
+          "generation": 13,
+          "year_start": 1686,
+          "year_end": 1699
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%88%B8%E7%94%B0%E5%BF%A0%E6%98%8C",
+      "image_url": null,
+      "is_stub": false
+    },
+    {
+      "id": "戸田忠継",
+      "name": "戸田忠継",
+      "positions": [],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%88%B8%E7%94%B0%E5%BF%A0%E7%B6%99",
+      "image_url": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q10862124",
+      "name": "戸田忠真",
+      "positions": [
+        {
+          "han": "佐倉藩",
+          "generation": 14,
+          "year_start": 1699,
+          "year_end": 1701
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%88%B8%E7%94%B0%E5%BF%A0%E7%9C%9F",
+      "image_url": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q6013274",
+      "name": "稲葉正往",
+      "positions": [
+        {
+          "han": "佐倉藩",
+          "generation": 15,
+          "year_start": 1701,
+          "year_end": 1707
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E7%A8%B2%E8%91%89%E6%AD%A3%E5%BE%80",
+      "image_url": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q6013288",
+      "name": "稲葉正則",
+      "positions": [
+        {
+          "han": "小田原藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E7%A8%B2%E8%91%89%E6%AD%A3%E5%89%87",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Inaba_Masanori.jpg?width=200",
+      "is_stub": true
+    },
+    {
+      "id": "Q11596955",
+      "name": "稲葉正知",
+      "positions": [
+        {
+          "han": "佐倉藩",
+          "generation": 16,
+          "year_start": 1707,
+          "year_end": 1723
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E7%A8%B2%E8%91%89%E6%AD%A3%E7%9F%A5",
+      "image_url": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q10729497",
+      "name": "松平乗邑",
+      "positions": [
+        {
+          "han": "佐倉藩",
+          "generation": 17,
+          "year_start": 1723,
+          "year_end": 1745
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E4%B9%97%E9%82%91",
+      "image_url": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q10729483",
+      "name": "松平乗春",
+      "positions": [
+        {
+          "han": "唐津藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E4%B9%97%E6%98%A5",
+      "image_url": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q8515003",
+      "name": "松平乗祐",
+      "positions": [
+        {
+          "han": "佐倉藩",
+          "generation": 18,
+          "year_start": 1745,
+          "year_end": 1746
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E4%B9%97%E7%A5%90",
+      "image_url": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q8515546",
+      "name": "堀田正亮",
+      "positions": [
+        {
+          "han": "佐倉藩",
+          "generation": 19,
+          "year_start": 1746,
+          "year_end": 1761
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%A0%80%E7%94%B0%E6%AD%A3%E4%BA%AE",
+      "image_url": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q11427642",
+      "name": "堀田正武",
+      "positions": [],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%A0%80%E7%94%B0%E6%AD%A3%E6%AD%A6",
+      "image_url": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q11427654",
+      "name": "堀田正順",
+      "positions": [
+        {
+          "han": "佐倉藩",
+          "generation": 20,
+          "year_start": 1761,
+          "year_end": 1805
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%A0%80%E7%94%B0%E6%AD%A3%E9%A0%86",
+      "image_url": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q11427640",
+      "name": "堀田正時",
+      "positions": [
+        {
+          "han": "佐倉藩",
+          "generation": 21,
+          "year_start": 1805,
+          "year_end": 1811
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%A0%80%E7%94%B0%E6%AD%A3%E6%99%82",
+      "image_url": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q11427637",
+      "name": "堀田正愛",
+      "positions": [
+        {
+          "han": "佐倉藩",
+          "generation": 22,
+          "year_start": 1811,
+          "year_end": 1824
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%A0%80%E7%94%B0%E6%AD%A3%E6%84%9B",
+      "image_url": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q11427633",
+      "name": "堀田正功",
+      "positions": [
+        {
+          "han": "佐倉藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%A0%80%E7%94%B0%E6%AD%A3%E5%8A%9F",
+      "image_url": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q910241",
+      "name": "堀田正睦",
+      "positions": [
+        {
+          "han": "佐倉藩",
+          "generation": 23,
+          "year_start": 1825,
+          "year_end": 1859
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%A0%80%E7%94%B0%E6%AD%A3%E7%9D%A6",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Daimyo_Hotta_Masayoshi.png?width=200",
+      "is_stub": false
+    },
+    {
+      "id": "Q11427632",
+      "name": "堀田正倫",
+      "positions": [
+        {
+          "han": "佐倉藩",
+          "generation": 24,
+          "year_start": 1859,
+          "year_end": 1871
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%A0%80%E7%94%B0%E6%AD%A3%E5%80%AB",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hotta_Masatomo.jpg?width=200",
+      "is_stub": false
+    },
+    {
+      "id": "Q1185372",
+      "name": "島津忠恒",
+      "positions": [
+        {
+          "han": "薩摩藩",
+          "generation": 1,
+          "year_start": 1601,
+          "year_end": 1638
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E5%BF%A0%E6%81%92",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shimazu_Tadatsune.jpg?width=200",
+      "is_stub": false
+    },
+    {
+      "id": "Q1156288",
+      "name": "島津義弘",
+      "positions": [
+        {
+          "han": "薩摩藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E7%BE%A9%E5%BC%98",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shimazu_Yoshihiro.jpg?width=200",
+      "is_stub": true
+    },
+    {
+      "id": "Q11246514",
+      "name": "島津光久",
+      "positions": [
+        {
+          "han": "薩摩藩",
+          "generation": 2,
+          "year_start": 1638,
+          "year_end": 1687
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E5%85%89%E4%B9%85",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shimadzu-mitsuhisa.jpg?width=200",
+      "is_stub": false
+    },
+    {
+      "id": "Q11245334",
+      "name": "島津綱貴",
+      "positions": [
+        {
+          "han": "薩摩藩",
+          "generation": 3,
+          "year_start": 1687,
+          "year_end": 1704
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E7%B6%B1%E8%B2%B4",
+      "image_url": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q11245310",
+      "name": "島津綱久",
+      "positions": [
+        {
+          "han": "薩摩藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E7%B6%B1%E4%B9%85",
+      "image_url": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q11246537",
+      "name": "島津吉貴",
+      "positions": [
+        {
+          "han": "薩摩藩",
+          "generation": 4,
+          "year_start": 1704,
+          "year_end": 1721
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E5%90%89%E8%B2%B4",
+      "image_url": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q11245289",
+      "name": "島津継豊",
+      "positions": [
+        {
+          "han": "薩摩藩",
+          "generation": 5,
+          "year_start": 1721,
+          "year_end": 1746
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E7%B6%99%E8%B1%8A",
+      "image_url": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q11246653",
+      "name": "島津宗信",
+      "positions": [
+        {
+          "han": "薩摩藩",
+          "generation": 6,
+          "year_start": 1746,
+          "year_end": 1749
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E5%AE%97%E4%BF%A1",
+      "image_url": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q11476823",
+      "name": "島津重年",
+      "positions": [
+        {
+          "han": "薩摩藩",
+          "generation": 7,
+          "year_start": 1749,
+          "year_end": 1755
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E9%87%8D%E5%B9%B4",
+      "image_url": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q8013051",
+      "name": "島津重豪",
+      "positions": [
+        {
+          "han": "薩摩藩",
+          "generation": 8,
+          "year_start": 1755,
+          "year_end": 1787
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E9%87%8D%E8%B1%AA",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/%E5%B3%B6%E6%B4%A5%E9%87%8D%E8%B1%AA.jpg?width=200",
+      "is_stub": false
+    },
+    {
+      "id": "Q8514648",
+      "name": "島津斉宣",
+      "positions": [
+        {
+          "han": "薩摩藩",
+          "generation": 9,
+          "year_start": 1787,
+          "year_end": 1809
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E6%96%89%E5%AE%A3",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Narinbu_shimadzu.jpg?width=200",
+      "is_stub": false
+    },
+    {
+      "id": "Q1016994",
+      "name": "島津斉興",
+      "positions": [
+        {
+          "han": "薩摩藩",
+          "generation": 10,
+          "year_start": 1809,
+          "year_end": 1851
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E6%96%89%E8%88%88",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Narioki_shimadzu.jpg?width=200",
+      "is_stub": false
+    },
+    {
+      "id": "Q1143856",
+      "name": "島津斉彬",
+      "positions": [
+        {
+          "han": "薩摩藩",
+          "generation": 11,
+          "year_start": 1851,
+          "year_end": 1858
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E6%96%89%E5%BD%AC",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shiro_Ichiki%2C_Portrait_of_Nariakira_Shimazu%2C_1857.jpg?width=200",
+      "is_stub": false
+    },
+    {
+      "id": "Q1005245",
+      "name": "島津忠義",
+      "positions": [
+        {
+          "han": "薩摩藩",
+          "generation": 12,
+          "year_start": 1858,
+          "year_end": 1869
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E5%BF%A0%E7%BE%A9",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shimazu_Tadayoshi.jpg?width=200",
+      "is_stub": false
+    },
+    {
+      "id": "Q656135",
+      "name": "島津久光",
+      "positions": [
+        {
+          "han": "薩摩藩",
+          "generation": null,
+          "year_start": 1869,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B3%B6%E6%B4%A5%E4%B9%85%E5%85%89",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Shimazu_Hisamitsu_%E5%B3%B6%E6%B4%A5%E4%B9%85%E5%85%89.jpg?width=200",
+      "is_stub": true
+    },
+    {
       "id": "Q311183",
       "name": "伊達政宗",
-      "han": "仙台藩",
-      "generation": 1,
+      "positions": [
+        {
+          "han": "仙台藩",
+          "generation": 1,
+          "year_start": 1600,
+          "year_end": 1636
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E6%94%BF%E5%AE%97",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Date_Masamune02.jpg?width=200",
       "is_stub": false
@@ -138,8 +945,7 @@
     {
       "id": "Q2625556",
       "name": "伊達輝宗",
-      "han": null,
-      "generation": null,
+      "positions": [],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E8%BC%9D%E5%AE%97",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Date_Terumune.JPG?width=200",
       "is_stub": true
@@ -147,8 +953,14 @@
     {
       "id": "Q115852",
       "name": "伊達忠宗",
-      "han": "仙台藩",
-      "generation": 2,
+      "positions": [
+        {
+          "han": "仙台藩",
+          "generation": 2,
+          "year_start": 1636,
+          "year_end": 1658
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E5%BF%A0%E5%AE%97",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Date_Tadamune.jpg?width=200",
       "is_stub": false
@@ -156,8 +968,14 @@
     {
       "id": "Q846370",
       "name": "伊達綱宗",
-      "han": "仙台藩",
-      "generation": 3,
+      "positions": [
+        {
+          "han": "仙台藩",
+          "generation": 3,
+          "year_start": 1658,
+          "year_end": 1660
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E7%B6%B1%E5%AE%97",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Date_Tunamune.jpg?width=200",
       "is_stub": false
@@ -165,8 +983,14 @@
     {
       "id": "Q5227557",
       "name": "伊達綱村",
-      "han": "仙台藩",
-      "generation": 4,
+      "positions": [
+        {
+          "han": "仙台藩",
+          "generation": 4,
+          "year_start": 1660,
+          "year_end": 1703
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E7%B6%B1%E6%9D%91",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Date_Tsunamura.jpg?width=200",
       "is_stub": false
@@ -174,8 +998,14 @@
     {
       "id": "Q116151",
       "name": "伊達吉村",
-      "han": "仙台藩",
-      "generation": 5,
+      "positions": [
+        {
+          "han": "仙台藩",
+          "generation": 5,
+          "year_start": 1703,
+          "year_end": 1743
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E5%90%89%E6%9D%91",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Date_Yoshimura.jpg?width=200",
       "is_stub": false
@@ -183,8 +1013,14 @@
     {
       "id": "Q11380721",
       "name": "伊達宗房",
-      "han": "仙台藩",
-      "generation": null,
+      "positions": [
+        {
+          "han": "仙台藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E5%AE%97%E6%88%BF",
       "image_url": null,
       "is_stub": true
@@ -192,8 +1028,14 @@
     {
       "id": "Q5227536",
       "name": "伊達宗村 (仙台藩主)",
-      "han": "仙台藩",
-      "generation": 6,
+      "positions": [
+        {
+          "han": "仙台藩",
+          "generation": 6,
+          "year_start": 1743,
+          "year_end": 1756
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E5%AE%97%E6%9D%91_%28%E4%BB%99%E5%8F%B0%E8%97%A9%E4%B8%BB%29",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Date_Munemura.jpg?width=200",
       "is_stub": false
@@ -201,8 +1043,14 @@
     {
       "id": "Q846378",
       "name": "伊達重村",
-      "han": "仙台藩",
-      "generation": 7,
+      "positions": [
+        {
+          "han": "仙台藩",
+          "generation": 7,
+          "year_start": 1756,
+          "year_end": 1790
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E9%87%8D%E6%9D%91",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Date_Shigemura.jpg?width=200",
       "is_stub": false
@@ -210,8 +1058,14 @@
     {
       "id": "Q5227543",
       "name": "伊達斉村",
-      "han": "仙台藩",
-      "generation": 8,
+      "positions": [
+        {
+          "han": "仙台藩",
+          "generation": 8,
+          "year_start": 1790,
+          "year_end": 1796
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E6%96%89%E6%9D%91",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Date_Narimura.jpg?width=200",
       "is_stub": false
@@ -219,8 +1073,14 @@
     {
       "id": "Q5227519",
       "name": "伊達周宗",
-      "han": "仙台藩",
-      "generation": 9,
+      "positions": [
+        {
+          "han": "仙台藩",
+          "generation": 9,
+          "year_start": 1796,
+          "year_end": 1812
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E5%91%A8%E5%AE%97",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Date_Chikamune.jpg?width=200",
       "is_stub": false
@@ -228,8 +1088,14 @@
     {
       "id": "Q5227540",
       "name": "伊達斉宗",
-      "han": "仙台藩",
-      "generation": 10,
+      "positions": [
+        {
+          "han": "仙台藩",
+          "generation": 10,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E6%96%89%E5%AE%97",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Date_Narimune.jpg?width=200",
       "is_stub": false
@@ -237,8 +1103,14 @@
     {
       "id": "Q7201026",
       "name": "伊達斉義",
-      "han": "仙台藩",
-      "generation": 11,
+      "positions": [
+        {
+          "han": "仙台藩",
+          "generation": 11,
+          "year_start": 1819,
+          "year_end": 1827
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E6%96%89%E7%BE%A9",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Date_Nariyoshi.jpg?width=200",
       "is_stub": false
@@ -246,17 +1118,44 @@
     {
       "id": "Q8514091",
       "name": "田村村資",
-      "han": "仙台藩",
-      "generation": null,
+      "positions": [
+        {
+          "han": "仙台藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E7%94%B0%E6%9D%91%E6%9D%91%E8%B3%87",
+      "image_url": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q11380816",
+      "name": "伊達村良",
+      "positions": [
+        {
+          "han": "仙台藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E6%9D%91%E8%89%AF",
       "image_url": null,
       "is_stub": true
     },
     {
       "id": "Q5227539",
       "name": "伊達斉邦",
-      "han": "仙台藩",
-      "generation": 12,
+      "positions": [
+        {
+          "han": "仙台藩",
+          "generation": 12,
+          "year_start": 1827,
+          "year_end": 1841
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E6%96%89%E9%82%A6",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Date_Narikuni.jpg?width=200",
       "is_stub": false
@@ -264,8 +1163,14 @@
     {
       "id": "Q11380708",
       "name": "伊達宗充",
-      "han": "仙台藩",
-      "generation": null,
+      "positions": [
+        {
+          "han": "仙台藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E5%AE%97%E5%85%85",
       "image_url": null,
       "is_stub": true
@@ -273,8 +1178,14 @@
     {
       "id": "Q846375",
       "name": "伊達慶邦",
-      "han": "仙台藩",
-      "generation": 13,
+      "positions": [
+        {
+          "han": "仙台藩",
+          "generation": 13,
+          "year_start": 1841,
+          "year_end": 1868
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E6%85%B6%E9%82%A6",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Date_Yoshikuni.jpg?width=200",
       "is_stub": false
@@ -282,8 +1193,14 @@
     {
       "id": "Q5227534",
       "name": "伊達宗基",
-      "han": "仙台藩",
-      "generation": 14,
+      "positions": [
+        {
+          "han": "仙台藩",
+          "generation": 14,
+          "year_start": 1868,
+          "year_end": 1869
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E5%AE%97%E5%9F%BA",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Munemoto_Date.jpg?width=200",
       "is_stub": false
@@ -291,8 +1208,14 @@
     {
       "id": "Q1376605",
       "name": "上杉景勝",
-      "han": "米沢藩",
-      "generation": 1,
+      "positions": [
+        {
+          "han": "米沢藩",
+          "generation": 1,
+          "year_start": 1601,
+          "year_end": 1623
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E6%99%AF%E5%8B%9D",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Uesugi_Kagekatsu_Portrait_Yonezawa_City_Uesugi_Museum.png?width=200",
       "is_stub": false
@@ -300,8 +1223,7 @@
     {
       "id": "Q6958482",
       "name": "長尾政景",
-      "han": null,
-      "generation": null,
+      "positions": [],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E5%B0%BE%E6%94%BF%E6%99%AF",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nagao_Masakage_and_His_wife.jpg?width=200",
       "is_stub": true
@@ -309,8 +1231,14 @@
     {
       "id": "Q8514762",
       "name": "上杉定勝",
-      "han": "米沢藩",
-      "generation": 2,
+      "positions": [
+        {
+          "han": "米沢藩",
+          "generation": 2,
+          "year_start": 1623,
+          "year_end": 1645
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E5%AE%9A%E5%8B%9D",
       "image_url": null,
       "is_stub": false
@@ -318,8 +1246,14 @@
     {
       "id": "Q8514779",
       "name": "上杉綱勝",
-      "han": "米沢藩",
-      "generation": 3,
+      "positions": [
+        {
+          "han": "米沢藩",
+          "generation": 3,
+          "year_start": 1645,
+          "year_end": 1664
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E7%B6%B1%E5%8B%9D",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Uesugi_Tsunakatsu.jpg?width=200",
       "is_stub": false
@@ -327,8 +1261,14 @@
     {
       "id": "Q8514773",
       "name": "上杉綱憲",
-      "han": "米沢藩",
-      "generation": 4,
+      "positions": [
+        {
+          "han": "米沢藩",
+          "generation": 4,
+          "year_start": 1664,
+          "year_end": 1703
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E7%B6%B1%E6%86%B2",
       "image_url": null,
       "is_stub": false
@@ -336,8 +1276,7 @@
     {
       "id": "Q3132109",
       "name": "吉良義央",
-      "han": null,
-      "generation": null,
+      "positions": [],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%90%89%E8%89%AF%E7%BE%A9%E5%A4%AE",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Wooden_statue_of_Kira_Yoshihisa%2C_circa_1910.jpg?width=200",
       "is_stub": true
@@ -345,8 +1284,14 @@
     {
       "id": "Q8514785",
       "name": "上杉吉憲",
-      "han": "米沢藩",
-      "generation": 5,
+      "positions": [
+        {
+          "han": "米沢藩",
+          "generation": 5,
+          "year_start": 1703,
+          "year_end": 1722
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E5%90%89%E6%86%B2",
       "image_url": null,
       "is_stub": false
@@ -354,8 +1299,14 @@
     {
       "id": "Q8514751",
       "name": "上杉宗憲",
-      "han": "米沢藩",
-      "generation": 6,
+      "positions": [
+        {
+          "han": "米沢藩",
+          "generation": 6,
+          "year_start": 1722,
+          "year_end": 1734
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E5%AE%97%E6%86%B2",
       "image_url": null,
       "is_stub": false
@@ -363,8 +1314,14 @@
     {
       "id": "Q8514757",
       "name": "上杉宗房",
-      "han": "米沢藩",
-      "generation": 7,
+      "positions": [
+        {
+          "han": "米沢藩",
+          "generation": 7,
+          "year_start": 1734,
+          "year_end": 1746
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E5%AE%97%E6%88%BF",
       "image_url": null,
       "is_stub": false
@@ -372,8 +1329,14 @@
     {
       "id": "Q8514768",
       "name": "上杉重定",
-      "han": "米沢藩",
-      "generation": 8,
+      "positions": [
+        {
+          "han": "米沢藩",
+          "generation": 8,
+          "year_start": 1746,
+          "year_end": 1767
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E9%87%8D%E5%AE%9A",
       "image_url": null,
       "is_stub": false
@@ -381,8 +1344,14 @@
     {
       "id": "Q1194899",
       "name": "上杉治憲",
-      "han": "米沢藩",
-      "generation": 9,
+      "positions": [
+        {
+          "han": "米沢藩",
+          "generation": 9,
+          "year_start": 1767,
+          "year_end": 1785
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E6%B2%BB%E6%86%B2",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/%E4%B8%8A%E6%9D%89%E9%B7%B9%E5%B1%B1.jpg?width=200",
       "is_stub": false
@@ -390,8 +1359,14 @@
     {
       "id": "Q11595125",
       "name": "秋月種美",
-      "han": "高鍋藩",
-      "generation": null,
+      "positions": [
+        {
+          "han": "高鍋藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E7%A7%8B%E6%9C%88%E7%A8%AE%E7%BE%8E",
       "image_url": null,
       "is_stub": true
@@ -399,8 +1374,14 @@
     {
       "id": "Q8514791",
       "name": "上杉治広",
-      "han": "米沢藩",
-      "generation": 10,
+      "positions": [
+        {
+          "han": "米沢藩",
+          "generation": 10,
+          "year_start": 1785,
+          "year_end": 1812
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E6%B2%BB%E5%BA%83",
       "image_url": null,
       "is_stub": false
@@ -408,8 +1389,14 @@
     {
       "id": "Q8514745",
       "name": "上杉斉定",
-      "han": "米沢藩",
-      "generation": 11,
+      "positions": [
+        {
+          "han": "米沢藩",
+          "generation": 11,
+          "year_start": 1812,
+          "year_end": 1839
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E6%96%89%E5%AE%9A",
       "image_url": null,
       "is_stub": false
@@ -417,8 +1404,14 @@
     {
       "id": "Q11359143",
       "name": "上杉勝熙",
-      "han": "米沢藩",
-      "generation": null,
+      "positions": [
+        {
+          "han": "米沢藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E5%8B%9D%E7%86%99",
       "image_url": null,
       "is_stub": true
@@ -426,8 +1419,14 @@
     {
       "id": "Q851776",
       "name": "上杉斉憲",
-      "han": "米沢藩",
-      "generation": 12,
+      "positions": [
+        {
+          "han": "米沢藩",
+          "generation": 12,
+          "year_start": 1839,
+          "year_end": 1869
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E6%96%89%E6%86%B2",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Uesugi_Narinori.jpg?width=200",
       "is_stub": false
@@ -435,8 +1434,14 @@
     {
       "id": "Q851787",
       "name": "上杉茂憲",
-      "han": "米沢藩",
-      "generation": 13,
+      "positions": [
+        {
+          "han": "米沢藩",
+          "generation": 13,
+          "year_start": 1869,
+          "year_end": 1871
+        }
+      ],
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E8%8C%82%E6%86%B2",
       "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Uesugi_Mochinori.jpg?width=200",
       "is_stub": false
@@ -496,6 +1501,158 @@
       "child_id": "Q6729123"
     },
     {
+      "parent_id": "Q171977",
+      "child_id": "Q1133267"
+    },
+    {
+      "parent_id": "Q171977",
+      "child_id": "Q837867"
+    },
+    {
+      "parent_id": "小笠原長隆 (三河小笠原氏)",
+      "child_id": "Q10860025"
+    },
+    {
+      "parent_id": "Q871566",
+      "child_id": "Q1042428"
+    },
+    {
+      "parent_id": "Q8081570",
+      "child_id": "Q11585808"
+    },
+    {
+      "parent_id": "Q11239164",
+      "child_id": "Q5368670"
+    },
+    {
+      "parent_id": "Q5368670",
+      "child_id": "Q8515117"
+    },
+    {
+      "parent_id": "Q11427634",
+      "child_id": "Q1631219"
+    },
+    {
+      "parent_id": "Q1631219",
+      "child_id": "Q1631220"
+    },
+    {
+      "parent_id": "Q6788057",
+      "child_id": "Q10729463"
+    },
+    {
+      "parent_id": "Q11432012",
+      "child_id": "Q8081578"
+    },
+    {
+      "parent_id": "Q8081570",
+      "child_id": "Q11432012"
+    },
+    {
+      "parent_id": "戸田忠継",
+      "child_id": "Q3530227"
+    },
+    {
+      "parent_id": "Q3530227",
+      "child_id": "Q10862124"
+    },
+    {
+      "parent_id": "Q6013288",
+      "child_id": "Q6013274"
+    },
+    {
+      "parent_id": "Q6013274",
+      "child_id": "Q11596955"
+    },
+    {
+      "parent_id": "Q10729483",
+      "child_id": "Q10729497"
+    },
+    {
+      "parent_id": "Q11427642",
+      "child_id": "Q8515546"
+    },
+    {
+      "parent_id": "Q8515546",
+      "child_id": "Q11427654"
+    },
+    {
+      "parent_id": "Q8515546",
+      "child_id": "Q11427640"
+    },
+    {
+      "parent_id": "Q11427633",
+      "child_id": "Q11427637"
+    },
+    {
+      "parent_id": "Q11427654",
+      "child_id": "Q11427633"
+    },
+    {
+      "parent_id": "Q11427640",
+      "child_id": "Q910241"
+    },
+    {
+      "parent_id": "Q910241",
+      "child_id": "Q11427632"
+    },
+    {
+      "parent_id": "Q1156288",
+      "child_id": "Q1185372"
+    },
+    {
+      "parent_id": "Q1185372",
+      "child_id": "Q11246514"
+    },
+    {
+      "parent_id": "Q11245310",
+      "child_id": "Q11245334"
+    },
+    {
+      "parent_id": "Q11246514",
+      "child_id": "Q11245310"
+    },
+    {
+      "parent_id": "Q11245334",
+      "child_id": "Q11246537"
+    },
+    {
+      "parent_id": "Q11246537",
+      "child_id": "Q11245289"
+    },
+    {
+      "parent_id": "Q11245289",
+      "child_id": "Q11246653"
+    },
+    {
+      "parent_id": "Q11245289",
+      "child_id": "Q11476823"
+    },
+    {
+      "parent_id": "Q11476823",
+      "child_id": "Q8013051"
+    },
+    {
+      "parent_id": "Q8013051",
+      "child_id": "Q8514648"
+    },
+    {
+      "parent_id": "Q8514648",
+      "child_id": "Q1016994"
+    },
+    {
+      "parent_id": "Q1016994",
+      "child_id": "Q1143856"
+    },
+    {
+      "parent_id": "Q656135",
+      "child_id": "Q1005245"
+    },
+    {
+      "parent_id": "Q1016994",
+      "child_id": "Q656135"
+    },
+    {
       "parent_id": "Q2625556",
       "child_id": "Q311183"
     },
@@ -514,6 +1671,10 @@
     {
       "parent_id": "Q11380721",
       "child_id": "Q116151"
+    },
+    {
+      "parent_id": "Q115852",
+      "child_id": "Q11380721"
     },
     {
       "parent_id": "Q116151",
@@ -540,8 +1701,20 @@
       "child_id": "Q7201026"
     },
     {
+      "parent_id": "Q11380816",
+      "child_id": "Q8514091"
+    },
+    {
+      "parent_id": "Q116151",
+      "child_id": "Q11380816"
+    },
+    {
       "parent_id": "Q11380708",
       "child_id": "Q5227539"
+    },
+    {
+      "parent_id": "Q11380816",
+      "child_id": "Q11380708"
     },
     {
       "parent_id": "Q7201026",
@@ -594,6 +1767,10 @@
     {
       "parent_id": "Q11359143",
       "child_id": "Q8514745"
+    },
+    {
+      "parent_id": "Q8514768",
+      "child_id": "Q11359143"
     },
     {
       "parent_id": "Q8514745",
