@@ -73,6 +73,7 @@ IMAGE_WIDTH = 200
 TARGET_HANS: dict[str, dict[str, str]] = {
     "米沢藩": {"template": "Template:米沢藩主", "slug": "yonezawa"},
     "加賀藩": {"template": "Template:加賀藩主", "slug": "kaga"},
+    "仙台藩": {"template": "Template:仙台藩主", "slug": "sendai"},
 }
 
 # 出力先ディレクトリ。藩ごとに <slug>.json を作る。
@@ -440,15 +441,18 @@ def _first_link_after_label(text: str, label_variants: list[str], exclude_labels
     text内で label_variants のいずれかのラベル(例: '父')の直後に現れる最初のwikilinkを返す。
     ただし exclude_labels (例: '養父') に該当する位置からのマッチは除外する。
     """
-    # ラベルの位置をすべて洗い出し、除外ラベルと重なるものを取り除く
+    # ラベルの位置をすべて洗い出し、除外ラベルと重なるものを取り除く。
+    # ラベル自体がウィキリンク化されている場合(例: '[[父]]:...')にも対応するため、
+    # ラベル文字列の直後に閉じ括弧']]'が0〜2個続くのを許容してからコロンを探す。
+    LABEL_SUFFIX_RE = r"\]{0,2}\s*[:：]"
     label_positions: list[tuple[int, int, str]] = []  # (start, end, label)
     for label in label_variants:
-        for lm in re.finditer(re.escape(label) + r"\s*[:：]", text):
+        for lm in re.finditer(re.escape(label) + LABEL_SUFFIX_RE, text):
             label_positions.append((lm.start(), lm.end(), label))
 
     exclude_spans: list[tuple[int, int]] = []
     for ex_label in exclude_labels:
-        for em in re.finditer(re.escape(ex_label) + r"\s*[:：]", text):
+        for em in re.finditer(re.escape(ex_label) + LABEL_SUFFIX_RE, text):
             exclude_spans.append((em.start(), em.end()))
 
     def is_excluded(pos: int) -> bool:
@@ -467,7 +471,7 @@ def _first_link_after_label(text: str, label_variants: list[str], exclude_labels
         # ラベル以降、次のラベル(母/養父など)が出てくる前までを対象にリンクを探す
         rest = text[end:]
         next_label_m = re.search(
-            "|".join(re.escape(l) + r"\s*[:：]" for l in (label_variants + exclude_labels) if l),
+            "|".join(re.escape(l) + LABEL_SUFFIX_RE for l in (label_variants + exclude_labels) if l),
             rest,
         )
         segment = rest[: next_label_m.start()] if next_label_m else rest

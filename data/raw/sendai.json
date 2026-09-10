@@ -1,0 +1,191 @@
+{
+  "generated_by": "scripts/fetch_daimyo_data.py",
+  "han": "仙台藩",
+  "slug": "sendai",
+  "template": "Template:仙台藩主",
+  "daimyo": [
+    {
+      "id": "Q311183",
+      "name": "伊達政宗",
+      "han": "仙台藩",
+      "generation": 1,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E6%94%BF%E5%AE%97",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Date_Masamune02.jpg?width=200",
+      "father_id": "Q2625556",
+      "is_stub": false
+    },
+    {
+      "id": "Q2625556",
+      "name": "伊達輝宗",
+      "han": null,
+      "generation": null,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E8%BC%9D%E5%AE%97",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Date_Terumune.JPG?width=200",
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q115852",
+      "name": "伊達忠宗",
+      "han": "仙台藩",
+      "generation": 2,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E5%BF%A0%E5%AE%97",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Date_Tadamune.jpg?width=200",
+      "father_id": "Q311183",
+      "is_stub": false
+    },
+    {
+      "id": "Q846370",
+      "name": "伊達綱宗",
+      "han": "仙台藩",
+      "generation": 3,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E7%B6%B1%E5%AE%97",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Date_Tunamune.jpg?width=200",
+      "father_id": "Q115852",
+      "is_stub": false
+    },
+    {
+      "id": "Q5227557",
+      "name": "伊達綱村",
+      "han": "仙台藩",
+      "generation": 4,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E7%B6%B1%E6%9D%91",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Date_Tsunamura.jpg?width=200",
+      "father_id": "Q846370",
+      "is_stub": false
+    },
+    {
+      "id": "Q116151",
+      "name": "伊達吉村",
+      "han": "仙台藩",
+      "generation": 5,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E5%90%89%E6%9D%91",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Date_Yoshimura.jpg?width=200",
+      "father_id": "Q11380721",
+      "is_stub": false
+    },
+    {
+      "id": "Q11380721",
+      "name": "伊達宗房",
+      "han": "仙台藩",
+      "generation": null,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E5%AE%97%E6%88%BF",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q5227536",
+      "name": "伊達宗村 (仙台藩主)",
+      "han": "仙台藩",
+      "generation": 6,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E5%AE%97%E6%9D%91_%28%E4%BB%99%E5%8F%B0%E8%97%A9%E4%B8%BB%29",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Date_Munemura.jpg?width=200",
+      "father_id": "Q116151",
+      "is_stub": false
+    },
+    {
+      "id": "Q846378",
+      "name": "伊達重村",
+      "han": "仙台藩",
+      "generation": 7,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E9%87%8D%E6%9D%91",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Date_Shigemura.jpg?width=200",
+      "father_id": "Q5227536",
+      "is_stub": false
+    },
+    {
+      "id": "Q5227543",
+      "name": "伊達斉村",
+      "han": "仙台藩",
+      "generation": 8,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E6%96%89%E6%9D%91",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Date_Narimura.jpg?width=200",
+      "father_id": "Q846378",
+      "is_stub": false
+    },
+    {
+      "id": "Q5227519",
+      "name": "伊達周宗",
+      "han": "仙台藩",
+      "generation": 9,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E5%91%A8%E5%AE%97",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Date_Chikamune.jpg?width=200",
+      "father_id": "Q5227543",
+      "is_stub": false
+    },
+    {
+      "id": "Q5227540",
+      "name": "伊達斉宗",
+      "han": "仙台藩",
+      "generation": 10,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E6%96%89%E5%AE%97",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Date_Narimune.jpg?width=200",
+      "father_id": "Q5227543",
+      "is_stub": false
+    },
+    {
+      "id": "Q7201026",
+      "name": "伊達斉義",
+      "han": "仙台藩",
+      "generation": 11,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E6%96%89%E7%BE%A9",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Date_Nariyoshi.jpg?width=200",
+      "father_id": "Q8514091",
+      "is_stub": false
+    },
+    {
+      "id": "Q8514091",
+      "name": "田村村資",
+      "han": "仙台藩",
+      "generation": null,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E7%94%B0%E6%9D%91%E6%9D%91%E8%B3%87",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q5227539",
+      "name": "伊達斉邦",
+      "han": "仙台藩",
+      "generation": 12,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E6%96%89%E9%82%A6",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Date_Narikuni.jpg?width=200",
+      "father_id": "Q11380708",
+      "is_stub": false
+    },
+    {
+      "id": "Q11380708",
+      "name": "伊達宗充",
+      "han": "仙台藩",
+      "generation": null,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E5%AE%97%E5%85%85",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q846375",
+      "name": "伊達慶邦",
+      "han": "仙台藩",
+      "generation": 13,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E6%85%B6%E9%82%A6",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Date_Yoshikuni.jpg?width=200",
+      "father_id": "Q7201026",
+      "is_stub": false
+    },
+    {
+      "id": "Q5227534",
+      "name": "伊達宗基",
+      "han": "仙台藩",
+      "generation": 14,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BC%8A%E9%81%94%E5%AE%97%E5%9F%BA",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Munemoto_Date.jpg?width=200",
+      "father_id": "Q846375",
+      "is_stub": false
+    }
+  ],
+  "warnings": [
+    "[仙台藩] リンクを含まない一覧項目をスキップしました: '*版籍奉還'"
+  ]
+}

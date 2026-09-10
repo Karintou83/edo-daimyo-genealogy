@@ -15,6 +15,9 @@ nodes/edges 形式の data/tree.json を組み立てるスクリプト。
   重複排除の優先順位:
     1. is_stub=false のレコード(実際にその藩の藩主一覧に載っている)を、
        is_stub=true のレコード(他の藩からスタブとして参照されただけ)より優先する。
+       採用前に、他ファイルのスタブレコードと氏名・Wikipediaリンク・画像・han
+       (双方に値がある場合のみ)が食い違っていないか確認し、食い違いがあれば
+       理由付きで警告を出す(採用結果自体はis_stub=false側で変わらない)。
     2. 同じ優先度のレコード同士で内容が食い違う場合は、最初に見つかったものを
        採用しつつ警告を出す(hanが空のレコードより埋まっているレコードを優先)。
 
@@ -101,7 +104,26 @@ def _resolve_duplicate(rid: str, entries: list[tuple[str, dict]]) -> dict:
         return non_stub[0][1]
 
     if len(non_stub) == 1:
-        return non_stub[0][1]
+        chosen_slug, chosen = non_stub[0]
+        # is_stub=falseのレコードを採用する前に、他ファイルのスタブレコードと
+        # 身元に関わる項目(氏名・Wikipediaリンク・画像・han)が食い違っていないか確認する。
+        # generation と is_stub はスタブ側が構造上異なるのが正常なので比較対象から除く。
+        identity_fields = ["name", "wikipedia_url", "image_url"]
+        for slug, r in stub:
+            mismatches = []
+            for f in identity_fields:
+                if r.get(f) != chosen.get(f):
+                    mismatches.append((f, r.get(f), chosen.get(f)))
+            if r.get("han") is not None and chosen.get("han") is not None and r.get("han") != chosen.get("han"):
+                mismatches.append(("han", r.get("han"), chosen.get("han")))
+            if mismatches:
+                detail = "; ".join(f"{f}: {sv!r}(stub) vs {cv!r}(採用)" for f, sv, cv in mismatches)
+                warn(
+                    f"id={rid}({chosen.get('name')}): {slug} 側のスタブレコードと "
+                    f"{chosen_slug} 側の is_stub=false レコードで内容が食い違っています({detail})。"
+                    f"is_stub=false のレコード({chosen_slug})を優先して採用します。"
+                )
+        return chosen
 
     # 全てstub: 内容が一致しているか確認し、一致しなければ警告。hanが埋まっている方を優先する。
     chosen_slug, chosen = stub[0]
