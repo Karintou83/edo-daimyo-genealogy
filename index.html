@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>江戸藩主 家系図</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<style>
+  :root{
+    --bg: #f6f4ef;
+    --ink: #2b2621;
+    --panel-bg: #ffffff;
+    --panel-border: #d8d2c6;
+    --muted: #8a8478;
+    --stub-fill: #d9d5cc;
+    --stub-stroke: #9c968a;
+    --accent: #b5482f;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: var(--bg);
+    font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", "Meiryo", sans-serif;
+    color: var(--ink);
+  }
+  #app { position: relative; width: 100vw; height: 100vh; }
+  svg#graph { width: 100%; height: 100%; display: block; cursor: grab; }
+  svg#graph.panning { cursor: grabbing; }
+
+  header#title-bar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    padding: 14px 18px 10px;
+    pointer-events: none;
+    z-index: 5;
+  }
+  header#title-bar h1 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: .02em;
+  }
+  header#title-bar p {
+    margin: 2px 0 0;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  #legend {
+    position: absolute;
+    left: 14px;
+    bottom: 14px;
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+    max-width: 220px;
+    z-index: 5;
+  }
+  #legend h2 {
+    margin: 0 0 6px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: .04em;
+  }
+  .legend-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 4px 0;
+    line-height: 1.2;
+  }
+  .legend-swatch {
+    flex: 0 0 auto;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+  }
+  .legend-swatch.stub {
+    background: var(--stub-fill);
+    border: 2px dashed var(--stub-stroke);
+  }
+
+  #controls {
+    position: absolute;
+    right: 14px;
+    top: 14px;
+    display: flex;
+    gap: 6px;
+    z-index: 5;
+  }
+  #controls button {
+    font-family: inherit;
+    font-size: 12px;
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    border-radius: 8px;
+    padding: 6px 10px;
+    cursor: pointer;
+    color: var(--ink);
+    box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  }
+  #controls button:hover { background: #f0ede6; }
+
+  #detail-panel {
+    position: absolute;
+    right: 14px;
+    top: 60px;
+    width: 260px;
+    background: var(--panel-bg);
+    border: 1px solid var(--panel-border);
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.12);
+    z-index: 10;
+    transform: translateX(320px);
+    opacity: 0;
+    transition: transform .18s ease, opacity .18s ease;
+  }
+  #detail-panel.open {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  #detail-panel .close-btn {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    border: none;
+    background: none;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--muted);
+    padding: 4px;
+  }
+  #detail-panel .close-btn:hover { color: var(--ink); }
+  #detail-panel .role {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 0 0 4px;
+  }
+  #detail-panel .role.stub-role {
+    color: var(--muted);
+  }
+  #detail-panel .name {
+    font-size: 19px;
+    font-weight: 700;
+    margin: 0 0 12px;
+  }
+  #detail-panel a.wiki-link {
+    display: inline-block;
+    font-size: 13px;
+    color: #fff;
+    background: var(--accent);
+    text-decoration: none;
+    padding: 7px 12px;
+    border-radius: 7px;
+  }
+  #detail-panel a.wiki-link:hover { opacity: .88; }
+  #detail-panel a.wiki-link::after {
+    content: " ↗";
+  }
+
+  .node { cursor: pointer; }
+  .node .ring {
+    stroke-width: 3px;
+  }
+  .node.stub .ring {
+    stroke-dasharray: 4,3;
+    stroke: var(--stub-stroke);
+    fill: var(--stub-fill);
+  }
+  .node.stub image {
+    filter: grayscale(1) opacity(.9);
+  }
+  .node.stub .initial {
+    fill: var(--stub-stroke);
+  }
+  .node .initial {
+    font-size: 13px;
+    font-weight: 700;
+    fill: #fff;
+    text-anchor: middle;
+    dominant-baseline: central;
+    pointer-events: none;
+    user-select: none;
+  }
+  .node.selected .ring {
+    stroke: #1b1b1b;
+    stroke-width: 4px;
+  }
+  .link {
+    stroke: #a9a297;
+    stroke-width: 1.6px;
+    fill: none;
+  }
+  #empty-state {
+    position: absolute;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<div id="app">
+  <svg id="graph"></svg>
+
+  <header id="title-bar">
+    <h1>江戸藩主 家系図</h1>
+    <p>ノードをクリックすると詳細を表示 / ドラッグで移動・ホイールでズーム</p>
+  </header>
+
+  <div id="controls">
+    <button id="btn-reset">表示をリセット</button>
+  </div>
+
+  <div id="legend"></div>
+
+  <div id="detail-panel">
+    <button class="close-btn" aria-label="閉じる">✕</button>
+    <p class="role"></p>
+    <p class="name"></p>
+    <a class="wiki-link" href="#" target="_blank" rel="noopener">Wikipediaで見る</a>
+  </div>
+
+  <div id="empty-state">データを読み込めませんでした(data/tree.json)。</div>
+</div>
+
+<script>
+(async function () {
+  const width = () => window.innerWidth;
+  const height = () => window.innerHeight;
+
+  let data;
+  try {
+    const res = await fetch('data/tree.json');
+    data = await res.json();
+  } catch (e) {
+    console.error(e);
+    document.getElementById('empty-state').style.display = 'flex';
+    return;
+  }
+
+  const nodes = data.nodes.map(d => Object.assign({}, d));
+  const nodeById = new Map(nodes.map(d => [d.id, d]));
+  const links = data.edges
+    .filter(e => nodeById.has(e.parent_id) && nodeById.has(e.child_id))
+    .map(e => Object.assign({}, e, { source: e.parent_id, target: e.child_id }));
+
+  // --- 色分け: is_stub:false のノードのみ han ごとに色を割り当てる ---
+  const hanList = Array.from(new Set(
+    nodes.filter(d => !d.is_stub && d.han).map(d => d.han)
+  )).sort();
+  const palette = d3.quantize(d3.interpolateRainbow, Math.max(hanList.length, 3) + 1).slice(0, -1);
+  // d3.schemeTableau10 reads better for a small number of categories; fall back to
+  // the rainbow interpolation only if we ever exceed it.
+  const categorical = d3.schemeTableau10.concat(d3.schemeSet3);
+  const hanColor = d3.scaleOrdinal()
+    .domain(hanList)
+    .range(hanList.length <= categorical.length ? categorical : palette);
+
+  const NODE_R = 20;
+  const STUB_R = 15;
+  const radiusOf = d => d.is_stub ? STUB_R : NODE_R;
+  const colorOf = d => d.is_stub ? null : hanColor(d.han);
+
+  // --- SVG setup ---
+  const svg = d3.select('#graph')
+    .attr('viewBox', [0, 0, width(), height()]);
+
+  const defs = svg.append('defs');
+  defs.append('marker')
+    .attr('id', 'arrow')
+    .attr('viewBox', '0 -5 10 10')
+    .attr('refX', 9)
+    .attr('refY', 0)
+    .attr('markerWidth', 7)
+    .attr('markerHeight', 7)
+    .attr('orient', 'auto')
+    .append('path')
+      .attr('d', 'M0,-5L10,0L0,5')
+      .attr('fill', '#a9a297');
+
+  const zoomLayer = svg.append('g').attr('class', 'zoom-layer');
+  const linkLayer = zoomLayer.append('g').attr('class', 'links');
+  const nodeLayer = zoomLayer.append('g').attr('class', 'nodes');
+
+  const zoom = d3.zoom()
+    .scaleExtent([0.2, 4])
+    .on('start', () => svg.classed('panning', true))
+    .on('end', () => svg.classed('panning', false))
+    .on('zoom', (event) => zoomLayer.attr('transform', event.transform));
+  svg.call(zoom);
+
+  // --- Force simulation ---
+  const simulation = d3.forceSimulation(nodes)
+    .force('link', d3.forceLink(links).id(d => d.id).distance(90).strength(0.6))
+    .force('charge', d3.forceManyBody().strength(-260))
+    .force('center', d3.forceCenter(width() / 2, height() / 2))
+    .force('collide', d3.forceCollide().radius(d => radiusOf(d) + 14));
+
+  const link = linkLayer.selectAll('line')
+    .data(links)
+    .join('line')
+      .attr('class', 'link')
+      .attr('marker-end', 'url(#arrow)');
+
+  const node = nodeLayer.selectAll('g.node')
+    .data(nodes, d => d.id)
+    .join('g')
+      .attr('class', d => 'node' + (d.is_stub ? ' stub' : ''))
+      .call(drag(simulation));
+
+  node.append('circle')
+    .attr('class', 'ring')
+    .attr('r', d => radiusOf(d))
+    .attr('fill', d => d.is_stub ? null : colorOf(d))
+    .attr('stroke', d => d.is_stub ? null : d3.color(colorOf(d)).darker(0.6));
+
+  node.append('text')
+    .attr('class', 'initial')
+    .text(d => (d.name || '?').charAt(0));
+
+  node.filter(d => !!d.image_url).each(function (d) {
+    const g = d3.select(this);
+    const clipId = 'clip-' + d.id;
+    defs.append('clipPath')
+      .attr('id', clipId)
+      .append('circle')
+        .attr('r', radiusOf(d));
+    g.append('image')
+      .attr('href', d.image_url)
+      .attr('x', -radiusOf(d))
+      .attr('y', -radiusOf(d))
+      .attr('width', radiusOf(d) * 2)
+      .attr('height', radiusOf(d) * 2)
+      .attr('preserveAspectRatio', 'xMidYMid slice')
+      .attr('clip-path', `url(#${clipId})`)
+      .on('error', function () {
+        // 画像の取得に失敗した場合は非表示にし、下地の色/イニシャル表示にフォールバックする
+        d3.select(this).remove();
+      });
+  });
+
+  node.append('title').text(d => d.name);
+
+  node.on('click', (event, d) => {
+    event.stopPropagation();
+    selectNode(d);
+  });
+
+  svg.on('click', () => selectNode(null));
+
+  function ticked() {
+    link
+      .each(function (d) {
+        const dx = d.target.x - d.source.x;
+        const dy = d.target.y - d.source.y;
+        const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+        const rt = radiusOf(d.target) + 6; // 矢印の分だけ余白を持たせる
+        const rs = radiusOf(d.source);
+        const x1 = d.source.x + (dx * rs) / dist;
+        const y1 = d.source.y + (dy * rs) / dist;
+        const x2 = d.target.x - (dx * rt) / dist;
+        const y2 = d.target.y - (dy * rt) / dist;
+        d3.select(this).attr('x1', x1).attr('y1', y1).attr('x2', x2).attr('y2', y2);
+      });
+    node.attr('transform', d => `translate(${d.x},${d.y})`);
+  }
+  simulation.on('tick', ticked);
+
+  function drag(sim) {
+    function dragstarted(event, d) {
+      if (!event.active) sim.alphaTarget(0.25).restart();
+      d.fx = d.x; d.fy = d.y;
+    }
+    function dragged(event, d) {
+      d.fx = event.x; d.fy = event.y;
+    }
+    function dragended(event, d) {
+      if (!event.active) sim.alphaTarget(0);
+      // ドラッグ後もその場に留める(固定)。ダブルクリックで解放。
+    }
+    return d3.drag()
+      .on('start', dragstarted)
+      .on('drag', dragged)
+      .on('end', dragended);
+  }
+
+  node.on('dblclick', (event, d) => {
+    event.stopPropagation();
+    d.fx = null; d.fy = null;
+    simulation.alphaTarget(0.25).restart();
+    setTimeout(() => simulation.alphaTarget(0), 300);
+  });
+
+  // --- 詳細パネル ---
+  const panel = document.getElementById('detail-panel');
+  const roleEl = panel.querySelector('.role');
+  const nameEl = panel.querySelector('.name');
+  const linkEl = panel.querySelector('.wiki-link');
+  panel.querySelector('.close-btn').addEventListener('click', () => selectNode(null));
+
+  let selected = null;
+  function selectNode(d) {
+    selected = d;
+    node.classed('selected', n => selected && n.id === selected.id);
+    if (!d) {
+      panel.classList.remove('open');
+      return;
+    }
+    if (d.is_stub) {
+      const hanNote = d.han ? d.han : '藩名不明';
+      roleEl.textContent = `${d.han ? d.han + '主' : '藩主'}ではない(参考: ${hanNote})`;
+      roleEl.classList.add('stub-role');
+    } else {
+      roleEl.textContent = `${d.han}${d.generation}代目`;
+      roleEl.classList.remove('stub-role');
+    }
+    nameEl.textContent = d.name;
+    if (d.wikipedia_url) {
+      linkEl.href = d.wikipedia_url;
+      linkEl.style.display = 'inline-block';
+    } else {
+      linkEl.style.display = 'none';
+    }
+    panel.classList.add('open');
+  }
+
+  // --- 凡例 ---
+  const legend = d3.select('#legend');
+  legend.append('h2').text('凡例');
+  hanList.forEach(han => {
+    const row = legend.append('div').attr('class', 'legend-row');
+    row.append('div').attr('class', 'legend-swatch')
+      .style('background', hanColor(han));
+    row.append('span').text(`${han} 藩主`);
+  });
+  const stubRow = legend.append('div').attr('class', 'legend-row');
+  stubRow.append('div').attr('class', 'legend-swatch stub');
+  stubRow.append('span').text('藩主ではない人物(実父など)');
+
+  // --- リセットボタン ---
+  document.getElementById('btn-reset').addEventListener('click', () => {
+    svg.transition().duration(400).call(zoom.transform, d3.zoomIdentity);
+    nodes.forEach(d => { d.fx = null; d.fy = null; });
+    simulation.alpha(0.6).restart();
+  });
+
+  // --- リサイズ対応 ---
+  window.addEventListener('resize', () => {
+    svg.attr('viewBox', [0, 0, width(), height()]);
+    simulation.force('center', d3.forceCenter(width() / 2, height() / 2));
+    simulation.alpha(0.3).restart();
+  });
+
+  // 初期ズームを少し広めに
+  svg.call(zoom.transform, d3.zoomIdentity.translate(width() * 0.02, height() * 0.02).scale(0.92));
+})();
+</script>
+</body>
+</html>
