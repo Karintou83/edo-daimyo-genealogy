@@ -39,9 +39,9 @@
 - [x] GitHubリポジトリ Karintou83/edo-daimyo-genealogy をremoteに設定
 - [x] フェーズ1スクリプト(データ取得) `scripts/fetch_daimyo_data.py` — Infobox(`父母`パラメータ内の実父/養父書き分け)ベースで実装済み
 - [x] フェーズ1追加対応: 父の判定をWikidata P22最優先に切り替え、人物IDをQIDベースに変更済み。上杉茂憲の父もWikidata経由で解決済み(warningsに解決経緯が記録されている)。
-- [x] フェーズ1再対応: 出力先を単一の`data/daimyo_raw.json`から藩ごとの`data/raw/<スラッグ>.json`に分割し、image_url(Wikidata P18経由)を追加。米沢藩・加賀藩で実行済み(米沢17件・画像7件/加賀14件・画像10件)。旧`data/daimyo_raw.json`はまだリポジトリに残っている(`git rm data/daimyo_raw.json`が未実施)。
-- [x] フェーズ2スクリプト(データ整形): `scripts/build_tree.py`を`data/raw/*.json`統合版に書き直し済み(QIDで重複排除、image_url含む、内容食い違い時は警告)。米沢藩・加賀藩のデータで実行し`data/tree.json`を生成済み(31ノード/26エッジ、is_stub:true 5件、image_urlあり17件、han:nullは前田利家・長尾政景・吉良義央の3名で既知事項どおり)。
-- [ ] フェーズ3(表示サイト)
+- [x] フェーズ1再対応: 出力先を藩ごとの`data/raw/yonezawa.json`・`data/raw/kaga.json`に分割し、image_url(Wikidata P18経由)を追加済み。米沢藩17件(画像7件)・加賀藩14件(画像10件)。旧`data/daimyo_raw.json`はディスク上からは削除済み(gitへのコミットのみ未実施)。
+- [x] フェーズ2スクリプト(データ整形): `scripts/build_tree.py` で `data/raw/*.json` を統合(QIDで重複排除)し `data/tree.json` を生成。31ノード/26エッジ/スタブ5件/image_urlあり17件、ID重複なしを実データで確認済み。フェーズ2完了。
+- [ ] フェーズ3(表示サイト): `data/tree.json` を読み込んでD3.jsで表示する `index.html` を作る。image_urlがあれば肖像画像を表示。色分けは`is_stub`で判定(既知事項を参照)。
 
 ## フェーズ2に向けた既知事項
 
