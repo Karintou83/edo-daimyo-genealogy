@@ -1,147 +1,12 @@
 {
   "nodes": [
     {
-      "id": "Q1376605",
-      "name": "上杉景勝",
-      "han": "米沢藩",
-      "generation": 1,
-      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E6%99%AF%E5%8B%9D",
-      "is_stub": false
-    },
-    {
-      "id": "Q6958482",
-      "name": "長尾政景",
-      "han": null,
-      "generation": null,
-      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E5%B0%BE%E6%94%BF%E6%99%AF",
-      "is_stub": true
-    },
-    {
-      "id": "Q8514762",
-      "name": "上杉定勝",
-      "han": "米沢藩",
-      "generation": 2,
-      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E5%AE%9A%E5%8B%9D",
-      "is_stub": false
-    },
-    {
-      "id": "Q8514779",
-      "name": "上杉綱勝",
-      "han": "米沢藩",
-      "generation": 3,
-      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E7%B6%B1%E5%8B%9D",
-      "is_stub": false
-    },
-    {
-      "id": "Q8514773",
-      "name": "上杉綱憲",
-      "han": "米沢藩",
-      "generation": 4,
-      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E7%B6%B1%E6%86%B2",
-      "is_stub": false
-    },
-    {
-      "id": "Q3132109",
-      "name": "吉良義央",
-      "han": null,
-      "generation": null,
-      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%90%89%E8%89%AF%E7%BE%A9%E5%A4%AE",
-      "is_stub": true
-    },
-    {
-      "id": "Q8514785",
-      "name": "上杉吉憲",
-      "han": "米沢藩",
-      "generation": 5,
-      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E5%90%89%E6%86%B2",
-      "is_stub": false
-    },
-    {
-      "id": "Q8514751",
-      "name": "上杉宗憲",
-      "han": "米沢藩",
-      "generation": 6,
-      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E5%AE%97%E6%86%B2",
-      "is_stub": false
-    },
-    {
-      "id": "Q8514757",
-      "name": "上杉宗房",
-      "han": "米沢藩",
-      "generation": 7,
-      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E5%AE%97%E6%88%BF",
-      "is_stub": false
-    },
-    {
-      "id": "Q8514768",
-      "name": "上杉重定",
-      "han": "米沢藩",
-      "generation": 8,
-      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E9%87%8D%E5%AE%9A",
-      "is_stub": false
-    },
-    {
-      "id": "Q1194899",
-      "name": "上杉治憲",
-      "han": "米沢藩",
-      "generation": 9,
-      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E6%B2%BB%E6%86%B2",
-      "is_stub": false
-    },
-    {
-      "id": "Q11595125",
-      "name": "秋月種美",
-      "han": "高鍋藩",
-      "generation": null,
-      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E7%A7%8B%E6%9C%88%E7%A8%AE%E7%BE%8E",
-      "is_stub": true
-    },
-    {
-      "id": "Q8514791",
-      "name": "上杉治広",
-      "han": "米沢藩",
-      "generation": 10,
-      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E6%B2%BB%E5%BA%83",
-      "is_stub": false
-    },
-    {
-      "id": "Q8514745",
-      "name": "上杉斉定",
-      "han": "米沢藩",
-      "generation": 11,
-      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E6%96%89%E5%AE%9A",
-      "is_stub": false
-    },
-    {
-      "id": "Q11359143",
-      "name": "上杉勝熙",
-      "han": "米沢藩",
-      "generation": null,
-      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E5%8B%9D%E7%86%99",
-      "is_stub": true
-    },
-    {
-      "id": "Q851776",
-      "name": "上杉斉憲",
-      "han": "米沢藩",
-      "generation": 12,
-      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E6%96%89%E6%86%B2",
-      "is_stub": false
-    },
-    {
-      "id": "Q851787",
-      "name": "上杉茂憲",
-      "han": "米沢藩",
-      "generation": 13,
-      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E8%8C%82%E6%86%B2",
-      "is_stub": false
-    },
-    {
       "id": "Q1186742",
       "name": "前田利長",
       "han": "加賀藩",
       "generation": 1,
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E5%88%A9%E9%95%B7",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Maeda_Toshinaga.jpg?width=200",
       "is_stub": false
     },
     {
@@ -150,6 +15,7 @@
       "han": null,
       "generation": null,
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E5%88%A9%E5%AE%B6",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Maeda_Toshiie.jpg?width=200",
       "is_stub": true
     },
     {
@@ -158,6 +24,7 @@
       "han": "加賀藩",
       "generation": 2,
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E5%88%A9%E5%B8%B8",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Maeda_Toshitsune.png?width=200",
       "is_stub": false
     },
     {
@@ -166,6 +33,7 @@
       "han": "加賀藩",
       "generation": 3,
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E5%85%89%E9%AB%98",
+      "image_url": null,
       "is_stub": false
     },
     {
@@ -174,6 +42,7 @@
       "han": "加賀藩",
       "generation": 4,
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E7%B6%B1%E7%B4%80",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Maeda_Tsunanori.jpg?width=200",
       "is_stub": false
     },
     {
@@ -182,6 +51,7 @@
       "han": "加賀藩",
       "generation": 5,
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E5%90%89%E5%BE%B3",
+      "image_url": null,
       "is_stub": false
     },
     {
@@ -190,6 +60,7 @@
       "han": "加賀藩",
       "generation": 6,
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E5%AE%97%E8%BE%B0",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Maeda_Munetoki.jpg?width=200",
       "is_stub": false
     },
     {
@@ -198,6 +69,7 @@
       "han": "加賀藩",
       "generation": 7,
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E9%87%8D%E7%85%95",
+      "image_url": null,
       "is_stub": false
     },
     {
@@ -206,6 +78,7 @@
       "han": "加賀藩",
       "generation": 8,
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E9%87%8D%E9%9D%96",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Maeda_Shigenobu.jpg?width=200",
       "is_stub": false
     },
     {
@@ -214,6 +87,7 @@
       "han": "加賀藩",
       "generation": 9,
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E9%87%8D%E6%95%99",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Maeda_Shigemichi.jpg?width=200",
       "is_stub": false
     },
     {
@@ -222,6 +96,7 @@
       "han": "加賀藩",
       "generation": 10,
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E6%B2%BB%E8%84%A9",
+      "image_url": null,
       "is_stub": false
     },
     {
@@ -230,6 +105,7 @@
       "han": "加賀藩",
       "generation": 11,
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E6%96%89%E5%BA%83",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Maeda_Narinaga.jpg?width=200",
       "is_stub": false
     },
     {
@@ -238,6 +114,7 @@
       "han": "加賀藩",
       "generation": 12,
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E6%96%89%E6%B3%B0",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Maeda_Nariyasu.JPG?width=200",
       "is_stub": false
     },
     {
@@ -246,62 +123,164 @@
       "han": "加賀藩",
       "generation": 13,
       "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E6%85%B6%E5%AF%A7",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Maeda_Yoshiyasu.jpg?width=200",
+      "is_stub": false
+    },
+    {
+      "id": "Q1376605",
+      "name": "上杉景勝",
+      "han": "米沢藩",
+      "generation": 1,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E6%99%AF%E5%8B%9D",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Uesugi_Kagekatsu_Portrait_Yonezawa_City_Uesugi_Museum.png?width=200",
+      "is_stub": false
+    },
+    {
+      "id": "Q6958482",
+      "name": "長尾政景",
+      "han": null,
+      "generation": null,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E5%B0%BE%E6%94%BF%E6%99%AF",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nagao_Masakage_and_His_wife.jpg?width=200",
+      "is_stub": true
+    },
+    {
+      "id": "Q8514762",
+      "name": "上杉定勝",
+      "han": "米沢藩",
+      "generation": 2,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E5%AE%9A%E5%8B%9D",
+      "image_url": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q8514779",
+      "name": "上杉綱勝",
+      "han": "米沢藩",
+      "generation": 3,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E7%B6%B1%E5%8B%9D",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Uesugi_Tsunakatsu.jpg?width=200",
+      "is_stub": false
+    },
+    {
+      "id": "Q8514773",
+      "name": "上杉綱憲",
+      "han": "米沢藩",
+      "generation": 4,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E7%B6%B1%E6%86%B2",
+      "image_url": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q3132109",
+      "name": "吉良義央",
+      "han": null,
+      "generation": null,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%90%89%E8%89%AF%E7%BE%A9%E5%A4%AE",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Wooden_statue_of_Kira_Yoshihisa%2C_circa_1910.jpg?width=200",
+      "is_stub": true
+    },
+    {
+      "id": "Q8514785",
+      "name": "上杉吉憲",
+      "han": "米沢藩",
+      "generation": 5,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E5%90%89%E6%86%B2",
+      "image_url": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q8514751",
+      "name": "上杉宗憲",
+      "han": "米沢藩",
+      "generation": 6,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E5%AE%97%E6%86%B2",
+      "image_url": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q8514757",
+      "name": "上杉宗房",
+      "han": "米沢藩",
+      "generation": 7,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E5%AE%97%E6%88%BF",
+      "image_url": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q8514768",
+      "name": "上杉重定",
+      "han": "米沢藩",
+      "generation": 8,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E9%87%8D%E5%AE%9A",
+      "image_url": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q1194899",
+      "name": "上杉治憲",
+      "han": "米沢藩",
+      "generation": 9,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E6%B2%BB%E6%86%B2",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/%E4%B8%8A%E6%9D%89%E9%B7%B9%E5%B1%B1.jpg?width=200",
+      "is_stub": false
+    },
+    {
+      "id": "Q11595125",
+      "name": "秋月種美",
+      "han": "高鍋藩",
+      "generation": null,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E7%A7%8B%E6%9C%88%E7%A8%AE%E7%BE%8E",
+      "image_url": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q8514791",
+      "name": "上杉治広",
+      "han": "米沢藩",
+      "generation": 10,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E6%B2%BB%E5%BA%83",
+      "image_url": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q8514745",
+      "name": "上杉斉定",
+      "han": "米沢藩",
+      "generation": 11,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E6%96%89%E5%AE%9A",
+      "image_url": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q11359143",
+      "name": "上杉勝熙",
+      "han": "米沢藩",
+      "generation": null,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E5%8B%9D%E7%86%99",
+      "image_url": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q851776",
+      "name": "上杉斉憲",
+      "han": "米沢藩",
+      "generation": 12,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E6%96%89%E6%86%B2",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Uesugi_Narinori.jpg?width=200",
+      "is_stub": false
+    },
+    {
+      "id": "Q851787",
+      "name": "上杉茂憲",
+      "han": "米沢藩",
+      "generation": 13,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E8%8C%82%E6%86%B2",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Uesugi_Mochinori.jpg?width=200",
       "is_stub": false
     }
   ],
   "edges": [
-    {
-      "parent_id": "Q6958482",
-      "child_id": "Q1376605"
-    },
-    {
-      "parent_id": "Q1376605",
-      "child_id": "Q8514762"
-    },
-    {
-      "parent_id": "Q8514762",
-      "child_id": "Q8514779"
-    },
-    {
-      "parent_id": "Q3132109",
-      "child_id": "Q8514773"
-    },
-    {
-      "parent_id": "Q8514773",
-      "child_id": "Q8514785"
-    },
-    {
-      "parent_id": "Q8514785",
-      "child_id": "Q8514751"
-    },
-    {
-      "parent_id": "Q8514785",
-      "child_id": "Q8514757"
-    },
-    {
-      "parent_id": "Q8514785",
-      "child_id": "Q8514768"
-    },
-    {
-      "parent_id": "Q11595125",
-      "child_id": "Q1194899"
-    },
-    {
-      "parent_id": "Q8514768",
-      "child_id": "Q8514791"
-    },
-    {
-      "parent_id": "Q11359143",
-      "child_id": "Q8514745"
-    },
-    {
-      "parent_id": "Q8514745",
-      "child_id": "Q851776"
-    },
-    {
-      "parent_id": "Q851776",
-      "child_id": "Q851787"
-    },
     {
       "parent_id": "Q1196817",
       "child_id": "Q1186742"
@@ -353,6 +332,58 @@
     {
       "parent_id": "Q6729110",
       "child_id": "Q6729123"
+    },
+    {
+      "parent_id": "Q6958482",
+      "child_id": "Q1376605"
+    },
+    {
+      "parent_id": "Q1376605",
+      "child_id": "Q8514762"
+    },
+    {
+      "parent_id": "Q8514762",
+      "child_id": "Q8514779"
+    },
+    {
+      "parent_id": "Q3132109",
+      "child_id": "Q8514773"
+    },
+    {
+      "parent_id": "Q8514773",
+      "child_id": "Q8514785"
+    },
+    {
+      "parent_id": "Q8514785",
+      "child_id": "Q8514751"
+    },
+    {
+      "parent_id": "Q8514785",
+      "child_id": "Q8514757"
+    },
+    {
+      "parent_id": "Q8514785",
+      "child_id": "Q8514768"
+    },
+    {
+      "parent_id": "Q11595125",
+      "child_id": "Q1194899"
+    },
+    {
+      "parent_id": "Q8514768",
+      "child_id": "Q8514791"
+    },
+    {
+      "parent_id": "Q11359143",
+      "child_id": "Q8514745"
+    },
+    {
+      "parent_id": "Q8514745",
+      "child_id": "Q851776"
+    },
+    {
+      "parent_id": "Q851776",
+      "child_id": "Q851787"
     }
   ]
 }

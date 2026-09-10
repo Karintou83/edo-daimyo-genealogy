@@ -4,8 +4,8 @@
 フェーズ1: データ取得スクリプト
 
 日本語版Wikipediaの藩主継承テンプレート(Navbox)から対象藩の藩主一覧と代数を取得し、
-各人物の父をWikidata(P22)優先・Infobox(基礎情報 武士など)フォールバックで特定して
-data/daimyo_raw.json に保存する。
+各人物の父をWikidata(P22)優先・Infobox(基礎情報 武士など)フォールバックで特定し、
+肖像画像をWikidataのP18(image)から取得して、藩ごとに data/raw/<スラッグ>.json に保存する。
 
 設計方針は CLAUDE.md を参照。
 - つなぐ関係は実の血縁(親子)関係のみ。養子として藩主になった人物は実父とつなぐ。
@@ -16,15 +16,21 @@ data/daimyo_raw.json に保存する。
   Infobox側で父が特定できなかった場合は、P22の値を採用しつつ理由付きの警告を残す
   (サイレントに上書きしない)。P22が未登録の場合のみInfoboxの「父母」パラメータからの
   抽出結果をフォールバックとして使う(この場合もリンク先の記事からQIDを解決する)。
+- 肖像画像はWikidataのP18(image)からCommonsのファイル名を取得し、
+  https://commons.wikimedia.org/wiki/Special:FilePath/<ファイル名>?width=200 の形で
+  image_url を組み立てる(P18が未登録なら None)。藩主・スタブノードの双方に持たせる。
 - データは一度取得してJSONに保存する静的構成(サイト側はリアルタイムにWikipedia/Wikidata
   APIを叩かない)。
 - 対象藩の藩主一覧に含まれない父はスタブノードとして追加し、そこから先は遡らない。
+- 出力は藩ごとに独立したファイルに分ける。対象藩を増やしても既存の藩のファイルには
+  影響を与えず、新しい藩のファイルだけが追加・更新される。
 
 実行方法:
-    python scripts/fetch_daimyo_data.py
+    python scripts/fetch_daimyo_data.py            # TARGET_HANS の全藩を取得
+    python scripts/fetch_daimyo_data.py 米沢藩      # 藩名(またはスラッグ)を指定して一部だけ取得
 
 出力:
-    data/daimyo_raw.json
+    data/raw/<藩の英語表記スラッグ>.json  (例: data/raw/yonezawa.json, data/raw/kaga.json)
 """
 
 from __future__ import annotations
@@ -56,14 +62,21 @@ REQUEST_INTERVAL_SEC = 1.0  # 連続リクエストの間隔(エンドポイン�
 
 # Wikidataの「父」プロパティ
 P_FATHER = "P22"
+# Wikidataの「画像」プロパティ
+P_IMAGE = "P18"
 
-# 対象藩: 藩名 -> 継承テンプレート名
-TARGET_HANS: dict[str, str] = {
-    "米沢藩": "Template:米沢藩主",
-    "加賀藩": "Template:加賀藩主",
+# image_url に付けるサムネイル幅(px)
+IMAGE_WIDTH = 200
+
+# 対象藩: 藩名 -> {"template": 継承テンプレート名, "slug": 出力ファイル名に使う英語表記スラッグ}
+# 藩を追加するときはここに1行足すだけでよい(既存の藩の出力ファイルには影響しない)。
+TARGET_HANS: dict[str, dict[str, str]] = {
+    "米沢藩": {"template": "Template:米沢藩主", "slug": "yonezawa"},
+    "加賀藩": {"template": "Template:加賀藩主", "slug": "kaga"},
 }
 
-OUTPUT_PATH = Path(__file__).resolve().parent.parent / "data" / "daimyo_raw.json"
+# 出力先ディレクトリ。藩ごとに <slug>.json を作る。
+OUTPUT_DIR = Path(__file__).resolve().parent.parent / "data" / "raw"
 
 # Infoboxとして扱うテンプレート名のプレフィックス(表記揺れに対応するため前方一致で判定)
 # 「基礎情報 武士」系が中心だが、明治以降に華族・政治家として活動した人物(例: 最後の藩主)は
@@ -86,11 +99,21 @@ FATHER_LABELS_PRIORITY = ["実父", "父"]
 # 除外すべきラベル(実父ではないもの)
 NON_FATHER_LABELS = ["養父", "義父", "母", "養母", "継父"]
 
+# 警告は藩ごとのファイルに分けて出力するため、藩の処理開始時にリセットする。
 WARNINGS: list[str] = []
+TOTAL_WARNING_COUNT = 0
+
+
+def reset_warnings() -> None:
+    """藩ごとの処理を始める前に警告バッファを空にする。"""
+    global WARNINGS
+    WARNINGS = []
 
 
 def warn(message: str) -> None:
+    global TOTAL_WARNING_COUNT
     WARNINGS.append(message)
+    TOTAL_WARNING_COUNT += 1
     print(f"[WARN] {message}", file=sys.stderr)
 
 
@@ -203,6 +226,37 @@ def get_father_qid_from_wikidata(qid: str) -> Optional[str]:
         value = mainsnak.get("datavalue", {}).get("value")
         if isinstance(value, dict) and value.get("entity-type") == "item":
             return value.get("id")
+    return None
+
+
+def build_commons_image_url(filename: str, width: int = IMAGE_WIDTH) -> str:
+    """Commonsのファイル名から Special:FilePath 形式のサムネイルURLを組み立てる。"""
+    encoded = urllib.parse.quote(filename.strip().replace(" ", "_"))
+    return f"https://commons.wikimedia.org/wiki/Special:FilePath/{encoded}?width={width}"
+
+
+def get_image_url_from_wikidata(node_id: str) -> Optional[str]:
+    """
+    WikidataのP18(image)からCommonsのファイル名を取得し、image_urlを組み立てる。
+    P18が未登録の場合や、QIDが不明な場合はNoneを返す。
+    claimsは父の判定(P22)と同じwbgetentitiesのレスポンスをキャッシュから使い回すため、
+    追加のAPIリクエストは発生しない。
+    """
+    if not is_qid(node_id):
+        return None
+    claims = get_wikidata_claims(node_id)
+    if not claims:
+        return None
+    statements = claims.get(P_IMAGE)
+    if not statements:
+        return None
+    for stmt in statements:
+        mainsnak = stmt.get("mainsnak", {})
+        if mainsnak.get("snaktype") != "value":
+            continue
+        filename = mainsnak.get("datavalue", {}).get("value")
+        if isinstance(filename, str) and filename.strip():
+            return build_commons_image_url(filename)
     return None
 
 
@@ -499,6 +553,7 @@ class DaimyoNode:
     han: Optional[str]
     generation: Optional[int]
     wikipedia_url: Optional[str]
+    image_url: Optional[str]  # WikidataのP18(image)由来。画像がなければNone
     father_id: Optional[str]  # is_stubがTrueの場合は常にNone(さらに遡らないため)
     is_stub: bool
 
@@ -577,17 +632,25 @@ def add_stub_node(father_id: str, all_nodes: dict[str, DaimyoNode]) -> None:
         han=han_hint,
         generation=None,
         wikipedia_url=wikipedia_url,
+        image_url=get_image_url_from_wikidata(father_id),
         father_id=None,  # スタブノードはさらに遡らない
         is_stub=True,
     )
 
 
-def process_han(han_name: str, template_title: str, all_nodes: dict[str, DaimyoNode]) -> None:
+def process_han(han_name: str, template_title: str) -> dict[str, DaimyoNode]:
+    """
+    1つの藩を処理し、その藩の藩主ノードと(その藩の藩主一覧に載らない実父の)スタブノードを
+    まとめた辞書を返す。藩ごとに独立した辞書を作るため、他の藩の処理結果には影響しない
+    (同じ人物が複数の藩のファイルに現れることはあるが、その重複排除はフェーズ2で行う)。
+    """
     print(f"=== {han_name} ({template_title}) ===")
+    all_nodes: dict[str, DaimyoNode] = {}
+
     template_wikitext = fetch_wikitext(template_title)
     if template_wikitext is None:
         warn(f"[{han_name}] テンプレートを取得できなかったためスキップします")
-        return
+        return all_nodes
 
     ordered_names = extract_ordered_daimyo_from_template(template_wikitext, han_name)
     print(f"  代数順の藩主一覧({len(ordered_names)}名): {', '.join(ordered_names)}")
@@ -619,6 +682,7 @@ def process_han(han_name: str, template_title: str, all_nodes: dict[str, DaimyoN
             han=han_name,
             generation=idx,
             wikipedia_url=build_url(name),
+            image_url=get_image_url_from_wikidata(node_id),
             father_id=father_id,
             is_stub=False,
         )
@@ -628,27 +692,68 @@ def process_han(han_name: str, template_title: str, all_nodes: dict[str, DaimyoN
             print(f"    -> 父({father_id})は{han_name}主一覧に含まれないため、スタブノードとして追加します")
             add_stub_node(father_id, all_nodes)
 
+    return all_nodes
 
-def main() -> None:
-    all_nodes: dict[str, DaimyoNode] = {}
 
-    for han_name, template_title in TARGET_HANS.items():
-        process_han(han_name, template_title, all_nodes)
-
+def write_han_file(han_name: str, slug: str, template_title: str, nodes: dict[str, DaimyoNode]) -> Path:
+    """1つの藩の取得結果を data/raw/<slug>.json に書き出す。"""
     output = {
         "generated_by": "scripts/fetch_daimyo_data.py",
-        "target_hans": list(TARGET_HANS.keys()),
-        "daimyo": [asdict(node) for node in all_nodes.values()],
-        "warnings": WARNINGS,
+        "han": han_name,
+        "slug": slug,
+        "template": template_title,
+        "daimyo": [asdict(node) for node in nodes.values()],
+        "warnings": list(WARNINGS),
     }
 
-    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with OUTPUT_PATH.open("w", encoding="utf-8") as f:
+    output_path = OUTPUT_DIR / f"{slug}.json"
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with output_path.open("w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
+    return output_path
 
-    print(f"\n完了: {len(all_nodes)}件のノードを {OUTPUT_PATH} に保存しました。")
-    if WARNINGS:
-        print(f"警告 {len(WARNINGS)}件が出力されました(標準エラー出力を参照)。", file=sys.stderr)
+
+def select_target_hans(args: list[str]) -> dict[str, dict[str, str]]:
+    """
+    コマンドライン引数で藩を絞り込む。引数がなければTARGET_HANSの全藩を対象にする。
+    藩名(例: 米沢藩)でもスラッグ(例: yonezawa)でも指定できる。
+    """
+    if not args:
+        return dict(TARGET_HANS)
+
+    selected: dict[str, dict[str, str]] = {}
+    for arg in args:
+        for han_name, conf in TARGET_HANS.items():
+            if arg == han_name or arg == conf["slug"]:
+                selected[han_name] = conf
+                break
+        else:
+            print(f"[ERROR] 対象藩に '{arg}' が見つかりません。"
+                  f"指定できるのは: {', '.join(TARGET_HANS)} "
+                  f"({', '.join(c['slug'] for c in TARGET_HANS.values())})", file=sys.stderr)
+            sys.exit(1)
+    return selected
+
+
+def main() -> None:
+    targets = select_target_hans(sys.argv[1:])
+
+    written: list[tuple[str, Path, int]] = []
+    for han_name, conf in targets.items():
+        # 警告も藩ごとのファイルに分けて記録するため、藩の処理ごとにリセットする
+        reset_warnings()
+        nodes = process_han(han_name, conf["template"])
+        output_path = write_han_file(han_name, conf["slug"], conf["template"], nodes)
+        written.append((han_name, output_path, len(nodes)))
+        with_image = sum(1 for n in nodes.values() if n.image_url)
+        print(f"  -> {len(nodes)}件のノード(うち画像あり{with_image}件)を {output_path} に保存しました。")
+
+    print("\n完了:")
+    for han_name, output_path, count in written:
+        print(f"  {han_name}: {count}件 -> {output_path}")
+    if TOTAL_WARNING_COUNT:
+        print(f"警告 {TOTAL_WARNING_COUNT}件が出力されました"
+              f"(標準エラー出力および各藩のJSONの warnings を参照)。", file=sys.stderr)
 
 
 if __name__ == "__main__":

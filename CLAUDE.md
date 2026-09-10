@@ -15,6 +15,8 @@
 - **サイトの構成**: データは一度取得してJSONファイルに保存し、サイトはそのJSONを読み込むだけの静的な構成にする。ページ表示のたびにWikipedia APIへ問い合わせるような、リアルタイム取得の仕組みにはしない。データを更新したい場合は取得スクリプトを再実行してJSONを作り直す。
 - **表示**: D3.jsによるインタラクティブな家系図(ズーム・パン、ノードクリックで詳細パネル)。**色分けは「実際にその藩の藩主だったかどうか」で決める**: `is_stub: false`(藩主一覧テンプレートに載っている実際の藩主)のノードのみ、藩ごとの色を塗る。`is_stub: true` のノードは、`han` の値に関わらず(たとえ対象藩に属する人物であっても)藩主とは異なる見た目(グレーアウト・破線枠など)にし、藩主本人ではないことが一目でわかるようにする。
 - **対象藩以外の実父の扱い**: 実父が対象藩の藩主一覧に含まれない場合(例: 上杉鷹山の実父・秋月種美は高鍋藩主)、その人物を「スタブノード」として追加する。氏名・Wikipediaリンク・(取得できれば)藩名のみを持たせ、そこからさらに祖先を遡って展開はしない。表示上も通常ノードと区別できるようにする(薄い色・簡易表示など)。
+- **画像**: WikidataのP18(image)プロパティを使い、画像がある人物には肖像画像を表示する。画像がない人物は画像なしの表示にフォールバックする。
+- **取得データのファイル分割**: 対象藩を増やしていく運用を見据え、フェーズ1の生データは藩ごとに別ファイル(`data/raw/<藩の英語表記スラッグ>.json`、例: `data/raw/yonezawa.json`)に分けて保存する。表示用の統合ファイル(`data/tree.json`)は今まで通り単一ファイルのままにする(D3.jsでの表示は血縁が藩をまたぐため、全体を一度に持つ必要があるが、想定データ量では1〜2MB程度に収まる見込みで問題ない)。
 
 ## プロトタイプ対象
 
@@ -27,17 +29,18 @@
 
 ## 実装フェーズ
 
-1. **フェーズ1(データ取得)**: `scripts/` に、Wikipedia上の藩主継承テンプレートとWikidataからデータを取得し `data/daimyo_raw.json` に保存するスクリプトを作る。各人物は `id(QID), name, han, generation, wikipedia_url, father_id(QID), is_stub: false` を持たせる。父の判定はWikidataのP22を最優先、未登録ならInfoboxの「父」パラメータをフォールバックとして使う(フォールバック時もリンクターゲットからQIDを解決する)。父が対象藩の藩主一覧に含まれない場合は、その父を `is_stub: true` の人物として追加し、`id(QID), name, wikipedia_url, han(取得できれば), generation: null` のみを持たせ、その人物の父はさらに遡って取得しない。
-2. **フェーズ2(データ整形)**: `daimyo_raw.json` から `nodes`(id, name, han, generation, wikipedia_url)と `edges`(parent_id, child_id)を組み立て、`data/tree.json` に保存するスクリプトを作る。
-3. **フェーズ3(表示)**: `tree.json` を読み込んでD3.jsで表示する `index.html` を作る。
+1. **フェーズ1(データ取得)**: `scripts/` に、Wikipedia上の藩主継承テンプレートとWikidataからデータを取得し、藩ごとに `data/raw/<藩の英語表記スラッグ>.json` に保存するスクリプトを作る。各人物は `id(QID), name, han, generation, wikipedia_url, image_url, father_id(QID), is_stub: false` を持たせる。父の判定はWikidataのP22を最優先、未登録ならInfoboxの「父」パラメータをフォールバックとして使う(フォールバック時もリンクターゲットからQIDを解決する)。画像はWikidataのP18(image)からCommonsのファイル名を取得し、`https://commons.wikimedia.org/wiki/Special:FilePath/<ファイル名>?width=200` の形でimage_urlを組み立てる(P18がなければnull)。父が対象藩の藩主一覧に含まれない場合は、その父を `is_stub: true` の人物として追加し、`id(QID), name, wikipedia_url, image_url, han(取得できれば), generation: null` のみを持たせ、その人物の父はさらに遡って取得しない。
+2. **フェーズ2(データ整形)**: `data/raw/*.json` をすべて読み込んで統合し、`nodes`(id, name, han, generation, wikipedia_url, image_url, is_stub)と `edges`(parent_id, child_id)を組み立て、`data/tree.json` に保存するスクリプトを作る。複数のraw ファイルに同じQIDの人物(スタブとして複数藩から参照される場合など)が重複して出てくることがあるので、QIDで重複排除する(内容が食い違う場合は警告を出す)。
+3. **フェーズ3(表示)**: `tree.json` を読み込んでD3.jsで表示する `index.html` を作る。ノードに `image_url` があれば肖像画像を表示し、なければ画像なしの表示にする。
 
 ## 進捗状況(随時更新)
 
 - [x] プロジェクトフォルダ作成、README/.gitignore/ディレクトリ構成の雛形作成
 - [x] GitHubリポジトリ Karintou83/edo-daimyo-genealogy をremoteに設定
 - [x] フェーズ1スクリプト(データ取得) `scripts/fetch_daimyo_data.py` — Infobox(`父母`パラメータ内の実父/養父書き分け)ベースで実装済み
-- [x] フェーズ1追加対応: 父の判定をWikidata P22最優先に切り替え、人物IDをQIDベースに変更済み。`data/daimyo_raw.json` は id(QID)/name/han/generation/wikipedia_url/father_id(QID)/is_stub のスキーマで、米沢藩・加賀藩あわせて31件(実際の藩主26名+スタブ5名: 長尾政景・吉良義央・秋月種美・上杉勝熙・前田利家)を出力済み。上杉茂憲の父もWikidata経由で解決済み(warningsに解決経緯が記録されている)。フェーズ1完了。
-- [ ] フェーズ2スクリプト(データ整形): `daimyo_raw.json` → `data/tree.json`(nodes/edges化)
+- [x] フェーズ1追加対応: 父の判定をWikidata P22最優先に切り替え、人物IDをQIDベースに変更済み。上杉茂憲の父もWikidata経由で解決済み(warningsに解決経緯が記録されている)。
+- [x] フェーズ1再対応: 出力先を単一の`data/daimyo_raw.json`から藩ごとの`data/raw/<スラッグ>.json`に分割し、image_url(Wikidata P18経由)を追加。米沢藩・加賀藩で実行済み(米沢17件・画像7件/加賀14件・画像10件)。旧`data/daimyo_raw.json`はまだリポジトリに残っている(`git rm data/daimyo_raw.json`が未実施)。
+- [x] フェーズ2スクリプト(データ整形): `scripts/build_tree.py`を`data/raw/*.json`統合版に書き直し済み(QIDで重複排除、image_url含む、内容食い違い時は警告)。米沢藩・加賀藩のデータで実行し`data/tree.json`を生成済み(31ノード/26エッジ、is_stub:true 5件、image_urlあり17件、han:nullは前田利家・長尾政景・吉良義央の3名で既知事項どおり)。
 - [ ] フェーズ3(表示サイト)
 
 ## フェーズ2に向けた既知事項
