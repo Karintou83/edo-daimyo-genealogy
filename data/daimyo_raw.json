@@ -1,0 +1,294 @@
+{
+  "generated_by": "scripts/fetch_daimyo_data.py",
+  "target_hans": [
+    "米沢藩",
+    "加賀藩"
+  ],
+  "daimyo": [
+    {
+      "id": "Q1376605",
+      "name": "上杉景勝",
+      "han": "米沢藩",
+      "generation": 1,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E6%99%AF%E5%8B%9D",
+      "father_id": "Q6958482",
+      "is_stub": false
+    },
+    {
+      "id": "Q6958482",
+      "name": "長尾政景",
+      "han": null,
+      "generation": null,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%95%B7%E5%B0%BE%E6%94%BF%E6%99%AF",
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q8514762",
+      "name": "上杉定勝",
+      "han": "米沢藩",
+      "generation": 2,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E5%AE%9A%E5%8B%9D",
+      "father_id": "Q1376605",
+      "is_stub": false
+    },
+    {
+      "id": "Q8514779",
+      "name": "上杉綱勝",
+      "han": "米沢藩",
+      "generation": 3,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E7%B6%B1%E5%8B%9D",
+      "father_id": "Q8514762",
+      "is_stub": false
+    },
+    {
+      "id": "Q8514773",
+      "name": "上杉綱憲",
+      "han": "米沢藩",
+      "generation": 4,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E7%B6%B1%E6%86%B2",
+      "father_id": "Q3132109",
+      "is_stub": false
+    },
+    {
+      "id": "Q3132109",
+      "name": "吉良義央",
+      "han": null,
+      "generation": null,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%90%89%E8%89%AF%E7%BE%A9%E5%A4%AE",
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q8514785",
+      "name": "上杉吉憲",
+      "han": "米沢藩",
+      "generation": 5,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E5%90%89%E6%86%B2",
+      "father_id": "Q8514773",
+      "is_stub": false
+    },
+    {
+      "id": "Q8514751",
+      "name": "上杉宗憲",
+      "han": "米沢藩",
+      "generation": 6,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E5%AE%97%E6%86%B2",
+      "father_id": "Q8514785",
+      "is_stub": false
+    },
+    {
+      "id": "Q8514757",
+      "name": "上杉宗房",
+      "han": "米沢藩",
+      "generation": 7,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E5%AE%97%E6%88%BF",
+      "father_id": "Q8514785",
+      "is_stub": false
+    },
+    {
+      "id": "Q8514768",
+      "name": "上杉重定",
+      "han": "米沢藩",
+      "generation": 8,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E9%87%8D%E5%AE%9A",
+      "father_id": "Q8514785",
+      "is_stub": false
+    },
+    {
+      "id": "Q1194899",
+      "name": "上杉治憲",
+      "han": "米沢藩",
+      "generation": 9,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E6%B2%BB%E6%86%B2",
+      "father_id": "Q11595125",
+      "is_stub": false
+    },
+    {
+      "id": "Q11595125",
+      "name": "秋月種美",
+      "han": "高鍋藩",
+      "generation": null,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E7%A7%8B%E6%9C%88%E7%A8%AE%E7%BE%8E",
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q8514791",
+      "name": "上杉治広",
+      "han": "米沢藩",
+      "generation": 10,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E6%B2%BB%E5%BA%83",
+      "father_id": "Q8514768",
+      "is_stub": false
+    },
+    {
+      "id": "Q8514745",
+      "name": "上杉斉定",
+      "han": "米沢藩",
+      "generation": 11,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E6%96%89%E5%AE%9A",
+      "father_id": "Q11359143",
+      "is_stub": false
+    },
+    {
+      "id": "Q11359143",
+      "name": "上杉勝熙",
+      "han": "米沢藩",
+      "generation": null,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E5%8B%9D%E7%86%99",
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q851776",
+      "name": "上杉斉憲",
+      "han": "米沢藩",
+      "generation": 12,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E6%96%89%E6%86%B2",
+      "father_id": "Q8514745",
+      "is_stub": false
+    },
+    {
+      "id": "Q851787",
+      "name": "上杉茂憲",
+      "han": "米沢藩",
+      "generation": 13,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%8A%E6%9D%89%E8%8C%82%E6%86%B2",
+      "father_id": "Q851776",
+      "is_stub": false
+    },
+    {
+      "id": "Q1186742",
+      "name": "前田利長",
+      "han": "加賀藩",
+      "generation": 1,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E5%88%A9%E9%95%B7",
+      "father_id": "Q1196817",
+      "is_stub": false
+    },
+    {
+      "id": "Q1196817",
+      "name": "前田利家",
+      "han": null,
+      "generation": null,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E5%88%A9%E5%AE%B6",
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q587204",
+      "name": "前田利常",
+      "han": "加賀藩",
+      "generation": 2,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E5%88%A9%E5%B8%B8",
+      "father_id": "Q1196817",
+      "is_stub": false
+    },
+    {
+      "id": "Q6729106",
+      "name": "前田光高",
+      "han": "加賀藩",
+      "generation": 3,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E5%85%89%E9%AB%98",
+      "father_id": "Q587204",
+      "is_stub": false
+    },
+    {
+      "id": "Q841837",
+      "name": "前田綱紀",
+      "han": "加賀藩",
+      "generation": 4,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E7%B6%B1%E7%B4%80",
+      "father_id": "Q6729106",
+      "is_stub": false
+    },
+    {
+      "id": "Q6729131",
+      "name": "前田吉徳",
+      "han": "加賀藩",
+      "generation": 5,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E5%90%89%E5%BE%B3",
+      "father_id": "Q841837",
+      "is_stub": false
+    },
+    {
+      "id": "Q6729107",
+      "name": "前田宗辰",
+      "han": "加賀藩",
+      "generation": 6,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E5%AE%97%E8%BE%B0",
+      "father_id": "Q6729131",
+      "is_stub": false
+    },
+    {
+      "id": "Q8189385",
+      "name": "前田重煕",
+      "han": "加賀藩",
+      "generation": 7,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E9%87%8D%E7%85%95",
+      "father_id": "Q6729131",
+      "is_stub": false
+    },
+    {
+      "id": "Q8189350",
+      "name": "前田重靖",
+      "han": "加賀藩",
+      "generation": 8,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E9%87%8D%E9%9D%96",
+      "father_id": "Q6729131",
+      "is_stub": false
+    },
+    {
+      "id": "Q6729112",
+      "name": "前田重教",
+      "han": "加賀藩",
+      "generation": 9,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E9%87%8D%E6%95%99",
+      "father_id": "Q6729131",
+      "is_stub": false
+    },
+    {
+      "id": "Q6729094",
+      "name": "前田治脩",
+      "han": "加賀藩",
+      "generation": 10,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E6%B2%BB%E8%84%A9",
+      "father_id": "Q6729131",
+      "is_stub": false
+    },
+    {
+      "id": "Q6729104",
+      "name": "前田斉広",
+      "han": "加賀藩",
+      "generation": 11,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E6%96%89%E5%BA%83",
+      "father_id": "Q6729112",
+      "is_stub": false
+    },
+    {
+      "id": "Q6729110",
+      "name": "前田斉泰",
+      "han": "加賀藩",
+      "generation": 12,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E6%96%89%E6%B3%B0",
+      "father_id": "Q6729104",
+      "is_stub": false
+    },
+    {
+      "id": "Q6729123",
+      "name": "前田慶寧",
+      "han": "加賀藩",
+      "generation": 13,
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%89%8D%E7%94%B0%E6%85%B6%E5%AF%A7",
+      "father_id": "Q6729110",
+      "is_stub": false
+    }
+  ],
+  "warnings": [
+    "[米沢藩] リンクを含まない一覧項目をスキップしました: '*廃藩置県'",
+    "『上杉茂憲』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『上杉茂憲』: Infobox側では父を特定できませんでしたが、WikidataのP22から父(Q851776)を解決しました。Wikidataの値を採用します。",
+    "[加賀藩] リンクを含まない一覧項目をスキップしました: '*廃藩置県'"
+  ]
+}
