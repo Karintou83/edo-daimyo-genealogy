@@ -1,0 +1,392 @@
+{
+  "generated_by": "scripts/fetch_daimyo_data.py",
+  "han": "高松藩",
+  "slug": "takamatsu",
+  "template": "Template:高松藩主",
+  "daimyo": [
+    {
+      "id": "Q3776375",
+      "name": "生駒一正",
+      "positions": [
+        {
+          "han": "高松藩",
+          "generation": 1,
+          "year_start": 1600,
+          "year_end": 1610
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E7%94%9F%E9%A7%92%E4%B8%80%E6%AD%A3",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ikoma_Kazumasa.jpg?width=200",
+      "father_id": "Q1059845",
+      "is_stub": false
+    },
+    {
+      "id": "Q1059845",
+      "name": "生駒親正",
+      "positions": [
+        {
+          "han": "高松藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E7%94%9F%E9%A7%92%E8%A6%AA%E6%AD%A3",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ikoma_Chikamasa.jpg?width=200",
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q11574929",
+      "name": "生駒正俊",
+      "positions": [
+        {
+          "han": "高松藩",
+          "generation": 2,
+          "year_start": 1610,
+          "year_end": 1621
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E7%94%9F%E9%A7%92%E6%AD%A3%E4%BF%8A",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ikoma_Masatoshi.jpg?width=200",
+      "father_id": "Q3776375",
+      "is_stub": false
+    },
+    {
+      "id": "Q5996119",
+      "name": "生駒高俊",
+      "positions": [
+        {
+          "han": "高松藩",
+          "generation": 3,
+          "year_start": 1621,
+          "year_end": 1640
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E7%94%9F%E9%A7%92%E9%AB%98%E4%BF%8A",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ikoma_Takatoshi.jpg?width=200",
+      "father_id": "Q11574929",
+      "is_stub": false
+    },
+    {
+      "id": "Q3299364",
+      "name": "松平頼重",
+      "positions": [
+        {
+          "han": "高松藩",
+          "generation": 4,
+          "year_start": 1642,
+          "year_end": 1673
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E9%A0%BC%E9%87%8D",
+      "image_url": null,
+      "father_id": "Q1133680",
+      "is_stub": false
+    },
+    {
+      "id": "Q1133680",
+      "name": "徳川頼房",
+      "positions": [
+        {
+          "han": "下妻藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E9%A0%BC%E6%88%BF",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tokugawa_Yorihusa.jpg?width=200",
+      "father_id": "Q171977",
+      "is_stub": true
+    },
+    {
+      "id": "Q171977",
+      "name": "徳川家康",
+      "positions": [],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E5%AE%B6%E5%BA%B7",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tokugawa_Ieyasu2.JPG?width=200",
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q11530633",
+      "name": "松平頼常",
+      "positions": [
+        {
+          "han": "高松藩",
+          "generation": 5,
+          "year_start": 1673,
+          "year_end": 1704
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E9%A0%BC%E5%B8%B8",
+      "image_url": null,
+      "father_id": "Q1194944",
+      "is_stub": false
+    },
+    {
+      "id": "Q1194944",
+      "name": "徳川光圀",
+      "positions": [
+        {
+          "han": "水戸藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E5%85%89%E5%9C%80",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tokugawa_Mitsukuni.jpg?width=200",
+      "father_id": "Q1133680",
+      "is_stub": true
+    },
+    {
+      "id": "Q11530657",
+      "name": "松平頼豊",
+      "positions": [
+        {
+          "han": "高松藩",
+          "generation": 6,
+          "year_start": 1704,
+          "year_end": 1735
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E9%A0%BC%E8%B1%8A",
+      "image_url": null,
+      "father_id": "Q11530629",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530629",
+      "name": "松平頼侯",
+      "positions": [
+        {
+          "han": "高松藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E9%A0%BC%E4%BE%AF",
+      "image_url": null,
+      "father_id": "Q3299364",
+      "is_stub": true
+    },
+    {
+      "id": "Q11530640",
+      "name": "松平頼桓",
+      "positions": [
+        {
+          "han": "高松藩",
+          "generation": 7,
+          "year_start": 1735,
+          "year_end": 1739
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E9%A0%BC%E6%A1%93",
+      "image_url": null,
+      "father_id": "Q11530645",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530645",
+      "name": "松平頼煕 (松平大膳家)",
+      "positions": [
+        {
+          "han": "高松藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E9%A0%BC%E7%85%95_%28%E6%9D%BE%E5%B9%B3%E5%A4%A7%E8%86%B3%E5%AE%B6%29",
+      "image_url": null,
+      "father_id": "Q11530652",
+      "is_stub": true
+    },
+    {
+      "id": "Q11530652",
+      "name": "松平頼芳",
+      "positions": [
+        {
+          "han": "高松藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E9%A0%BC%E8%8A%B3",
+      "image_url": null,
+      "father_id": "Q3299364",
+      "is_stub": true
+    },
+    {
+      "id": "Q6638174",
+      "name": "松平頼恭",
+      "positions": [
+        {
+          "han": "高松藩",
+          "generation": 8,
+          "year_start": 1739,
+          "year_end": 1771
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E9%A0%BC%E6%81%AD",
+      "image_url": null,
+      "father_id": "Q6638114",
+      "is_stub": false
+    },
+    {
+      "id": "Q6638114",
+      "name": "松平頼貞",
+      "positions": [
+        {
+          "han": "額田藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E9%A0%BC%E8%B2%9E",
+      "image_url": null,
+      "father_id": "Q6638460",
+      "is_stub": true
+    },
+    {
+      "id": "Q6638460",
+      "name": "松平頼元",
+      "positions": [
+        {
+          "han": "額田藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E9%A0%BC%E5%85%83",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q11530648",
+      "name": "松平頼真",
+      "positions": [
+        {
+          "han": "高松藩",
+          "generation": 9,
+          "year_start": 1771,
+          "year_end": 1780
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E9%A0%BC%E7%9C%9F",
+      "image_url": null,
+      "father_id": "Q6638174",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530658",
+      "name": "松平頼起",
+      "positions": [
+        {
+          "han": "高松藩",
+          "generation": 10,
+          "year_start": 1780,
+          "year_end": 1792
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E9%A0%BC%E8%B5%B7",
+      "image_url": null,
+      "father_id": "Q6638174",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530630",
+      "name": "松平頼儀",
+      "positions": [
+        {
+          "han": "高松藩",
+          "generation": 11,
+          "year_start": 1792,
+          "year_end": 1821
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E9%A0%BC%E5%84%80",
+      "image_url": null,
+      "father_id": "Q11530648",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530635",
+      "name": "松平頼恕",
+      "positions": [
+        {
+          "han": "高松藩",
+          "generation": 12,
+          "year_start": 1821,
+          "year_end": 1842
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E9%A0%BC%E6%81%95",
+      "image_url": null,
+      "father_id": "Q728162",
+      "is_stub": false
+    },
+    {
+      "id": "Q728162",
+      "name": "徳川治紀",
+      "positions": [
+        {
+          "han": "水戸藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E6%B2%BB%E7%B4%80",
+      "image_url": null,
+      "father_id": "Q6998193",
+      "is_stub": true
+    },
+    {
+      "id": "Q11530651",
+      "name": "松平頼胤",
+      "positions": [
+        {
+          "han": "高松藩",
+          "generation": 13,
+          "year_start": 1842,
+          "year_end": 1861
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E9%A0%BC%E8%83%A4",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Matsudaira_Yoritane.jpg?width=200",
+      "father_id": "Q11530630",
+      "is_stub": false
+    },
+    {
+      "id": "Q3387880",
+      "name": "松平頼聰",
+      "positions": [
+        {
+          "han": "高松藩",
+          "generation": 14,
+          "year_start": 1861,
+          "year_end": 1871
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E9%A0%BC%E8%81%B0",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Matudaira_Yoritoshi.jpg?width=200",
+      "father_id": "Q11530635",
+      "is_stub": false
+    }
+  ],
+  "warnings": [
+    "[高松藩] (list1) リンク『生駒親正』は藩主マスターリスト(3520件)に含まれていないため、藩主候補から除外しました: '*[[生駒親正]]<small>1587-1600</small>'",
+    "[高松藩] (list1) リンク『生駒騒動』は藩主マスターリスト(3520件)に含まれていないため、藩主候補から除外しました: '*お家騒動（[[生駒騒動]]）の為、改易。[[出羽国|出羽]][[矢島藩]]を堪忍料として与えられる'",
+    "[高松藩] (list2) リンクを含まない一覧項目をスキップしました: '*廃藩置県'",
+    "『生駒親重』: 既知のInfoboxテンプレートが見つかりませんでした(表記揺れの可能性。手動確認が必要です)",
+    "『生駒親正』: 父をさらに5世代遡っても藩主に行き着かなかったため、この人物だけをスタブノードとして表示します(途中の世代は表示しません)。"
+  ]
+}

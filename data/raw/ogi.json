@@ -1,0 +1,224 @@
+{
+  "generated_by": "scripts/fetch_daimyo_data.py",
+  "han": "小城藩",
+  "slug": "ogi",
+  "template": "Template:小城藩主",
+  "daimyo": [
+    {
+      "id": "Q6956818",
+      "name": "鍋島元茂",
+      "positions": [
+        {
+          "han": "小城藩",
+          "generation": 1,
+          "year_start": 1642,
+          "year_end": 1654
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%8D%8B%E5%B3%B6%E5%85%83%E8%8C%82",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nabeshima_Motoshige.jpg?width=200",
+      "father_id": "Q3138980",
+      "is_stub": false
+    },
+    {
+      "id": "Q3138980",
+      "name": "鍋島勝茂",
+      "positions": [
+        {
+          "han": "佐賀藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%8D%8B%E5%B3%B6%E5%8B%9D%E8%8C%82",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nabeshima_Katsushige_Portrait.jpg?width=200",
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q11650687",
+      "name": "鍋島直能",
+      "positions": [
+        {
+          "han": "小城藩",
+          "generation": 2,
+          "year_start": 1654,
+          "year_end": 1679
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%8D%8B%E5%B3%B6%E7%9B%B4%E8%83%BD",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nabeshima_Naoyoshi%28%E5%B0%8F%E5%9F%8E%29.jpg?width=200",
+      "father_id": "Q6956818",
+      "is_stub": false
+    },
+    {
+      "id": "Q11650632",
+      "name": "鍋島元武",
+      "positions": [
+        {
+          "han": "小城藩",
+          "generation": 3,
+          "year_start": 1679,
+          "year_end": 1713
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%8D%8B%E5%B3%B6%E5%85%83%E6%AD%A6",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nabeshima_Mototake.jpg?width=200",
+      "father_id": "Q11650687",
+      "is_stub": false
+    },
+    {
+      "id": "Q11650634",
+      "name": "鍋島元延",
+      "positions": [
+        {
+          "han": "小城藩",
+          "generation": 4,
+          "year_start": 1713,
+          "year_end": 1714
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%8D%8B%E5%B3%B6%E5%85%83%E5%BB%B6",
+      "image_url": null,
+      "father_id": "Q11650632",
+      "is_stub": false
+    },
+    {
+      "id": "Q11650688",
+      "name": "鍋島直英",
+      "positions": [
+        {
+          "han": "小城藩",
+          "generation": 5,
+          "year_start": 1714,
+          "year_end": 1744
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%8D%8B%E5%B3%B6%E7%9B%B4%E8%8B%B1",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nabeshima_Naohide.jpg?width=200",
+      "father_id": "Q11650632",
+      "is_stub": false
+    },
+    {
+      "id": "Q11650663",
+      "name": "鍋島直員",
+      "positions": [
+        {
+          "han": "小城藩",
+          "generation": 6,
+          "year_start": 1744,
+          "year_end": 1764
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%8D%8B%E5%B3%B6%E7%9B%B4%E5%93%A1",
+      "image_url": null,
+      "father_id": "Q11650688",
+      "is_stub": false
+    },
+    {
+      "id": "Q11650669",
+      "name": "鍋島直愈",
+      "positions": [
+        {
+          "han": "小城藩",
+          "generation": 7,
+          "year_start": 1764,
+          "year_end": 1794
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%8D%8B%E5%B3%B6%E7%9B%B4%E6%84%88",
+      "image_url": null,
+      "father_id": "Q11650663",
+      "is_stub": false
+    },
+    {
+      "id": "Q11650684",
+      "name": "鍋島直知",
+      "positions": [
+        {
+          "han": "小城藩",
+          "generation": 8,
+          "year_start": 1794,
+          "year_end": 1804
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%8D%8B%E5%B3%B6%E7%9B%B4%E7%9F%A5",
+      "image_url": null,
+      "father_id": "Q11650669",
+      "is_stub": false
+    },
+    {
+      "id": "Q11650665",
+      "name": "鍋島直堯",
+      "positions": [
+        {
+          "han": "小城藩",
+          "generation": 9,
+          "year_start": 1804,
+          "year_end": 1850
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%8D%8B%E5%B3%B6%E7%9B%B4%E5%A0%AF",
+      "image_url": null,
+      "father_id": "Q11650669",
+      "is_stub": false
+    },
+    {
+      "id": "Q11650661",
+      "name": "鍋島直亮",
+      "positions": [
+        {
+          "han": "小城藩",
+          "generation": 10,
+          "year_start": 1850,
+          "year_end": 1864
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%8D%8B%E5%B3%B6%E7%9B%B4%E4%BA%AE",
+      "image_url": null,
+      "father_id": "Q11650665",
+      "is_stub": false
+    },
+    {
+      "id": "Q6956825",
+      "name": "鍋島直虎",
+      "positions": [
+        {
+          "han": "小城藩",
+          "generation": 11,
+          "year_start": 1864,
+          "year_end": 1871
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%8D%8B%E5%B3%B6%E7%9B%B4%E8%99%8E",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Naotora_Nabeshima.jpg?width=200",
+      "father_id": "Q3334677",
+      "is_stub": false
+    },
+    {
+      "id": "Q3334677",
+      "name": "鍋島直正",
+      "positions": [
+        {
+          "han": "佐賀藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%8D%8B%E5%B3%B6%E7%9B%B4%E6%AD%A3",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nabeshima_Naomasa.jpg?width=200",
+      "father_id": "Q11650651",
+      "is_stub": true
+    }
+  ],
+  "warnings": [
+    "[小城藩] (list1) リンクを含まない一覧項目をスキップしました: '*廃藩置県'",
+    "『鍋島経房』: 既知のInfoboxテンプレートが見つかりませんでした(表記揺れの可能性。手動確認が必要です)",
+    "『鍋島経房』: Infobox側では父を特定できませんでしたが、WikidataのP22から父(Q11464739)を解決しました。Wikidataの値を採用します。",
+    "『鍋島勝茂』: 父をさらに5世代遡っても藩主に行き着かなかったため、この人物だけをスタブノードとして表示します(途中の世代は表示しません)。",
+    "『鍋島直虎』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『鍋島直虎』: Infobox側では父を特定できませんでしたが、WikidataのP22から父(Q3334677)を解決しました。Wikidataの値を採用します。"
+  ]
+}

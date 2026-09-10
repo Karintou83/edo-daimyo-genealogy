@@ -1,0 +1,602 @@
+{
+  "generated_by": "scripts/fetch_daimyo_data.py",
+  "han": "川越藩",
+  "slug": "kawagoe",
+  "template": "Template:川越藩主",
+  "daimyo": [
+    {
+      "id": "Q5369481",
+      "name": "酒井重忠",
+      "positions": [
+        {
+          "han": "川越藩",
+          "generation": 1,
+          "year_start": 1590,
+          "year_end": 1601
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%85%92%E4%BA%95%E9%87%8D%E5%BF%A0",
+      "image_url": null,
+      "father_id": "Q11644203",
+      "is_stub": false
+    },
+    {
+      "id": "Q11644203",
+      "name": "酒井正親",
+      "positions": [],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%85%92%E4%BA%95%E6%AD%A3%E8%A6%AA",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q11644106",
+      "name": "酒井忠利",
+      "positions": [
+        {
+          "han": "川越藩",
+          "generation": 2,
+          "year_start": 1609,
+          "year_end": 1627
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%85%92%E4%BA%95%E5%BF%A0%E5%88%A9",
+      "image_url": null,
+      "father_id": "Q11644203",
+      "is_stub": false
+    },
+    {
+      "id": "Q7402768",
+      "name": "酒井忠勝 (小浜藩主)",
+      "positions": [
+        {
+          "han": "川越藩",
+          "generation": 3,
+          "year_start": 1627,
+          "year_end": 1634
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%85%92%E4%BA%95%E5%BF%A0%E5%8B%9D_%28%E5%B0%8F%E6%B5%9C%E8%97%A9%E4%B8%BB%29",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sakai_Tadakatsu.jpg?width=200",
+      "father_id": "Q11644106",
+      "is_stub": false
+    },
+    {
+      "id": "Q1631219",
+      "name": "堀田正盛",
+      "positions": [
+        {
+          "han": "川越藩",
+          "generation": 4,
+          "year_start": 1635,
+          "year_end": 1638
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%A0%80%E7%94%B0%E6%AD%A3%E7%9B%9B",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hotta_Masamori.png?width=200",
+      "father_id": "Q11427634",
+      "is_stub": false
+    },
+    {
+      "id": "Q11427634",
+      "name": "堀田正吉",
+      "positions": [],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%A0%80%E7%94%B0%E6%AD%A3%E5%90%89",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q6788056",
+      "name": "松平信綱",
+      "positions": [
+        {
+          "han": "川越藩",
+          "generation": 5,
+          "year_start": 1639,
+          "year_end": 1662
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E4%BF%A1%E7%B6%B1",
+      "image_url": null,
+      "father_id": "Q11437025",
+      "is_stub": false
+    },
+    {
+      "id": "Q11437025",
+      "name": "大河内久綱",
+      "positions": [],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%B2%B3%E5%86%85%E4%B9%85%E7%B6%B1",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q11530600",
+      "name": "松平輝綱",
+      "positions": [
+        {
+          "han": "川越藩",
+          "generation": 6,
+          "year_start": 1662,
+          "year_end": 1672
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E8%BC%9D%E7%B6%B1",
+      "image_url": null,
+      "father_id": "Q6788056",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530361",
+      "name": "松平信輝",
+      "positions": [
+        {
+          "han": "川越藩",
+          "generation": 7,
+          "year_start": 1672,
+          "year_end": 1694
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E4%BF%A1%E8%BC%9D",
+      "image_url": null,
+      "father_id": "Q11530600",
+      "is_stub": false
+    },
+    {
+      "id": "Q846911",
+      "name": "柳沢吉保",
+      "positions": [
+        {
+          "han": "川越藩",
+          "generation": 8,
+          "year_start": 1694,
+          "year_end": 1704
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9F%B3%E6%B2%A2%E5%90%89%E4%BF%9D",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Yanagisawa_Yoshiyasu.jpg?width=200",
+      "father_id": "Q11534394",
+      "is_stub": false
+    },
+    {
+      "id": "Q11534394",
+      "name": "柳沢安忠",
+      "positions": [
+        {
+          "han": "館林藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9F%B3%E6%B2%A2%E5%AE%89%E5%BF%A0",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q10862094",
+      "name": "秋元喬知",
+      "positions": [
+        {
+          "han": "川越藩",
+          "generation": 9,
+          "year_start": 1704,
+          "year_end": 1714
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E7%A7%8B%E5%85%83%E5%96%AC%E7%9F%A5",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Akimoto_Takatomo.jpg?width=200",
+      "father_id": "Q3530227",
+      "is_stub": false
+    },
+    {
+      "id": "Q3530227",
+      "name": "戸田忠昌",
+      "positions": [
+        {
+          "han": "田原藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%88%B8%E7%94%B0%E5%BF%A0%E6%98%8C",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q11594839",
+      "name": "秋元喬房",
+      "positions": [
+        {
+          "han": "川越藩",
+          "generation": 10,
+          "year_start": 1714,
+          "year_end": 1738
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E7%A7%8B%E5%85%83%E5%96%AC%E6%88%BF",
+      "image_url": null,
+      "father_id": "Q10862094",
+      "is_stub": false
+    },
+    {
+      "id": "Q11594838",
+      "name": "秋元喬求",
+      "positions": [
+        {
+          "han": "川越藩",
+          "generation": 11,
+          "year_start": 1738,
+          "year_end": 1742
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E7%A7%8B%E5%85%83%E5%96%AC%E6%B1%82",
+      "image_url": null,
+      "father_id": "Q10862107",
+      "is_stub": false
+    },
+    {
+      "id": "Q10862107",
+      "name": "戸田忠余",
+      "positions": [
+        {
+          "han": "宇都宮藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%88%B8%E7%94%B0%E5%BF%A0%E4%BD%99",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q8515279",
+      "name": "秋元凉朝",
+      "positions": [
+        {
+          "han": "川越藩",
+          "generation": 12,
+          "year_start": 1742,
+          "year_end": 1767
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E7%A7%8B%E5%85%83%E5%87%89%E6%9C%9D",
+      "image_url": null,
+      "father_id": "秋元貞朝",
+      "is_stub": false
+    },
+    {
+      "id": "秋元貞朝",
+      "name": "秋元貞朝",
+      "positions": [],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E7%A7%8B%E5%85%83%E8%B2%9E%E6%9C%9D",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q11530472",
+      "name": "松平朝矩",
+      "positions": [
+        {
+          "han": "川越藩",
+          "generation": 13,
+          "year_start": 1767,
+          "year_end": 1768
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E6%9C%9D%E7%9F%A9",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Matsudaira_Tomonori.jpg?width=200",
+      "father_id": "Q11239149",
+      "is_stub": false
+    },
+    {
+      "id": "Q11239149",
+      "name": "松平明矩",
+      "positions": [
+        {
+          "han": "白河藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E6%98%8E%E7%9F%A9",
+      "image_url": null,
+      "father_id": "Q8515140",
+      "is_stub": true
+    },
+    {
+      "id": "Q8515140",
+      "name": "松平知清",
+      "positions": [
+        {
+          "han": "陸奥国",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E7%9F%A5%E6%B8%85",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q11530530",
+      "name": "松平直恒",
+      "positions": [
+        {
+          "han": "川越藩",
+          "generation": 14,
+          "year_start": 1768,
+          "year_end": 1810
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E7%9B%B4%E6%81%92",
+      "image_url": null,
+      "father_id": "Q11530472",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530541",
+      "name": "松平直温 (川越藩主)",
+      "positions": [
+        {
+          "han": "川越藩",
+          "generation": 15,
+          "year_start": 1810,
+          "year_end": 1816
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E7%9B%B4%E6%B8%A9_%28%E5%B7%9D%E8%B6%8A%E8%97%A9%E4%B8%BB%29",
+      "image_url": null,
+      "father_id": "Q11530530",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530457",
+      "name": "松平斉典",
+      "positions": [
+        {
+          "han": "川越藩",
+          "generation": 16,
+          "year_start": 1816,
+          "year_end": 1850
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E6%96%89%E5%85%B8",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Matsudaira_Naritsune_%28Lord_of_Kawagoe%29.jpg?width=200",
+      "father_id": "Q11530530",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530372",
+      "name": "松平典則",
+      "positions": [
+        {
+          "han": "川越藩",
+          "generation": 17,
+          "year_start": 1850,
+          "year_end": 1854
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E5%85%B8%E5%89%87",
+      "image_url": null,
+      "father_id": "Q11530457",
+      "is_stub": false
+    },
+    {
+      "id": "Q6997990",
+      "name": "松平直侯",
+      "positions": [
+        {
+          "han": "川越藩",
+          "generation": 18,
+          "year_start": 1854,
+          "year_end": 1861
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E7%9B%B4%E4%BE%AF",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Matsudaira_Naoyoshi.jpg?width=200",
+      "father_id": "Q1323770",
+      "is_stub": false
+    },
+    {
+      "id": "Q1323770",
+      "name": "徳川斉昭",
+      "positions": [
+        {
+          "han": "水戸藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E6%96%89%E6%98%AD",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tokugawa_Nariaki.jpg?width=200",
+      "father_id": "Q728162",
+      "is_stub": true
+    },
+    {
+      "id": "Q11530518",
+      "name": "松平直克",
+      "positions": [
+        {
+          "han": "川越藩",
+          "generation": 19,
+          "year_start": 1861,
+          "year_end": 1867
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E7%9B%B4%E5%85%8B",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Matsudaira_Naokatsu.jpg?width=200",
+      "father_id": "Q11516845",
+      "is_stub": false
+    },
+    {
+      "id": "Q11516845",
+      "name": "有馬頼徳",
+      "positions": [
+        {
+          "han": "久留米藩",
+          "generation": null,
+          "year_start": 1812,
+          "year_end": 1844
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9C%89%E9%A6%AC%E9%A0%BC%E5%BE%B3",
+      "image_url": null,
+      "father_id": "Q11516849",
+      "is_stub": true
+    },
+    {
+      "id": "Q11516849",
+      "name": "有馬頼端",
+      "positions": [
+        {
+          "han": "久留米藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9C%89%E9%A6%AC%E9%A0%BC%E7%AB%AF",
+      "image_url": null,
+      "father_id": "Q11516852",
+      "is_stub": true
+    },
+    {
+      "id": "Q11516852",
+      "name": "有馬頼貴",
+      "positions": [
+        {
+          "han": "久留米藩",
+          "generation": null,
+          "year_start": 1784,
+          "year_end": 1812
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9C%89%E9%A6%AC%E9%A0%BC%E8%B2%B4",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Arima_Yoritaka.jpg?width=200",
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q6526602",
+      "name": "松平康英",
+      "positions": [
+        {
+          "han": "川越藩",
+          "generation": 20,
+          "year_start": 1866,
+          "year_end": 1869
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E5%BA%B7%E8%8B%B1",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Matsui_Yasuhide.jpg?width=200",
+      "father_id": "Q132435905",
+      "is_stub": false
+    },
+    {
+      "id": "Q132435905",
+      "name": "松平康済",
+      "positions": [],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E5%BA%B7%E6%B8%88",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q10791122",
+      "name": "松平康載",
+      "positions": [
+        {
+          "han": "川越藩",
+          "generation": 21,
+          "year_start": 1869,
+          "year_end": 1871
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E5%BA%B7%E8%BC%89",
+      "image_url": null,
+      "father_id": "Q6832332",
+      "is_stub": false
+    },
+    {
+      "id": "Q6832332",
+      "name": "松平光庸",
+      "positions": [
+        {
+          "han": "松本藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E5%85%89%E5%BA%B8",
+      "image_url": null,
+      "father_id": "Q10862140",
+      "is_stub": true
+    },
+    {
+      "id": "Q10862140",
+      "name": "松平光行",
+      "positions": [
+        {
+          "han": "松本藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E5%85%89%E8%A1%8C",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": true
+    }
+  ],
+  "warnings": [
+    "[川越藩] (list1) リンク『上野国』は藩主マスターリスト(3520件)に含まれていないため、藩主候補から除外しました: '*[[上野国|上野]][[前橋藩|厩橋藩]]に転封'",
+    "[川越藩] (list2) リンク『若狭国』は藩主マスターリスト(3520件)に含まれていないため、藩主候補から除外しました: '*[[若狭国|若狭]][[小浜藩]]に転封'",
+    "[川越藩] (list3) リンク『信濃国』は藩主マスターリスト(3520件)に含まれていないため、藩主候補から除外しました: '*[[信濃国|信濃]][[松本藩]]に転封'",
+    "[川越藩] (list4) リンク『下総国』は藩主マスターリスト(3520件)に含まれていないため、藩主候補から除外しました: '*[[下総国|下総]][[古河藩]]に転封'",
+    "[川越藩] (list5) リンク『甲斐国』は藩主マスターリスト(3520件)に含まれていないため、藩主候補から除外しました: '*[[甲斐国|甲斐]][[甲府藩]]に転封'",
+    "[川越藩] (list6) リンク『出羽国』は藩主マスターリスト(3520件)に含まれていないため、藩主候補から除外しました: '*[[出羽国|出羽]][[山形藩]]に転封'",
+    "[川越藩] (list7) リンク『上野国』は藩主マスターリスト(3520件)に含まれていないため、藩主候補から除外しました: '*[[上野国|上野]][[前橋藩]]に居城を移転'",
+    "[川越藩] (list8) リンクを含まない一覧項目をスキップしました: '*廃藩置県'",
+    "『酒井清秀』: WikidataのQIDを取得できませんでした。記事名をIDとして代用します。",
+    "『酒井清秀』の取得に失敗しました: The page you specified doesn't exist.",
+    "『酒井正親』: 父をさらに5世代遡っても藩主に行き着かなかったため、この人物だけをスタブノードとして表示します(途中の世代は表示しません)。",
+    "『堀田正秀』の取得に失敗しました: The page you specified doesn't exist.",
+    "『堀田正吉』: 父をさらに5世代遡っても藩主に行き着かなかったため、この人物だけをスタブノードとして表示します(途中の世代は表示しません)。",
+    "『大河内久綱』: 既知のInfoboxテンプレートが見つかりませんでした(表記揺れの可能性。手動確認が必要です)",
+    "『大河内久綱』: Infobox側では父を特定できませんでしたが、WikidataのP22から父(Q11437052)を解決しました。Wikidataの値を採用します。",
+    "『大河内秀綱』: 既知のInfoboxテンプレートが見つかりませんでした(表記揺れの可能性。手動確認が必要です)",
+    "『大河内久綱』: 父をさらに5世代遡っても藩主に行き着かなかったため、この人物だけをスタブノードとして表示します(途中の世代は表示しません)。",
+    "『柳沢安忠』: パラメータ「父母」から実父のリンクを特定できませんでした(値: '[[柳沢信俊]]、[[石原昌明]]娘')。手動確認が必要です。",
+    "『柳沢安忠』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『柳沢安忠』: Infobox側では父を特定できませんでしたが、WikidataのP22から父(Q11534372)を解決しました。Wikidataの値を採用します。",
+    "『柳沢信俊』: パラメータ「父母」から実父のリンクを特定できませんでした(値: '[[青木信立]]、[[漆戸左京亮|漆戸左京亮某]]娘')。手動確認が必要です。",
+    "『柳沢信俊』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『柳沢安忠』: 父をさらに5世代遡っても藩主に行き着かなかったため、この人物だけをスタブノードとして表示します(途中の世代は表示しません)。",
+    "『戸田忠継』の取得に失敗しました: The page you specified doesn't exist.",
+    "『戸田忠昌』: 父をさらに5世代遡っても藩主に行き着かなかったため、この人物だけをスタブノードとして表示します(途中の世代は表示しません)。",
+    "『戸田忠章』: WikidataのQIDを取得できませんでした。記事名をIDとして代用します。",
+    "『戸田忠章』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『戸田忠余』: 父をさらに5世代遡っても藩主に行き着かなかったため、この人物だけをスタブノードとして表示します(途中の世代は表示しません)。",
+    "『秋元貞朝』: WikidataのQIDを取得できませんでした。記事名をIDとして代用します。",
+    "『秋元貞朝』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『秋元貞朝』: 父をさらに5世代遡っても藩主に行き着かなかったため、この人物だけをスタブノードとして表示します(途中の世代は表示しません)。",
+    "『松平康済』: 既知のInfoboxテンプレートが見つかりませんでした(表記揺れの可能性。手動確認が必要です)",
+    "『松平康済』: Infobox側では父を特定できませんでしたが、WikidataのP22から父(Q138762701)を解決しました。Wikidataの値を採用します。",
+    "QID Q138762701: 対応する日本語版Wikipedia記事(sitelink)が見つからなかったため、Wikidataのラベルを名前として使用します(Wikipediaリンクなし)。",
+    "『松平康済』: 父をさらに5世代遡っても藩主に行き着かなかったため、この人物だけをスタブノードとして表示します(途中の世代は表示しません)。"
+  ]
+}

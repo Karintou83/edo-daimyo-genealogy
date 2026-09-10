@@ -1,0 +1,379 @@
+{
+  "generated_by": "scripts/fetch_daimyo_data.py",
+  "han": "福井藩",
+  "slug": "fukui",
+  "template": "Template:福井藩主",
+  "daimyo": [
+    {
+      "id": "Q1130929",
+      "name": "結城秀康",
+      "positions": [
+        {
+          "han": "福井藩",
+          "generation": 1,
+          "year_start": 1601,
+          "year_end": 1607
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E7%B5%90%E5%9F%8E%E7%A7%80%E5%BA%B7",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Yuki_Hideyasu.jpg?width=200",
+      "father_id": "Q171977",
+      "is_stub": false
+    },
+    {
+      "id": "Q171977",
+      "name": "徳川家康",
+      "positions": [],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E5%AE%B6%E5%BA%B7",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tokugawa_Ieyasu2.JPG?width=200",
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q839124",
+      "name": "松平忠直",
+      "positions": [
+        {
+          "han": "福井藩",
+          "generation": 2,
+          "year_start": 1607,
+          "year_end": 1623
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E5%BF%A0%E7%9B%B4",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Matsudaira_Tadanao.png?width=200",
+      "father_id": "Q1130929",
+      "is_stub": false
+    },
+    {
+      "id": "Q2814515",
+      "name": "松平忠昌",
+      "positions": [
+        {
+          "han": "福井藩",
+          "generation": 3,
+          "year_start": 1623,
+          "year_end": 1645
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E5%BF%A0%E6%98%8C",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Matsudaira_Tadamasa%282%29.png?width=200",
+      "father_id": "Q1130929",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530368",
+      "name": "松平光通",
+      "positions": [
+        {
+          "han": "福井藩",
+          "generation": 4,
+          "year_start": 1645,
+          "year_end": 1674
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E5%85%89%E9%80%9A",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Matsudaira_Mitsumichi.png?width=200",
+      "father_id": "Q2814515",
+      "is_stub": false
+    },
+    {
+      "id": "Q6788037",
+      "name": "松平昌親",
+      "positions": [
+        {
+          "han": "福井藩",
+          "generation": 5,
+          "year_start": 1674,
+          "year_end": 1676
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E6%98%8C%E8%A6%AA",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Matsudaira_Masachika.png?width=200",
+      "father_id": "Q2814515",
+      "is_stub": false
+    },
+    {
+      "id": "Q6788074",
+      "name": "松平綱昌",
+      "positions": [
+        {
+          "han": "福井藩",
+          "generation": 6,
+          "year_start": 1676,
+          "year_end": 1686
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E7%B6%B1%E6%98%8C",
+      "image_url": null,
+      "father_id": "Q11530468",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530468",
+      "name": "松平昌勝",
+      "positions": [
+        {
+          "han": "越前松岡藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E6%98%8C%E5%8B%9D",
+      "image_url": null,
+      "father_id": "Q2814515",
+      "is_stub": true
+    },
+    {
+      "id": "Q6788080",
+      "name": "松平吉邦",
+      "positions": [
+        {
+          "han": "福井藩",
+          "generation": 7,
+          "year_start": 1710,
+          "year_end": 1721
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E5%90%89%E9%82%A6",
+      "image_url": null,
+      "father_id": "Q11530468",
+      "is_stub": false
+    },
+    {
+      "id": "Q10816738",
+      "name": "松平宗昌",
+      "positions": [
+        {
+          "han": "福井藩",
+          "generation": 8,
+          "year_start": 1721,
+          "year_end": 1724
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E5%AE%97%E6%98%8C",
+      "image_url": null,
+      "father_id": "Q11530468",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530390",
+      "name": "松平宗矩",
+      "positions": [
+        {
+          "han": "福井藩",
+          "generation": 9,
+          "year_start": 1724,
+          "year_end": 1749
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E5%AE%97%E7%9F%A9",
+      "image_url": null,
+      "father_id": "Q8515140",
+      "is_stub": false
+    },
+    {
+      "id": "Q8515140",
+      "name": "松平知清",
+      "positions": [
+        {
+          "han": "陸奥国",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E7%9F%A5%E6%B8%85",
+      "image_url": null,
+      "father_id": "Q399755",
+      "is_stub": true
+    },
+    {
+      "id": "Q399755",
+      "name": "松平直矩",
+      "positions": [
+        {
+          "han": "姫路藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E7%9B%B4%E7%9F%A9",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Matsudaira_Naonori.jpg?width=200",
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q6788062",
+      "name": "松平重昌",
+      "positions": [
+        {
+          "han": "福井藩",
+          "generation": 10,
+          "year_start": 1749,
+          "year_end": 1758
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E9%87%8D%E6%98%8C",
+      "image_url": null,
+      "father_id": "Q3530490",
+      "is_stub": false
+    },
+    {
+      "id": "Q3530490",
+      "name": "徳川宗尹",
+      "positions": [],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E5%AE%97%E5%B0%B9",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tokugawa_Munetada.jpg?width=200",
+      "father_id": "Q319664",
+      "is_stub": true
+    },
+    {
+      "id": "Q11530619",
+      "name": "松平重富",
+      "positions": [
+        {
+          "han": "福井藩",
+          "generation": 11,
+          "year_start": 1758,
+          "year_end": 1799
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E9%87%8D%E5%AF%8C",
+      "image_url": null,
+      "father_id": "Q3530490",
+      "is_stub": false
+    },
+    {
+      "id": "Q6788031",
+      "name": "松平治好",
+      "positions": [
+        {
+          "han": "福井藩",
+          "generation": 12,
+          "year_start": 1799,
+          "year_end": 1825
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E6%B2%BB%E5%A5%BD",
+      "image_url": null,
+      "father_id": "Q11530619",
+      "is_stub": false
+    },
+    {
+      "id": "Q6788049",
+      "name": "松平斉承",
+      "positions": [
+        {
+          "han": "福井藩",
+          "generation": 13,
+          "year_start": 1826,
+          "year_end": 1835
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E6%96%89%E6%89%BF",
+      "image_url": null,
+      "father_id": "Q6788031",
+      "is_stub": false
+    },
+    {
+      "id": "Q6788045",
+      "name": "松平斉善",
+      "positions": [
+        {
+          "han": "福井藩",
+          "generation": 14,
+          "year_start": 1835,
+          "year_end": 1838
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E6%96%89%E5%96%84",
+      "image_url": null,
+      "father_id": "Q439717",
+      "is_stub": false
+    },
+    {
+      "id": "Q439717",
+      "name": "徳川家斉",
+      "positions": [],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E5%AE%B6%E6%96%89",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tokugawa_Ienari.jpg?width=200",
+      "father_id": "Q11490290",
+      "is_stub": true
+    },
+    {
+      "id": "Q11490290",
+      "name": "徳川治済",
+      "positions": [],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E6%B2%BB%E6%B8%88",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Harusada_Tokugawa.jpg?width=200",
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q6788042",
+      "name": "松平茂昭",
+      "positions": [
+        {
+          "han": "福井藩",
+          "generation": 15,
+          "year_start": 1858,
+          "year_end": 1871
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E8%8C%82%E6%98%AD",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Matsudaira_Mochiaki.jpg?width=200",
+      "father_id": "Q11530536",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530536",
+      "name": "松平直春",
+      "positions": [
+        {
+          "han": "糸魚川藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E7%9B%B4%E6%98%A5",
+      "image_url": null,
+      "father_id": "Q11530543",
+      "is_stub": true
+    },
+    {
+      "id": "Q11530543",
+      "name": "松平直益",
+      "positions": [
+        {
+          "han": "糸魚川藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E7%9B%B4%E7%9B%8A",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": true
+    }
+  ],
+  "warnings": [
+    "[福井藩] (list2) 一覧内に重複したリンクがありました: '松平昌親'(2回目以降は無視)",
+    "[福井藩] (list2) リンク『松平春嶽』は藩主マスターリスト(3520件)に含まれていないため、藩主候補から除外しました: '*[[松平春嶽|松平慶永]]<small>1838-1858</small>'",
+    "[福井藩] (list2) リンクを含まない一覧項目をスキップしました: '*廃藩置県'",
+    "『徳川家康』: 父をさらに5世代遡っても藩主に行き着かなかったため、この人物だけをスタブノードとして表示します(途中の世代は表示しません)。",
+    "『松平昌勝』: パラメータ「父母」から実父のリンクを特定できませんでした(値: '[[松平忠昌]]、幾久')。手動確認が必要です。",
+    "『松平昌勝』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『松平昌勝』: Infobox側では父を特定できませんでしたが、WikidataのP22から父(Q2814515)を解決しました。Wikidataの値を採用します。",
+    "『松平知清』: パラメータ「父母」から実父のリンクを特定できませんでした(値: '[[松平直矩]]、村上氏')。手動確認が必要です。",
+    "『松平知清』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『松平知清』: Infobox側では父を特定できませんでしたが、WikidataのP22から父(Q399755)を解決しました。Wikidataの値を採用します。",
+    "『松平治好』: パラメータ「父母」から実父のリンクを特定できませんでした(値: '[[松平重富]]、[[徳川宗将]]三女致姫')。手動確認が必要です。",
+    "『松平治好』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『松平治好』: Infobox側では父を特定できませんでしたが、WikidataのP22から父(Q11530619)を解決しました。Wikidataの値を採用します。"
+  ]
+}

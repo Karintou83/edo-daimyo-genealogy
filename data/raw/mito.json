@@ -1,0 +1,246 @@
+{
+  "generated_by": "scripts/fetch_daimyo_data.py",
+  "han": "水戸藩",
+  "slug": "mito",
+  "template": "Template:水戸藩主",
+  "daimyo": [
+    {
+      "id": "Q1133680",
+      "name": "徳川頼房",
+      "positions": [
+        {
+          "han": "水戸藩",
+          "generation": 1,
+          "year_start": 1609,
+          "year_end": 1661
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E9%A0%BC%E6%88%BF",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tokugawa_Yorihusa.jpg?width=200",
+      "father_id": "Q171977",
+      "is_stub": false
+    },
+    {
+      "id": "Q171977",
+      "name": "徳川家康",
+      "positions": [],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E5%AE%B6%E5%BA%B7",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tokugawa_Ieyasu2.JPG?width=200",
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q1194944",
+      "name": "徳川光圀",
+      "positions": [
+        {
+          "han": "水戸藩",
+          "generation": 2,
+          "year_start": 1661,
+          "year_end": 1690
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E5%85%89%E5%9C%80",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tokugawa_Mitsukuni.jpg?width=200",
+      "father_id": "Q1133680",
+      "is_stub": false
+    },
+    {
+      "id": "Q6997897",
+      "name": "徳川綱條",
+      "positions": [
+        {
+          "han": "水戸藩",
+          "generation": 3,
+          "year_start": 1690,
+          "year_end": 1718
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E7%B6%B1%E6%A2%9D",
+      "image_url": null,
+      "father_id": "Q3299364",
+      "is_stub": false
+    },
+    {
+      "id": "Q3299364",
+      "name": "松平頼重",
+      "positions": [
+        {
+          "han": "下館藩",
+          "generation": null,
+          "year_start": 1642,
+          "year_end": 1673
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E9%A0%BC%E9%87%8D",
+      "image_url": null,
+      "father_id": "Q1133680",
+      "is_stub": true
+    },
+    {
+      "id": "Q6998366",
+      "name": "徳川宗堯",
+      "positions": [
+        {
+          "han": "水戸藩",
+          "generation": 4,
+          "year_start": 1718,
+          "year_end": 1730
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E5%AE%97%E5%A0%AF",
+      "image_url": null,
+      "father_id": "Q11530657",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530657",
+      "name": "松平頼豊",
+      "positions": [
+        {
+          "han": "高松藩",
+          "generation": null,
+          "year_start": 1704,
+          "year_end": 1735
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E9%A0%BC%E8%B1%8A",
+      "image_url": null,
+      "father_id": "Q11530629",
+      "is_stub": true
+    },
+    {
+      "id": "Q11530629",
+      "name": "松平頼侯",
+      "positions": [
+        {
+          "han": "高松藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E9%A0%BC%E4%BE%AF",
+      "image_url": null,
+      "father_id": "Q3299364",
+      "is_stub": true
+    },
+    {
+      "id": "Q843627",
+      "name": "徳川宗翰",
+      "positions": [
+        {
+          "han": "水戸藩",
+          "generation": 5,
+          "year_start": 1730,
+          "year_end": 1766
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E5%AE%97%E7%BF%B0",
+      "image_url": null,
+      "father_id": "Q6998366",
+      "is_stub": false
+    },
+    {
+      "id": "Q6998193",
+      "name": "徳川治保",
+      "positions": [
+        {
+          "han": "水戸藩",
+          "generation": 6,
+          "year_start": 1766,
+          "year_end": 1805
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E6%B2%BB%E4%BF%9D",
+      "image_url": null,
+      "father_id": "Q843627",
+      "is_stub": false
+    },
+    {
+      "id": "Q728162",
+      "name": "徳川治紀",
+      "positions": [
+        {
+          "han": "水戸藩",
+          "generation": 7,
+          "year_start": 1805,
+          "year_end": 1816
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E6%B2%BB%E7%B4%80",
+      "image_url": null,
+      "father_id": "Q6998193",
+      "is_stub": false
+    },
+    {
+      "id": "Q6998088",
+      "name": "徳川斉脩",
+      "positions": [
+        {
+          "han": "水戸藩",
+          "generation": 8,
+          "year_start": 1816,
+          "year_end": 1829
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E6%96%89%E8%84%A9",
+      "image_url": null,
+      "father_id": "Q728162",
+      "is_stub": false
+    },
+    {
+      "id": "Q1323770",
+      "name": "徳川斉昭",
+      "positions": [
+        {
+          "han": "水戸藩",
+          "generation": 9,
+          "year_start": 1829,
+          "year_end": 1844
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E6%96%89%E6%98%AD",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tokugawa_Nariaki.jpg?width=200",
+      "father_id": "Q728162",
+      "is_stub": false
+    },
+    {
+      "id": "Q6998470",
+      "name": "徳川慶篤",
+      "positions": [
+        {
+          "han": "水戸藩",
+          "generation": 10,
+          "year_start": 1844,
+          "year_end": 1868
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E6%85%B6%E7%AF%A4",
+      "image_url": null,
+      "father_id": "Q1323770",
+      "is_stub": false
+    },
+    {
+      "id": "Q3530485",
+      "name": "徳川昭武",
+      "positions": [
+        {
+          "han": "水戸藩",
+          "generation": 11,
+          "year_start": 1868,
+          "year_end": 1871
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E6%98%AD%E6%AD%A6",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kyoto_Tokugawa_Akitake.jpg?width=200",
+      "father_id": "Q1323770",
+      "is_stub": false
+    }
+  ],
+  "warnings": [
+    "[水戸藩] (list3) リンクを含まない一覧項目をスキップしました: '*廃藩置県'",
+    "『徳川家康』: 父をさらに5世代遡っても藩主に行き着かなかったため、この人物だけをスタブノードとして表示します(途中の世代は表示しません)。",
+    "QID Q3299364: WikidataのP39(役職)に開始日/終了日を持つ候補が複数あり、在位年の対応が一意に決まりませんでした。最初の候補を採用します。"
+  ]
+}

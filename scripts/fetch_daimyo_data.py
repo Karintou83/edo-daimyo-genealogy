@@ -105,6 +105,27 @@ TARGET_HANS: dict[str, dict[str, str]] = {
     "薩摩藩": {"template": "Template:薩摩藩主", "slug": "satsuma"},
     "長州藩": {"template": "Template:長州藩主", "slug": "choushuu"},
     "佐倉藩": {"template": "Template:佐倉藩主", "slug": "sakura"},
+    "尾張藩": {"template": "Template:尾張藩主", "slug": "owari"},
+    "紀州藩": {"template": "Template:紀州藩主", "slug": "kishuu"},
+    "水戸藩": {"template": "Template:水戸藩主", "slug": "mito"},
+    "津山藩": {"template": "Template:津山藩主", "slug": "tsuyama"},
+    "福井藩": {"template": "Template:福井藩主", "slug": "fukui"},
+    "松江藩": {"template": "Template:松江藩主", "slug": "matsue"},
+    "川越藩": {"template": "Template:川越藩主", "slug": "kawagoe"},
+    "赤穂藩": {"template": "Template:赤穂藩主", "slug": "akou"},
+    "佐賀藩": {"template": "Template:佐賀藩主", "slug": "saga"},
+    "小城藩": {"template": "Template:小城藩主", "slug": "ogi"},
+    "鹿島藩": {"template": "Template:鹿島藩主", "slug": "kashima"},
+    "蓮池藩": {"template": "Template:蓮池藩主", "slug": "hasunoike"},
+    "広瀬藩": {"template": "Template:広瀬藩主", "slug": "hirose"},
+    "母里藩": {"template": "Template:母里藩主", "slug": "mori"},
+    "高松藩": {"template": "Template:高松藩主", "slug": "takamatsu"},
+    "西条藩": {"template": "Template:西条藩主", "slug": "saizyou"},
+    "高須藩": {"template": "Template:高須藩主", "slug": "takasu"},
+    "小倉藩": {"template": "Template:小倉藩主", "slug": "kokura"},
+    "福岡藩": {"template": "Template:福岡藩主", "slug": "fukuoka"},
+    "会津藩": {"template": "Template:会津藩主", "slug": "aizu"},
+    "唐津藩": {"template": "Template:唐津藩主", "slug": "kamigoto"},
 }
 
 # 出力先ディレクトリ。藩ごとに <slug>.json を作る。
@@ -1354,4 +1375,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-    

@@ -1,0 +1,473 @@
+{
+  "generated_by": "scripts/fetch_daimyo_data.py",
+  "han": "赤穂藩",
+  "slug": "akou",
+  "template": "Template:赤穂藩主",
+  "daimyo": [
+    {
+      "id": "Q11551932",
+      "name": "池田政綱",
+      "positions": [
+        {
+          "han": "赤穂藩",
+          "generation": 1,
+          "year_start": 1615,
+          "year_end": 1631
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%B1%A0%E7%94%B0%E6%94%BF%E7%B6%B1",
+      "image_url": null,
+      "father_id": "Q1385927",
+      "is_stub": false
+    },
+    {
+      "id": "Q1385927",
+      "name": "池田輝政",
+      "positions": [
+        {
+          "han": "姫路藩",
+          "generation": null,
+          "year_start": 1600,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%B1%A0%E7%94%B0%E8%BC%9D%E6%94%BF",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ikeda_Terumasa.jpg?width=200",
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q11552150",
+      "name": "池田輝興",
+      "positions": [
+        {
+          "han": "赤穂藩",
+          "generation": 2,
+          "year_start": 1631,
+          "year_end": 1645
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%B1%A0%E7%94%B0%E8%BC%9D%E8%88%88",
+      "image_url": null,
+      "father_id": "Q1385927",
+      "is_stub": false
+    },
+    {
+      "id": "Q2866309",
+      "name": "浅野長直",
+      "positions": [
+        {
+          "han": "赤穂藩",
+          "generation": 3,
+          "year_start": 1645,
+          "year_end": 1671
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%B5%85%E9%87%8E%E9%95%B7%E7%9B%B4",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Asano_Naganao.jpg?width=200",
+      "father_id": "Q11557437",
+      "is_stub": false
+    },
+    {
+      "id": "Q11557437",
+      "name": "浅野長重",
+      "positions": [
+        {
+          "han": "真岡藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%B5%85%E9%87%8E%E9%95%B7%E9%87%8D",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q3335080",
+      "name": "浅野長友",
+      "positions": [
+        {
+          "han": "赤穂藩",
+          "generation": 4,
+          "year_start": 1671,
+          "year_end": 1675
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%B5%85%E9%87%8E%E9%95%B7%E5%8F%8B",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Asano_Nagatomo.jpg?width=200",
+      "father_id": "Q2866309",
+      "is_stub": false
+    },
+    {
+      "id": "Q2866316",
+      "name": "浅野長矩",
+      "positions": [
+        {
+          "han": "赤穂藩",
+          "generation": 5,
+          "year_start": 1675,
+          "year_end": 1701
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%B5%85%E9%87%8E%E9%95%B7%E7%9F%A9",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Naganori_Asano.jpg?width=200",
+      "father_id": "Q3335080",
+      "is_stub": false
+    },
+    {
+      "id": "Q3335053",
+      "name": "永井直敬",
+      "positions": [
+        {
+          "han": "赤穂藩",
+          "generation": 6,
+          "year_start": 1701,
+          "year_end": 1706
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%B0%B8%E4%BA%95%E7%9B%B4%E6%95%AC",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nagai_Naohiro.jpg?width=200",
+      "father_id": "Q3335052",
+      "is_stub": false
+    },
+    {
+      "id": "Q3335052",
+      "name": "永井尚庸",
+      "positions": [],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%B0%B8%E4%BA%95%E5%B0%9A%E5%BA%B8",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nagai_Naotsune.jpg?width=200",
+      "father_id": "Q6958349",
+      "is_stub": true
+    },
+    {
+      "id": "Q6958349",
+      "name": "永井尚政",
+      "positions": [
+        {
+          "han": "潤井戸藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%B0%B8%E4%BA%95%E5%B0%9A%E6%94%BF",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nagai_Naomasa%2817th%29.jpg?width=200",
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q3335056",
+      "name": "森長直",
+      "positions": [
+        {
+          "han": "赤穂藩",
+          "generation": 7,
+          "year_start": 1706,
+          "year_end": 1722
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%A3%AE%E9%95%B7%E7%9B%B4",
+      "image_url": null,
+      "father_id": "Q11540417",
+      "is_stub": false
+    },
+    {
+      "id": "Q11540417",
+      "name": "森長継",
+      "positions": [
+        {
+          "han": "津山藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%A3%AE%E9%95%B7%E7%B6%99",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q11540411",
+      "name": "森長孝",
+      "positions": [
+        {
+          "han": "赤穂藩",
+          "generation": 8,
+          "year_start": 1722,
+          "year_end": 1723
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%A3%AE%E9%95%B7%E5%AD%9D",
+      "image_url": null,
+      "father_id": "Q11539154",
+      "is_stub": false
+    },
+    {
+      "id": "Q11539154",
+      "name": "森三隆",
+      "positions": [],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%A3%AE%E4%B8%89%E9%9A%86",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q11540416",
+      "name": "森長生",
+      "positions": [
+        {
+          "han": "赤穂藩",
+          "generation": 9,
+          "year_start": 1723,
+          "year_end": 1731
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%A3%AE%E9%95%B7%E7%94%9F",
+      "image_url": null,
+      "father_id": "Q111012567",
+      "is_stub": false
+    },
+    {
+      "id": "Q111012567",
+      "name": "各務利直",
+      "positions": [],
+      "wikipedia_url": null,
+      "image_url": null,
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q11539716",
+      "name": "森政房",
+      "positions": [
+        {
+          "han": "赤穂藩",
+          "generation": 10,
+          "year_start": 1731,
+          "year_end": 1746
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%A3%AE%E6%94%BF%E6%88%BF",
+      "image_url": null,
+      "father_id": "Q111012567",
+      "is_stub": false
+    },
+    {
+      "id": "Q11539687",
+      "name": "森忠洪",
+      "positions": [
+        {
+          "han": "赤穂藩",
+          "generation": 11,
+          "year_start": 1747,
+          "year_end": 1769
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%A3%AE%E5%BF%A0%E6%B4%AA",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q11539690",
+      "name": "森忠興",
+      "positions": [
+        {
+          "han": "赤穂藩",
+          "generation": 12,
+          "year_start": 1769,
+          "year_end": 1780
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%A3%AE%E5%BF%A0%E8%88%88",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q11539691",
+      "name": "森忠賛",
+      "positions": [
+        {
+          "han": "赤穂藩",
+          "generation": 13,
+          "year_start": 1780,
+          "year_end": 1801
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%A3%AE%E5%BF%A0%E8%B3%9B",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q11539682",
+      "name": "森忠哲",
+      "positions": [
+        {
+          "han": "赤穂藩",
+          "generation": 14,
+          "year_start": 1801,
+          "year_end": 1807
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%A3%AE%E5%BF%A0%E5%93%B2",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q11539686",
+      "name": "森忠敬",
+      "positions": [
+        {
+          "han": "赤穂藩",
+          "generation": 15,
+          "year_start": 1807,
+          "year_end": 1824
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%A3%AE%E5%BF%A0%E6%95%AC",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q11539689",
+      "name": "森忠貫",
+      "positions": [
+        {
+          "han": "赤穂藩",
+          "generation": 16,
+          "year_start": 1824,
+          "year_end": 1827
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%A3%AE%E5%BF%A0%E8%B2%AB",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q11539684",
+      "name": "森忠徳",
+      "positions": [
+        {
+          "han": "赤穂藩",
+          "generation": 17,
+          "year_start": 1827,
+          "year_end": 1862
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%A3%AE%E5%BF%A0%E5%BE%B3",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q11539681",
+      "name": "森忠典",
+      "positions": [
+        {
+          "han": "赤穂藩",
+          "generation": 18,
+          "year_start": 1862,
+          "year_end": 1868
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%A3%AE%E5%BF%A0%E5%85%B8",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q11539680",
+      "name": "森忠儀",
+      "positions": [
+        {
+          "han": "赤穂藩",
+          "generation": 19,
+          "year_start": 1868,
+          "year_end": 1871
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%A3%AE%E5%BF%A0%E5%84%80",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mori_Tadanori.JPG?width=200",
+      "father_id": null,
+      "is_stub": false
+    }
+  ],
+  "warnings": [
+    "[赤穂藩] (list1) リンクを含まない一覧項目をスキップしました: '*改易'",
+    "[赤穂藩] (list2) リンク『赤穂事件』は藩主マスターリスト(3520件)に含まれていないため、藩主候補から除外しました: '*改易→[[赤穂事件]]'",
+    "[赤穂藩] (list3) リンク『信濃国』は藩主マスターリスト(3520件)に含まれていないため、藩主候補から除外しました: '*[[信濃国|信濃]][[飯山藩]]へ転封'",
+    "[赤穂藩] (list4) リンクを含まない一覧項目をスキップしました: '*廃藩置県'",
+    "『池田政綱』: パラメータ「父母」から実父のリンクを特定できませんでした(値: '[[池田輝政]]、[[督姫]]')。手動確認が必要です。",
+    "『池田政綱』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『池田政綱』: Infobox側では父を特定できませんでしたが、WikidataのP22から父(Q1385927)を解決しました。Wikidataの値を採用します。",
+    "『池田恒利』: パラメータ「父母」から実父のリンクを特定できませんでした(値: \"父：滝川貞勝？<br />養父：''池田政秀''？\")。手動確認が必要です。",
+    "『池田恒利』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『池田輝政』: 父をさらに5世代遡っても藩主に行き着かなかったため、この人物だけをスタブノードとして表示します(途中の世代は表示しません)。",
+    "QID Q1385927: WikidataのP39(役職)に開始日/終了日を持つ候補が複数あり、在位年の対応が一意に決まりませんでした。最初の候補を採用します。",
+    "『浅野長直』: パラメータ「父母」から実父のリンクを特定できませんでした(値: '[[浅野長重]]、[[徳川家康]]養女')。手動確認が必要です。",
+    "『浅野長直』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『浅野長直』: Infobox側では父を特定できませんでしたが、WikidataのP22から父(Q11557437)を解決しました。Wikidataの値を採用します。",
+    "『安井重継』: パラメータ「父母」から実父のリンクを特定できませんでした(値: '父：安井弥兵衛尉重幸または安井勝行')。手動確認が必要です。",
+    "『安井重継』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『安井重継』: Infobox側では父を特定できませんでしたが、WikidataのP22から父(Q106678455)を解決しました。Wikidataの値を採用します。",
+    "QID Q106678455: 対応する日本語版Wikipedia記事(sitelink)が見つからなかったため、Wikidataのラベルを名前として使用します(Wikipediaリンクなし)。",
+    "『浅野長重』: 父をさらに5世代遡っても藩主に行き着かなかったため、この人物だけをスタブノードとして表示します(途中の世代は表示しません)。",
+    "『浅野長友』: パラメータ「父母」から実父のリンクを特定できませんでした(値: '[[浅野長直]]、[[丹羽長重]]娘')。手動確認が必要です。",
+    "『浅野長友』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『浅野長友』: Infobox側では父を特定できませんでしたが、WikidataのP22から父(Q2866309)を解決しました。Wikidataの値を採用します。",
+    "『永井尚庸』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『永井尚庸』: Infobox側では父を特定できませんでしたが、WikidataのP22から父(Q6958349)を解決しました。Wikidataの値を採用します。",
+    "『森長直』: パラメータ「父母」から実父のリンクを特定できませんでした(値: '[[森長継]]、橋村氏')。手動確認が必要です。",
+    "『森長直』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『森長直』: Infobox側では父を特定できませんでしたが、WikidataのP22から父(Q11540417)を解決しました。Wikidataの値を採用します。",
+    "『関成次』: パラメータ「父母」から実父のリンクを特定できませんでした(値: '[[関成政]]、碧松院（[[森可成]]娘）')。手動確認が必要です。",
+    "『関成次』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『関成次』: Infobox側では父を特定できませんでしたが、WikidataのP22から父(Q11655794)を解決しました。Wikidataの値を採用します。",
+    "『関綱長』の取得に失敗しました: The page you specified doesn't exist.",
+    "『森長継』: 父をさらに5世代遡っても藩主に行き着かなかったため、この人物だけをスタブノードとして表示します(途中の世代は表示しません)。",
+    "『森長孝』: パラメータ「父母」から実父のリンクを特定できませんでした(値: \"[[森三隆]]、[[森長継]]七女兼<br/>''[[森長直]]''\")。手動確認が必要です。",
+    "『森長孝』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『森長孝』: Infobox側では父を特定できませんでしたが、WikidataのP22から父(Q11539154)を解決しました。Wikidataの値を採用します。",
+    "『森三隆』: 既知のInfoboxテンプレートが見つかりませんでした(表記揺れの可能性。手動確認が必要です)",
+    "『森三隆』: Infobox側では父を特定できませんでしたが、WikidataのP22から父(Q11539147)を解決しました。Wikidataの値を採用します。",
+    "『森三信』: 既知のInfoboxテンプレートが見つかりませんでした(表記揺れの可能性。手動確認が必要です)",
+    "『森三信』: Infobox側では父を特定できませんでしたが、WikidataのP22から父(Q11539363)を解決しました。Wikidataの値を採用します。",
+    "『森可行』: パラメータ「父母」から実父のリンクを特定できませんでした(値: '森可秀')。手動確認が必要です。",
+    "『森可行』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『森可行』: Infobox側では父を特定できませんでしたが、WikidataのP22から父(Q110282604)を解決しました。Wikidataの値を採用します。",
+    "『森三隆』: 父をさらに5世代遡っても藩主に行き着かなかったため、この人物だけをスタブノードとして表示します(途中の世代は表示しません)。",
+    "『各務利直』: WikidataのQIDを取得できませんでした。記事名をIDとして代用します。",
+    "『森長生』: InfoboxとWikidataで父の情報が食い違っています(Infobox: 各務利直 / QID 不明, Wikidata P22: Q111012567)。Wikidataの値を採用します。",
+    "QID Q111012567: 対応する日本語版Wikipedia記事(sitelink)が見つからなかったため、Wikidataのラベルを名前として使用します(Wikipediaリンクなし)。",
+    "『各務利直』: 父をさらに5世代遡っても藩主に行き着かなかったため、この人物だけをスタブノードとして表示します(途中の世代は表示しません)。",
+    "『森政房』: パラメータ「父母」から実父のリンクを特定できませんでした(値: \"[[各務利直]]、有馬氏<br/>''[[森長生]]''\")。手動確認が必要です。",
+    "『森政房』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『森政房』: Infobox側では父を特定できませんでしたが、WikidataのP22から父(Q111012567)を解決しました。Wikidataの値を採用します。",
+    "『森忠洪』: パラメータ「父母」から実父のリンクを特定できませんでした(値: \"[[森正典]]、森氏<small>または[[各務利直]]、側室久昌院</small><br/>''[[森政房]]''\")。手動確認が必要です。",
+    "『森忠洪』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『森忠興』: パラメータ「父母」から実父のリンクを特定できませんでした(値: '[[森忠洪]]、[[井上正之]]娘')。手動確認が必要です。",
+    "『森忠興』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『森忠賛』: パラメータ「父母」から実父のリンクを特定できませんでした(値: \"[[森忠洪]]、西宮氏<br/>''[[森忠興]]''\")。手動確認が必要です。",
+    "『森忠賛』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『森忠哲』: パラメータ「父母」から実父のリンクを特定できませんでした(値: '[[森忠賛]]、堤氏')。手動確認が必要です。",
+    "『森忠哲』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『森忠敬』: パラメータ「父母」から実父のリンクを特定できませんでした(値: \"[[森忠賛]]、''[[森忠哲]]''\")。手動確認が必要です。",
+    "『森忠敬』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『森忠貫』: パラメータ「父母」から実父のリンクを特定できませんでした(値: '[[森忠敬]]')。手動確認が必要です。",
+    "『森忠貫』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『森忠徳』: パラメータ「父母」から実父のリンクを特定できませんでした(値: '[[森忠敬]]、[[酒井忠実]]娘東姫')。手動確認が必要です。",
+    "『森忠徳』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『森忠典』: パラメータ「父母」から実父のリンクを特定できませんでした(値: '[[森忠徳]]、[[酒井忠嗣]]娘')。手動確認が必要です。",
+    "『森忠典』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『森忠儀』: パラメータ「父母」から実父のリンクを特定できませんでした(値: \"[[森忠徳]]、[[酒井忠嗣]]娘<br/>''[[森忠典]]''\")。手動確認が必要です。",
+    "『森忠儀』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)"
+  ]
+}

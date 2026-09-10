@@ -1,0 +1,411 @@
+{
+  "generated_by": "scripts/fetch_daimyo_data.py",
+  "han": "会津藩",
+  "slug": "aizu",
+  "template": "Template:会津藩主",
+  "daimyo": [
+    {
+      "id": "Q5520435",
+      "name": "蒲生秀行 (侍従)",
+      "positions": [
+        {
+          "han": "会津藩",
+          "generation": 1,
+          "year_start": 1601,
+          "year_end": 1612
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E8%92%B2%E7%94%9F%E7%A7%80%E8%A1%8C_%28%E4%BE%8D%E5%BE%93%29",
+      "image_url": null,
+      "father_id": "Q906580",
+      "is_stub": false
+    },
+    {
+      "id": "Q906580",
+      "name": "蒲生氏郷",
+      "positions": [],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E8%92%B2%E7%94%9F%E6%B0%8F%E9%83%B7",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Gam%C5%8D_Ujisato_%28Saik%C5%8Dji_Nishiazu%29.jpg?width=200",
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q8513818",
+      "name": "蒲生忠郷",
+      "positions": [
+        {
+          "han": "会津藩",
+          "generation": 2,
+          "year_start": 1612,
+          "year_end": 1627
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E8%92%B2%E7%94%9F%E5%BF%A0%E9%83%B7",
+      "image_url": null,
+      "father_id": "Q5520435",
+      "is_stub": false
+    },
+    {
+      "id": "Q8513824",
+      "name": "蒲生忠知",
+      "positions": [
+        {
+          "han": "会津藩",
+          "generation": 3,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E8%92%B2%E7%94%9F%E5%BF%A0%E7%9F%A5",
+      "image_url": null,
+      "father_id": "Q5520435",
+      "is_stub": false
+    },
+    {
+      "id": "Q1371657",
+      "name": "加藤嘉明",
+      "positions": [
+        {
+          "han": "会津藩",
+          "generation": 4,
+          "year_start": 1627,
+          "year_end": 1631
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%8A%A0%E8%97%A4%E5%98%89%E6%98%8E",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Kat%C5%8D_Yoshiaki.jpg?width=200",
+      "father_id": "Q56348388",
+      "is_stub": false
+    },
+    {
+      "id": "Q56348388",
+      "name": "加藤教明",
+      "positions": [],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%8A%A0%E8%97%A4%E6%95%99%E6%98%8E",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q8012693",
+      "name": "加藤明成",
+      "positions": [
+        {
+          "han": "会津藩",
+          "generation": 5,
+          "year_start": 1631,
+          "year_end": 1643
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%8A%A0%E8%97%A4%E6%98%8E%E6%88%90",
+      "image_url": null,
+      "father_id": "Q1371657",
+      "is_stub": false
+    },
+    {
+      "id": "Q837236",
+      "name": "保科正之",
+      "positions": [
+        {
+          "han": "会津藩",
+          "generation": 6,
+          "year_start": 1643,
+          "year_end": 1669
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BF%9D%E7%A7%91%E6%AD%A3%E4%B9%8B",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoshina_Masayuki2.jpg?width=200",
+      "father_id": "Q314464",
+      "is_stub": false
+    },
+    {
+      "id": "Q314464",
+      "name": "徳川秀忠",
+      "positions": [],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E7%A7%80%E5%BF%A0",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hidetada2.jpg?width=200",
+      "father_id": "Q171977",
+      "is_stub": true
+    },
+    {
+      "id": "Q171977",
+      "name": "徳川家康",
+      "positions": [],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E5%AE%B6%E5%BA%B7",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tokugawa_Ieyasu2.JPG?width=200",
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q11286854",
+      "name": "保科正経",
+      "positions": [
+        {
+          "han": "会津藩",
+          "generation": 7,
+          "year_start": 1669,
+          "year_end": 1681
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%BF%9D%E7%A7%91%E6%AD%A3%E7%B5%8C",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hoshina_Masatsune.jpg?width=200",
+      "father_id": "Q837236",
+      "is_stub": false
+    },
+    {
+      "id": "Q11239143",
+      "name": "松平正容",
+      "positions": [
+        {
+          "han": "会津藩",
+          "generation": 8,
+          "year_start": 1681,
+          "year_end": 1731
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E6%AD%A3%E5%AE%B9",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Matsudaira_Masakata.jpg?width=200",
+      "father_id": "Q837236",
+      "is_stub": false
+    },
+    {
+      "id": "Q11239086",
+      "name": "松平容貞",
+      "positions": [
+        {
+          "han": "会津藩",
+          "generation": 9,
+          "year_start": 1731,
+          "year_end": 1750
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E5%AE%B9%E8%B2%9E",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Matsudaira_Katasada.jpg?width=200",
+      "father_id": "Q11239143",
+      "is_stub": false
+    },
+    {
+      "id": "Q11239084",
+      "name": "松平容頌",
+      "positions": [
+        {
+          "han": "会津藩",
+          "generation": 10,
+          "year_start": 1750,
+          "year_end": 1805
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E5%AE%B9%E9%A0%8C",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Matsudaira_Katanobu.jpg?width=200",
+      "father_id": "Q11239086",
+      "is_stub": false
+    },
+    {
+      "id": "Q11239089",
+      "name": "松平容住",
+      "positions": [
+        {
+          "han": "会津藩",
+          "generation": 11,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E5%AE%B9%E4%BD%8F",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Matsudaira_Kataoki.jpg?width=200",
+      "father_id": "Q11530406",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530406",
+      "name": "松平容詮",
+      "positions": [
+        {
+          "han": "会津藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E5%AE%B9%E8%A9%AE",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q846169",
+      "name": "松平容衆",
+      "positions": [
+        {
+          "han": "会津藩",
+          "generation": 12,
+          "year_start": 1806,
+          "year_end": 1822
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E5%AE%B9%E8%A1%86",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Matsudaira_Katahiro.jpg?width=200",
+      "father_id": "Q11239089",
+      "is_stub": false
+    },
+    {
+      "id": "Q846200",
+      "name": "松平容敬",
+      "positions": [
+        {
+          "han": "会津藩",
+          "generation": 13,
+          "year_start": 1822,
+          "year_end": 1852
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E5%AE%B9%E6%95%AC",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Matsudaira_Katataka.jpg?width=200",
+      "father_id": "Q11530566",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530566",
+      "name": "松平義和",
+      "positions": [
+        {
+          "han": "高須藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E7%BE%A9%E5%92%8C",
+      "image_url": null,
+      "father_id": "Q6998193",
+      "is_stub": true
+    },
+    {
+      "id": "Q569441",
+      "name": "松平容保",
+      "positions": [
+        {
+          "han": "会津藩",
+          "generation": 14,
+          "year_start": 1852,
+          "year_end": 1868
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E5%AE%B9%E4%BF%9D",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Matudaira_Katamori.jpg?width=200",
+      "father_id": "Q11530568",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530568",
+      "name": "松平義建",
+      "positions": [
+        {
+          "han": "高須藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E7%BE%A9%E5%BB%BA",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Matsudaira_Yoshitatsu.jpg?width=200",
+      "father_id": "Q11530566",
+      "is_stub": true
+    },
+    {
+      "id": "Q930282",
+      "name": "松平喜徳",
+      "positions": [
+        {
+          "han": "会津藩",
+          "generation": 15,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E5%96%9C%E5%BE%B3",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Matsudaira_Nobunori_Young_Portrait.png?width=200",
+      "father_id": "Q1323770",
+      "is_stub": false
+    },
+    {
+      "id": "Q1323770",
+      "name": "徳川斉昭",
+      "positions": [
+        {
+          "han": "水戸藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E6%96%89%E6%98%AD",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tokugawa_Nariaki.jpg?width=200",
+      "father_id": "Q728162",
+      "is_stub": true
+    },
+    {
+      "id": "Q8515181",
+      "name": "酒井忠宝 (庄内藩主)",
+      "positions": [
+        {
+          "han": "会津藩",
+          "generation": 16,
+          "year_start": 1868,
+          "year_end": 1869
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%85%92%E4%BA%95%E5%BF%A0%E5%AE%9D_%28%E5%BA%84%E5%86%85%E8%97%A9%E4%B8%BB%29",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Sakai_Tadamichi.jpg?width=200",
+      "father_id": "Q8515202",
+      "is_stub": false
+    },
+    {
+      "id": "Q8515202",
+      "name": "酒井忠発",
+      "positions": [
+        {
+          "han": "庄内藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%85%92%E4%BA%95%E5%BF%A0%E7%99%BA",
+      "image_url": null,
+      "father_id": "Q8515249",
+      "is_stub": true
+    },
+    {
+      "id": "Q8515249",
+      "name": "酒井忠器",
+      "positions": [
+        {
+          "han": "庄内藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%85%92%E4%BA%95%E5%BF%A0%E5%99%A8",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": true
+    }
+  ],
+  "warnings": [
+    "[会津藩] (list2) リンク『会津騒動』は藩主マスターリスト(3520件)に含まれていないため、藩主候補から除外しました: '*[[会津騒動]]により改易。明成の長男・[[加藤明友|明友]]が後に[[石見国|石見]][[水口藩#吉永藩|吉永藩]]主に。'",
+    "[会津藩] (list3) 一覧内に重複したリンクがありました: '松平容保'(2回目以降は無視)",
+    "『和田政秀』: WikidataのQIDを取得できませんでした。記事名をIDとして代用します。",
+    "『蒲生貞秀』: InfoboxとWikidataで父の情報が食い違っています(Infobox: 和田政秀 / QID 不明, Wikidata P22: Q109116522)。Wikidataの値を採用します。",
+    "『蒲生氏郷』: 父をさらに5世代遡っても藩主に行き着かなかったため、この人物だけをスタブノードとして表示します(途中の世代は表示しません)。",
+    "『加藤教明』: パラメータ「父母」から実父のリンクを特定できませんでした(値: '[[加藤朝明]]（岸朝明）')。手動確認が必要です。",
+    "『加藤教明』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『加藤教明』: 父をさらに5世代遡っても藩主に行き着かなかったため、この人物だけをスタブノードとして表示します(途中の世代は表示しません)。",
+    "『松平容詮』: パラメータ「父母」から実父のリンクを特定できませんでした(値: \"[[松平容章]]（実父）<br>''[[松平容頌]]''（養父）\")。手動確認が必要です。",
+    "『松平容詮』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『松平容詮』: Infobox側では父を特定できませんでしたが、WikidataのP22から父(Q111024400)を解決しました。Wikidataの値を採用します。",
+    "QID Q111024400: 対応する日本語版Wikipedia記事(sitelink)が見つからなかったため、Wikidataのラベルを名前として使用します(Wikipediaリンクなし)。",
+    "『松平容詮』: 父をさらに5世代遡っても藩主に行き着かなかったため、この人物だけをスタブノードとして表示します(途中の世代は表示しません)。"
+  ]
+}

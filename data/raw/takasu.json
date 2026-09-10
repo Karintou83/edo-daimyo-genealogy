@@ -1,0 +1,413 @@
+{
+  "generated_by": "scripts/fetch_daimyo_data.py",
+  "han": "高須藩",
+  "slug": "takasu",
+  "template": "Template:高須藩主",
+  "daimyo": [
+    {
+      "id": "Q11490349",
+      "name": "徳永寿昌",
+      "positions": [
+        {
+          "han": "高須藩",
+          "generation": 1,
+          "year_start": 1600,
+          "year_end": 1612
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E6%B0%B8%E5%AF%BF%E6%98%8C",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": false
+    },
+    {
+      "id": "Q11490357",
+      "name": "徳永昌重",
+      "positions": [
+        {
+          "han": "高須藩",
+          "generation": 2,
+          "year_start": 1612,
+          "year_end": 1628
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E6%B0%B8%E6%98%8C%E9%87%8D",
+      "image_url": null,
+      "father_id": "Q11490349",
+      "is_stub": false
+    },
+    {
+      "id": "Q10856557",
+      "name": "小笠原貞信",
+      "positions": [
+        {
+          "han": "高須藩",
+          "generation": 3,
+          "year_start": 1640,
+          "year_end": 1691
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%AC%A0%E5%8E%9F%E8%B2%9E%E4%BF%A1",
+      "image_url": null,
+      "father_id": "高木貞勝",
+      "is_stub": false
+    },
+    {
+      "id": "高木貞勝",
+      "name": "高木貞勝",
+      "positions": [],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%AB%98%E6%9C%A8%E8%B2%9E%E5%8B%9D",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q6637021",
+      "name": "松平義行",
+      "positions": [
+        {
+          "han": "高須藩",
+          "generation": 4,
+          "year_start": 1700,
+          "year_end": 1715
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E7%BE%A9%E8%A1%8C",
+      "image_url": null,
+      "father_id": "Q843245",
+      "is_stub": false
+    },
+    {
+      "id": "Q843245",
+      "name": "徳川光友",
+      "positions": [
+        {
+          "han": "尾張藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E5%85%89%E5%8F%8B",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tokugawa_Mitsutomo.jpg?width=200",
+      "father_id": "Q1136186",
+      "is_stub": true
+    },
+    {
+      "id": "Q6636921",
+      "name": "松平義孝",
+      "positions": [
+        {
+          "han": "高須藩",
+          "generation": 5,
+          "year_start": 1715,
+          "year_end": 1732
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E7%BE%A9%E5%AD%9D",
+      "image_url": null,
+      "father_id": "Q982743",
+      "is_stub": false
+    },
+    {
+      "id": "Q982743",
+      "name": "徳川綱誠",
+      "positions": [
+        {
+          "han": "尾張藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E7%B6%B1%E8%AA%A0",
+      "image_url": null,
+      "father_id": "Q843245",
+      "is_stub": true
+    },
+    {
+      "id": "Q3327844",
+      "name": "徳川宗勝",
+      "positions": [
+        {
+          "han": "高須藩",
+          "generation": 6,
+          "year_start": 1732,
+          "year_end": 1739
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E5%AE%97%E5%8B%9D",
+      "image_url": null,
+      "father_id": "Q6636768",
+      "is_stub": false
+    },
+    {
+      "id": "Q6636768",
+      "name": "松平友著",
+      "positions": [
+        {
+          "han": "尾張藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E5%8F%8B%E8%91%97",
+      "image_url": null,
+      "father_id": "Q843245",
+      "is_stub": true
+    },
+    {
+      "id": "Q11530569",
+      "name": "松平義敏",
+      "positions": [
+        {
+          "han": "高須藩",
+          "generation": 7,
+          "year_start": 1739,
+          "year_end": 1771
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E7%BE%A9%E6%95%8F",
+      "image_url": null,
+      "father_id": "Q3327844",
+      "is_stub": false
+    },
+    {
+      "id": "Q6636824",
+      "name": "徳川治行",
+      "positions": [
+        {
+          "han": "高須藩",
+          "generation": 8,
+          "year_start": 1771,
+          "year_end": 1777
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E6%B2%BB%E8%A1%8C",
+      "image_url": null,
+      "father_id": "Q11530569",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530573",
+      "name": "松平義裕",
+      "positions": [
+        {
+          "han": "高須藩",
+          "generation": 9,
+          "year_start": 1777,
+          "year_end": 1795
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E7%BE%A9%E8%A3%95",
+      "image_url": null,
+      "father_id": "Q11530569",
+      "is_stub": false
+    },
+    {
+      "id": "Q6636988",
+      "name": "松平勝当",
+      "positions": [
+        {
+          "han": "高須藩",
+          "generation": 10,
+          "year_start": 1795,
+          "year_end": 1801
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E5%8B%9D%E5%BD%93",
+      "image_url": null,
+      "father_id": "Q3327844",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530567",
+      "name": "松平義居",
+      "positions": [
+        {
+          "han": "高須藩",
+          "generation": 11,
+          "year_start": 1801,
+          "year_end": 1804
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E7%BE%A9%E5%B1%85",
+      "image_url": null,
+      "father_id": "Q11490290",
+      "is_stub": false
+    },
+    {
+      "id": "Q11490290",
+      "name": "徳川治済",
+      "positions": [],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E6%B2%BB%E6%B8%88",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Harusada_Tokugawa.jpg?width=200",
+      "father_id": "Q3530490",
+      "is_stub": true
+    },
+    {
+      "id": "Q3530490",
+      "name": "徳川宗尹",
+      "positions": [],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E5%AE%97%E5%B0%B9",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tokugawa_Munetada.jpg?width=200",
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q11530566",
+      "name": "松平義和",
+      "positions": [
+        {
+          "han": "高須藩",
+          "generation": 12,
+          "year_start": 1804,
+          "year_end": 1832
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E7%BE%A9%E5%92%8C",
+      "image_url": null,
+      "father_id": "Q6998193",
+      "is_stub": false
+    },
+    {
+      "id": "Q6998193",
+      "name": "徳川治保",
+      "positions": [
+        {
+          "han": "水戸藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E6%B2%BB%E4%BF%9D",
+      "image_url": null,
+      "father_id": "Q843627",
+      "is_stub": true
+    },
+    {
+      "id": "Q11530568",
+      "name": "松平義建",
+      "positions": [
+        {
+          "han": "高須藩",
+          "generation": 13,
+          "year_start": 1832,
+          "year_end": 1850
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E7%BE%A9%E5%BB%BA",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Matsudaira_Yoshitatsu.jpg?width=200",
+      "father_id": "Q11530566",
+      "is_stub": false
+    },
+    {
+      "id": "Q946037",
+      "name": "徳川茂徳",
+      "positions": [
+        {
+          "han": "高須藩",
+          "generation": 14,
+          "year_start": 1850,
+          "year_end": 1858
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E8%8C%82%E5%BE%B3",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tokugawa_Motinaga.jpg?width=200",
+      "father_id": "Q11530568",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530572",
+      "name": "松平義端",
+      "positions": [
+        {
+          "han": "高須藩",
+          "generation": 15,
+          "year_start": 1858,
+          "year_end": 1860
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E7%BE%A9%E7%AB%AF",
+      "image_url": null,
+      "father_id": "Q946037",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530565",
+      "name": "松平義勇",
+      "positions": [
+        {
+          "han": "高須藩",
+          "generation": 16,
+          "year_start": 1860,
+          "year_end": 1869
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E7%BE%A9%E5%8B%87",
+      "image_url": null,
+      "father_id": "Q11530568",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530571",
+      "name": "松平義生",
+      "positions": [
+        {
+          "han": "高須藩",
+          "generation": 17,
+          "year_start": 1869,
+          "year_end": 1870
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E7%BE%A9%E7%94%9F",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Matsudaira_Yoshinari.jpg?width=200",
+      "father_id": "Q11459134",
+      "is_stub": false
+    },
+    {
+      "id": "Q11459134",
+      "name": "小出英教",
+      "positions": [
+        {
+          "han": "園部藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E5%87%BA%E8%8B%B1%E6%95%99",
+      "image_url": null,
+      "father_id": "Q11436057",
+      "is_stub": true
+    },
+    {
+      "id": "Q11436057",
+      "name": "大村純昌",
+      "positions": [
+        {
+          "han": "大村藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%9D%91%E7%B4%94%E6%98%8C",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": true
+    }
+  ],
+  "warnings": [
+    "[高須藩] (list1) リンクを含まない一覧項目をスキップしました: '*改易'",
+    "[高須藩] (list2) リンク『越前勝山藩』は藩主マスターリスト(3520件)に含まれていないため、藩主候補から除外しました: '*[[越前勝山藩]]に転封'",
+    "[高須藩] (list3) リンク『尾張藩』は藩主マスターリスト(3520件)に含まれていないため、藩主候補から除外しました: '*[[尾張藩]]に併合、廃藩'",
+    "『徳永寿昌』: パラメータ「父母」から実父のリンクを特定できませんでした(値: '父：徳永昌利（土佐守）')。手動確認が必要です。",
+    "『徳永寿昌』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『高木貞勝』: WikidataのQIDを取得できませんでした。記事名をIDとして代用します。",
+    "『高木貞勝』の取得に失敗しました: The page you specified doesn't exist.",
+    "『高木貞勝』: 父をさらに5世代遡っても藩主に行き着かなかったため、この人物だけをスタブノードとして表示します(途中の世代は表示しません)。"
+  ]
+}

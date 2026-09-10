@@ -1,0 +1,337 @@
+{
+  "generated_by": "scripts/fetch_daimyo_data.py",
+  "han": "小倉藩",
+  "slug": "kokura",
+  "template": "Template:小倉藩主",
+  "daimyo": [
+    {
+      "id": "Q1147154",
+      "name": "細川忠興",
+      "positions": [
+        {
+          "han": "小倉藩",
+          "generation": 1,
+          "year_start": 1602,
+          "year_end": 1620
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E7%B4%B0%E5%B7%9D%E5%BF%A0%E8%88%88",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hosokawa_Tadaoki.jpg?width=200",
+      "father_id": "Q1207509",
+      "is_stub": false
+    },
+    {
+      "id": "Q1207509",
+      "name": "細川藤孝",
+      "positions": [],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E7%B4%B0%E5%B7%9D%E8%97%A4%E5%AD%9D",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Y%C5%ABsai_Hosokawa_Fujitaka.jpg?width=200",
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q3140918",
+      "name": "細川忠利",
+      "positions": [
+        {
+          "han": "小倉藩",
+          "generation": 2,
+          "year_start": 1620,
+          "year_end": 1633
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E7%B4%B0%E5%B7%9D%E5%BF%A0%E5%88%A9",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hosokawa_Tadatoshi_cropped.jpg?width=200",
+      "father_id": "Q1147154",
+      "is_stub": false
+    },
+    {
+      "id": "Q7079842",
+      "name": "小笠原忠真",
+      "positions": [
+        {
+          "han": "小倉藩",
+          "generation": 3,
+          "year_start": 1632,
+          "year_end": 1667
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%AC%A0%E5%8E%9F%E5%BF%A0%E7%9C%9F",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ogasawara_Tadazane.jpg?width=200",
+      "father_id": "Q8192119",
+      "is_stub": false
+    },
+    {
+      "id": "Q8192119",
+      "name": "小笠原秀政",
+      "positions": [
+        {
+          "han": "古河藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%AC%A0%E5%8E%9F%E7%A7%80%E6%94%BF",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q10856547",
+      "name": "小笠原忠雄",
+      "positions": [
+        {
+          "han": "小倉藩",
+          "generation": 4,
+          "year_start": 1667,
+          "year_end": 1725
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%AC%A0%E5%8E%9F%E5%BF%A0%E9%9B%84",
+      "image_url": null,
+      "father_id": "Q7079842",
+      "is_stub": false
+    },
+    {
+      "id": "Q10856535",
+      "name": "小笠原忠基",
+      "positions": [
+        {
+          "han": "小倉藩",
+          "generation": 5,
+          "year_start": 1725,
+          "year_end": 1752
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%AC%A0%E5%8E%9F%E5%BF%A0%E5%9F%BA",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ogasawara_Tadamoto.jpg?width=200",
+      "father_id": "Q10856547",
+      "is_stub": false
+    },
+    {
+      "id": "Q10856543",
+      "name": "小笠原忠総",
+      "positions": [
+        {
+          "han": "小倉藩",
+          "generation": 6,
+          "year_start": 1752,
+          "year_end": 1790
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%AC%A0%E5%8E%9F%E5%BF%A0%E7%B7%8F",
+      "image_url": null,
+      "father_id": "Q10856535",
+      "is_stub": false
+    },
+    {
+      "id": "Q10856545",
+      "name": "小笠原忠苗",
+      "positions": [
+        {
+          "han": "小倉藩",
+          "generation": 7,
+          "year_start": 1791,
+          "year_end": 1804
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%AC%A0%E5%8E%9F%E5%BF%A0%E8%8B%97",
+      "image_url": null,
+      "father_id": "Q10859981",
+      "is_stub": false
+    },
+    {
+      "id": "Q10859981",
+      "name": "小笠原長逵",
+      "positions": [
+        {
+          "han": "安志藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%AC%A0%E5%8E%9F%E9%95%B7%E9%80%B5",
+      "image_url": null,
+      "father_id": "Q10856535",
+      "is_stub": true
+    },
+    {
+      "id": "Q10856534",
+      "name": "小笠原忠固",
+      "positions": [
+        {
+          "han": "小倉藩",
+          "generation": 8,
+          "year_start": 1804,
+          "year_end": 1843
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%AC%A0%E5%8E%9F%E5%BF%A0%E5%9B%BA",
+      "image_url": null,
+      "father_id": "Q10859963",
+      "is_stub": false
+    },
+    {
+      "id": "Q10859963",
+      "name": "小笠原長為",
+      "positions": [
+        {
+          "han": "安志藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%AC%A0%E5%8E%9F%E9%95%B7%E7%82%BA",
+      "image_url": null,
+      "father_id": "Q10859981",
+      "is_stub": true
+    },
+    {
+      "id": "Q10856538",
+      "name": "小笠原忠徴",
+      "positions": [
+        {
+          "han": "小倉藩",
+          "generation": 9,
+          "year_start": 1843,
+          "year_end": 1856
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%AC%A0%E5%8E%9F%E5%BF%A0%E5%BE%B4",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ogasawara_Tadaakira.jpg?width=200",
+      "father_id": "Q10856534",
+      "is_stub": false
+    },
+    {
+      "id": "Q10856533",
+      "name": "小笠原忠嘉",
+      "positions": [
+        {
+          "han": "小倉藩",
+          "generation": 10,
+          "year_start": 1856,
+          "year_end": 1860
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%AC%A0%E5%8E%9F%E5%BF%A0%E5%98%89",
+      "image_url": null,
+      "father_id": "Q10856558",
+      "is_stub": false
+    },
+    {
+      "id": "Q10856558",
+      "name": "小笠原貞哲",
+      "positions": [
+        {
+          "han": "小倉新田藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%AC%A0%E5%8E%9F%E8%B2%9E%E5%93%B2",
+      "image_url": null,
+      "father_id": "Q10856565",
+      "is_stub": true
+    },
+    {
+      "id": "Q10856565",
+      "name": "小笠原貞温",
+      "positions": [
+        {
+          "han": "小倉新田藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%AC%A0%E5%8E%9F%E8%B2%9E%E6%B8%A9",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q10856537",
+      "name": "小笠原忠幹",
+      "positions": [
+        {
+          "han": "小倉藩",
+          "generation": 11,
+          "year_start": 1860,
+          "year_end": 1865
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%AC%A0%E5%8E%9F%E5%BF%A0%E5%B9%B9",
+      "image_url": null,
+      "father_id": "Q10859959",
+      "is_stub": false
+    },
+    {
+      "id": "Q10859959",
+      "name": "小笠原長武",
+      "positions": [
+        {
+          "han": "安志藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%AC%A0%E5%8E%9F%E9%95%B7%E6%AD%A6",
+      "image_url": null,
+      "father_id": "Q10859970",
+      "is_stub": true
+    },
+    {
+      "id": "Q10859970",
+      "name": "小笠原長禎",
+      "positions": [
+        {
+          "han": "安志藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%AC%A0%E5%8E%9F%E9%95%B7%E7%A6%8E",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q7079838",
+      "name": "小笠原忠忱",
+      "positions": [
+        {
+          "han": "小倉藩",
+          "generation": 12,
+          "year_start": 1865,
+          "year_end": 1871
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%B0%8F%E7%AC%A0%E5%8E%9F%E5%BF%A0%E5%BF%B1",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ogasawara_Tadanobu.jpg?width=200",
+      "father_id": "Q10856537",
+      "is_stub": false
+    }
+  ],
+  "warnings": [
+    "[小倉藩] (list1) リンク『肥後国』は藩主マスターリスト(3520件)に含まれていないため、藩主候補から除外しました: '*[[肥後国|肥後]][[熊本藩]]に転封'",
+    "[小倉藩] (list2) リンクを含まない一覧項目をスキップしました: '*廃藩置県'",
+    "『三淵晴員』: パラメータ「父母」から実父のリンクを特定できませんでした(値: '不明{{efn|『[[寛政重修諸家譜]]』は父母を[[細川元有]]と[[三淵晴貞]]の娘、養父を[[三淵晴恒]]とするが、『[[寛永諸家系図伝]]』では不明とさ')。手動確認が必要です。",
+    "『三淵晴員』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『三淵晴員』: Infobox側では父を特定できませんでしたが、WikidataのP22から父(Q11605848)を解決しました。Wikidataの値を採用します。",
+    "『細川元有』: パラメータ「父母」から実父のリンクを特定できませんでした(値: '父：細川常有、母：不明')。手動確認が必要です。",
+    "『細川元有』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『細川元有』: Infobox側では父を特定できませんでしたが、WikidataのP22から父(Q110882564)を解決しました。Wikidataの値を採用します。",
+    "QID Q110882564: 対応する日本語版Wikipedia記事(sitelink)が見つからなかったため、Wikidataのラベルを名前として使用します(Wikipediaリンクなし)。",
+    "『細川藤孝』: 父をさらに5世代遡っても藩主に行き着かなかったため、この人物だけをスタブノードとして表示します(途中の世代は表示しません)。",
+    "『細川忠利』: パラメータ「父母」から実父のリンクを特定できませんでした(値: '父∶[[細川忠興]]<br>母∶[[細川ガラシャ|明智玉]]')。手動確認が必要です。",
+    "『細川忠利』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『細川忠利』: Infobox側では父を特定できませんでしたが、WikidataのP22から父(Q1147154)を解決しました。Wikidataの値を採用します。",
+    "『小笠原秀政』: 父をさらに5世代遡っても藩主に行き着かなかったため、この人物だけをスタブノードとして表示します(途中の世代は表示しません)。"
+  ]
+}

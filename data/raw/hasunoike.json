@@ -1,0 +1,190 @@
+{
+  "generated_by": "scripts/fetch_daimyo_data.py",
+  "han": "蓮池藩",
+  "slug": "hasunoike",
+  "template": "Template:蓮池藩主",
+  "daimyo": [
+    {
+      "id": "Q11650683",
+      "name": "鍋島直澄",
+      "positions": [
+        {
+          "han": "蓮池藩",
+          "generation": 1,
+          "year_start": 1642,
+          "year_end": 1665
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%8D%8B%E5%B3%B6%E7%9B%B4%E6%BE%84",
+      "image_url": null,
+      "father_id": "Q3138980",
+      "is_stub": false
+    },
+    {
+      "id": "Q3138980",
+      "name": "鍋島勝茂",
+      "positions": [
+        {
+          "han": "佐賀藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%8D%8B%E5%B3%B6%E5%8B%9D%E8%8C%82",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nabeshima_Katsushige_Portrait.jpg?width=200",
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q6956831",
+      "name": "鍋島直之",
+      "positions": [
+        {
+          "han": "蓮池藩",
+          "generation": 2,
+          "year_start": 1665,
+          "year_end": 1708
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%8D%8B%E5%B3%B6%E7%9B%B4%E4%B9%8B",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nabeshima_Naoyuki.jpg?width=200",
+      "father_id": "Q11650683",
+      "is_stub": false
+    },
+    {
+      "id": "Q6956821",
+      "name": "鍋島直称",
+      "positions": [
+        {
+          "han": "蓮池藩",
+          "generation": 3,
+          "year_start": 1708,
+          "year_end": 1717
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%8D%8B%E5%B3%B6%E7%9B%B4%E7%A7%B0",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nabeshima_Naonori.jpg?width=200",
+      "father_id": "Q11650683",
+      "is_stub": false
+    },
+    {
+      "id": "Q6956829",
+      "name": "鍋島直恒",
+      "positions": [
+        {
+          "han": "蓮池藩",
+          "generation": 4,
+          "year_start": 1717,
+          "year_end": 1749
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%8D%8B%E5%B3%B6%E7%9B%B4%E6%81%92",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nabeshima_Naotsune.jpg?width=200",
+      "father_id": "Q6956821",
+      "is_stub": false
+    },
+    {
+      "id": "Q6956822",
+      "name": "鍋島直興",
+      "positions": [
+        {
+          "han": "蓮池藩",
+          "generation": 5,
+          "year_start": 1750,
+          "year_end": 1757
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%8D%8B%E5%B3%B6%E7%9B%B4%E8%88%88",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nabeshima_Naooki.jpg?width=200",
+      "father_id": "Q6956829",
+      "is_stub": false
+    },
+    {
+      "id": "Q6956819",
+      "name": "鍋島直寛",
+      "positions": [
+        {
+          "han": "蓮池藩",
+          "generation": 6,
+          "year_start": 1757,
+          "year_end": 1773
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%8D%8B%E5%B3%B6%E7%9B%B4%E5%AF%9B",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nabeshima_Naohiro%28%E8%93%AE%E6%B1%A0%E8%97%A9%E4%B8%BB%29.jpg?width=200",
+      "father_id": "Q6956829",
+      "is_stub": false
+    },
+    {
+      "id": "Q285805",
+      "name": "鍋島直温",
+      "positions": [
+        {
+          "han": "蓮池藩",
+          "generation": 7,
+          "year_start": 1774,
+          "year_end": 1816
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%8D%8B%E5%B3%B6%E7%9B%B4%E6%B8%A9",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nabeshima_Naoharu.jpg?width=200",
+      "father_id": "Q6956819",
+      "is_stub": false
+    },
+    {
+      "id": "Q251150",
+      "name": "鍋島直与",
+      "positions": [
+        {
+          "han": "蓮池藩",
+          "generation": 8,
+          "year_start": 1816,
+          "year_end": 1845
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%8D%8B%E5%B3%B6%E7%9B%B4%E4%B8%8E",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nabeshima_Naotomo%28%E8%93%AE%E6%B1%A0%E8%97%A9%E4%B8%BB%29.jpg?width=200",
+      "father_id": "Q11650657",
+      "is_stub": false
+    },
+    {
+      "id": "Q11650657",
+      "name": "鍋島治茂",
+      "positions": [
+        {
+          "han": "鹿島藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%8D%8B%E5%B3%B6%E6%B2%BB%E8%8C%82",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nabeshima_Harushige.jpg?width=200",
+      "father_id": "Q11650644",
+      "is_stub": true
+    },
+    {
+      "id": "Q6956824",
+      "name": "鍋島直紀",
+      "positions": [
+        {
+          "han": "蓮池藩",
+          "generation": 9,
+          "year_start": 1845,
+          "year_end": 1871
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E9%8D%8B%E5%B3%B6%E7%9B%B4%E7%B4%80",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Nabeshima_Naotada%28%E8%93%AE%E6%B1%A0%E8%97%A9%E4%B8%BB%29.jpg?width=200",
+      "father_id": "Q251150",
+      "is_stub": false
+    }
+  ],
+  "warnings": [
+    "[蓮池藩] (list1) リンクを含まない一覧項目をスキップしました: '*廃藩置県'",
+    "『鍋島経房』: 既知のInfoboxテンプレートが見つかりませんでした(表記揺れの可能性。手動確認が必要です)",
+    "『鍋島経房』: Infobox側では父を特定できませんでしたが、WikidataのP22から父(Q11464739)を解決しました。Wikidataの値を採用します。",
+    "『鍋島勝茂』: 父をさらに5世代遡っても藩主に行き着かなかったため、この人物だけをスタブノードとして表示します(途中の世代は表示しません)。"
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "generated_by": "scripts/fetch_daimyo_data.py",
+  "han": "広瀬藩",
+  "slug": "hirose",
+  "template": "Template:広瀬藩主",
+  "daimyo": [
+    {
+      "id": "Q11530610",
+      "name": "松平近栄",
+      "positions": [
+        {
+          "han": "広瀬藩",
+          "generation": 1,
+          "year_start": 1666,
+          "year_end": 1702
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E8%BF%91%E6%A0%84",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Matsudaira_Chikayoshi%28%E5%BA%83%E7%80%AC%E8%97%A9%E4%B8%BB%29.jpg?width=200",
+      "father_id": "Q5324802",
+      "is_stub": false
+    },
+    {
+      "id": "Q5324802",
+      "name": "松平直政",
+      "positions": [
+        {
+          "han": "姉崎藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E7%9B%B4%E6%94%BF",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Matsudaira_Naomasa.jpg?width=200",
+      "father_id": "Q1130929",
+      "is_stub": true
+    },
+    {
+      "id": "Q11530606",
+      "name": "松平近時",
+      "positions": [
+        {
+          "han": "広瀬藩",
+          "generation": 2,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E8%BF%91%E6%99%82",
+      "image_url": null,
+      "father_id": "Q11530610",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530608",
+      "name": "松平近朝",
+      "positions": [
+        {
+          "han": "広瀬藩",
+          "generation": 3,
+          "year_start": 1702,
+          "year_end": 1728
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E8%BF%91%E6%9C%9D",
+      "image_url": null,
+      "father_id": "Q11530606",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530607",
+      "name": "松平近明",
+      "positions": [
+        {
+          "han": "広瀬藩",
+          "generation": 4,
+          "year_start": 1728,
+          "year_end": 1749
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E8%BF%91%E6%98%8E",
+      "image_url": null,
+      "father_id": "Q11530606",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530612",
+      "name": "松平近輝",
+      "positions": [
+        {
+          "han": "広瀬藩",
+          "generation": 5,
+          "year_start": 1749,
+          "year_end": 1757
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E8%BF%91%E8%BC%9D",
+      "image_url": null,
+      "father_id": "Q11530607",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530611",
+      "name": "松平近貞 (出雲国広瀬藩主)",
+      "positions": [
+        {
+          "han": "広瀬藩",
+          "generation": 6,
+          "year_start": 1757,
+          "year_end": 1773
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E8%BF%91%E8%B2%9E_%28%E5%87%BA%E9%9B%B2%E5%9B%BD%E5%BA%83%E7%80%AC%E8%97%A9%E4%B8%BB%29",
+      "image_url": null,
+      "father_id": "Q11530607",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530547",
+      "name": "松平直義",
+      "positions": [
+        {
+          "han": "広瀬藩",
+          "generation": 7,
+          "year_start": 1773,
+          "year_end": 1803
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E7%9B%B4%E7%BE%A9",
+      "image_url": null,
+      "father_id": "Q11530625",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530625",
+      "name": "松平長孝",
+      "positions": [
+        {
+          "han": "津山藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E9%95%B7%E5%AD%9D",
+      "image_url": null,
+      "father_id": "Q11530608",
+      "is_stub": true
+    },
+    {
+      "id": "Q11530526",
+      "name": "松平直寛",
+      "positions": [
+        {
+          "han": "広瀬藩",
+          "generation": 8,
+          "year_start": 1803,
+          "year_end": 1850
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E7%9B%B4%E5%AF%9B",
+      "image_url": null,
+      "father_id": "Q11530611",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530552",
+      "name": "松平直諒",
+      "positions": [
+        {
+          "han": "広瀬藩",
+          "generation": 9,
+          "year_start": 1850,
+          "year_end": 1861
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E7%9B%B4%E8%AB%92",
+      "image_url": null,
+      "father_id": "Q11530526",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530527",
+      "name": "松平直巳",
+      "positions": [
+        {
+          "han": "広瀬藩",
+          "generation": 10,
+          "year_start": 1861,
+          "year_end": 1871
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E7%9B%B4%E5%B7%B3",
+      "image_url": null,
+      "father_id": "Q11530526",
+      "is_stub": false
+    }
+  ],
+  "warnings": [
+    "[広瀬藩] (list1) リンクを含まない一覧項目をスキップしました: '*廃藩置県'"
+  ]
+}

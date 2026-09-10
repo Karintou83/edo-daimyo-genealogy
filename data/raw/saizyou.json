@@ -1,0 +1,277 @@
+{
+  "generated_by": "scripts/fetch_daimyo_data.py",
+  "han": "西条藩",
+  "slug": "saizyou",
+  "template": "Template:西条藩主",
+  "daimyo": [
+    {
+      "id": "Q11352871",
+      "name": "一柳直盛",
+      "positions": [
+        {
+          "han": "西条藩",
+          "generation": 1,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%80%E6%9F%B3%E7%9B%B4%E7%9B%9B",
+      "image_url": null,
+      "father_id": "Q11352874",
+      "is_stub": false
+    },
+    {
+      "id": "Q11352874",
+      "name": "一柳直高",
+      "positions": [],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%80%E6%9F%B3%E7%9B%B4%E9%AB%98",
+      "image_url": null,
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q11352873",
+      "name": "一柳直重",
+      "positions": [
+        {
+          "han": "西条藩",
+          "generation": 2,
+          "year_start": 1636,
+          "year_end": 1645
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%80%E6%9F%B3%E7%9B%B4%E9%87%8D",
+      "image_url": null,
+      "father_id": "Q11352871",
+      "is_stub": false
+    },
+    {
+      "id": "Q11352872",
+      "name": "一柳直興",
+      "positions": [
+        {
+          "han": "西条藩",
+          "generation": 3,
+          "year_start": 1645,
+          "year_end": 1665
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E4%B8%80%E6%9F%B3%E7%9B%B4%E8%88%88",
+      "image_url": null,
+      "father_id": "Q11352873",
+      "is_stub": false
+    },
+    {
+      "id": "Q6993673",
+      "name": "松平頼純",
+      "positions": [
+        {
+          "han": "西条藩",
+          "generation": 4,
+          "year_start": 1670,
+          "year_end": 1711
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E9%A0%BC%E7%B4%94",
+      "image_url": null,
+      "father_id": "Q1045763",
+      "is_stub": false
+    },
+    {
+      "id": "Q1045763",
+      "name": "徳川頼宣",
+      "positions": [
+        {
+          "han": "水戸藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E9%A0%BC%E5%AE%A3",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tokugawa_Yorinobu.jpg?width=200",
+      "father_id": "Q171977",
+      "is_stub": true
+    },
+    {
+      "id": "Q171977",
+      "name": "徳川家康",
+      "positions": [],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E5%AE%B6%E5%BA%B7",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Tokugawa_Ieyasu2.JPG?width=200",
+      "father_id": null,
+      "is_stub": true
+    },
+    {
+      "id": "Q6993442",
+      "name": "徳川宗直",
+      "positions": [
+        {
+          "han": "西条藩",
+          "generation": 5,
+          "year_start": 1711,
+          "year_end": 1716
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E5%AE%97%E7%9B%B4",
+      "image_url": null,
+      "father_id": "Q6993673",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530642",
+      "name": "松平頼渡",
+      "positions": [
+        {
+          "han": "西条藩",
+          "generation": 6,
+          "year_start": 1716,
+          "year_end": 1738
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E9%A0%BC%E6%B8%A1",
+      "image_url": null,
+      "father_id": "Q6993673",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530660",
+      "name": "松平頼邑",
+      "positions": [
+        {
+          "han": "西条藩",
+          "generation": 7,
+          "year_start": 1738,
+          "year_end": 1753
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E9%A0%BC%E9%82%91",
+      "image_url": null,
+      "father_id": "Q11530642",
+      "is_stub": false
+    },
+    {
+      "id": "Q6993326",
+      "name": "徳川治貞",
+      "positions": [
+        {
+          "han": "西条藩",
+          "generation": 8,
+          "year_start": 1753,
+          "year_end": 1775
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E6%B2%BB%E8%B2%9E",
+      "image_url": null,
+      "father_id": "Q6993442",
+      "is_stub": false
+    },
+    {
+      "id": "Q6993606",
+      "name": "松平頼謙",
+      "positions": [
+        {
+          "han": "西条藩",
+          "generation": 9,
+          "year_start": 1775,
+          "year_end": 1795
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E9%A0%BC%E8%AC%99",
+      "image_url": null,
+      "father_id": "Q3530488",
+      "is_stub": false
+    },
+    {
+      "id": "Q3530488",
+      "name": "徳川宗将",
+      "positions": [
+        {
+          "han": "紀州藩",
+          "generation": null,
+          "year_start": null,
+          "year_end": null
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E5%BE%B3%E5%B7%9D%E5%AE%97%E5%B0%86",
+      "image_url": null,
+      "father_id": "Q6993442",
+      "is_stub": true
+    },
+    {
+      "id": "Q11530647",
+      "name": "松平頼看",
+      "positions": [
+        {
+          "han": "西条藩",
+          "generation": 10,
+          "year_start": 1795,
+          "year_end": 1797
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E9%A0%BC%E7%9C%8B",
+      "image_url": null,
+      "father_id": "Q6993606",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530632",
+      "name": "松平頼啓",
+      "positions": [
+        {
+          "han": "西条藩",
+          "generation": 11,
+          "year_start": 1797,
+          "year_end": 1832
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E9%A0%BC%E5%95%93",
+      "image_url": null,
+      "father_id": "Q6993606",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530631",
+      "name": "松平頼学",
+      "positions": [
+        {
+          "han": "西条藩",
+          "generation": 12,
+          "year_start": 1832,
+          "year_end": 1862
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E9%A0%BC%E5%AD%A6",
+      "image_url": null,
+      "father_id": "Q11530632",
+      "is_stub": false
+    },
+    {
+      "id": "Q11530653",
+      "name": "松平頼英",
+      "positions": [
+        {
+          "han": "西条藩",
+          "generation": 13,
+          "year_start": 1862,
+          "year_end": 1871
+        }
+      ],
+      "wikipedia_url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E5%B9%B3%E9%A0%BC%E8%8B%B1",
+      "image_url": "https://commons.wikimedia.org/wiki/Special:FilePath/Matsudaira_Yorihide.jpg?width=200",
+      "father_id": "Q11530631",
+      "is_stub": false
+    }
+  ],
+  "warnings": [
+    "[西条藩] (list1) リンクを含まない一覧項目をスキップしました: '*職務怠慢・失政等を理由に改易'",
+    "[西条藩] (list2) リンクを含まない一覧項目をスキップしました: '*廃藩置県'",
+    "『一柳直高』: 父をさらに5世代遡っても藩主に行き着かなかったため、この人物だけをスタブノードとして表示します(途中の世代は表示しません)。",
+    "『松平頼謙』: パラメータ「父母」から実父のリンクを特定できませんでした(値: '[[徳川宗将]]、於安')。手動確認が必要です。",
+    "『松平頼謙』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『松平頼謙』: Infobox側では父を特定できませんでしたが、WikidataのP22から父(Q3530488)を解決しました。Wikidataの値を採用します。",
+    "『松平頼啓』: パラメータ「父母」から実父のリンクを特定できませんでした(値: \"[[松平頼謙]]、永石氏<br/>''[[松平頼看]]''\")。手動確認が必要です。",
+    "『松平頼啓』: 父の情報を特定できませんでした(父母/両親/父/実父いずれのパラメータも空または未検出)",
+    "『松平頼啓』: Infobox側では父を特定できませんでしたが、WikidataのP22から父(Q6993606)を解決しました。Wikidataの値を採用します。"
+  ]
+}
