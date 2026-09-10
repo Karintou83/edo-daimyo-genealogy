@@ -28,10 +28,11 @@
 - 出力は藩ごとに独立したファイルに分ける。対象藩を増やしても既存の藩のファイルには
   影響を与えず、新しい藩のファイルだけが追加・更新される。
 - テンプレートから拾った候補リンクが実在の藩主かどうかは、藩主マスターリスト
-  (Category:藩別の大名 配下の全「○○藩主」カテゴリから構築したID集合。初回実行時に構築し
-  data/cache/daimyo_master_list.json にキャッシュして使い回す)に含まれているかで判定する。
-  マスターリストにない候補(旧国名など。例: 佐倉藩テンプレート内の「常陸国」)は除外し、
-  理由付きの警告を出す。詳細は build_daimyo_master_list() を参照。
+  (Category:藩別の大名 配下の全「○○藩主」カテゴリ、加えてCategory:知藩事・
+  Category:江戸幕府の征夷大将軍・Category:清水徳川家当主から構築したID集合。
+  初回実行時に構築し data/cache/daimyo_master_list.json にキャッシュして使い回す)に
+  含まれているかで判定する。マスターリストにない候補(旧国名など。例: 佐倉藩テンプレート内の
+  「常陸国」)は除外し、理由付きの警告を出す。詳細は build_daimyo_master_list() を参照。
 
 実行方法:
     python scripts/fetch_daimyo_data.py                      # TARGET_HANS の全藩を取得
@@ -86,9 +87,12 @@ IMAGE_WIDTH = 200
 
 # スタブノードの父をさらに遡って探索する最大世代数。
 # 対象藩の藩主一覧に載らない人物(スタブ)が現れた場合、その人物自身を含めて最大この世代数まで
-# 父を遡り、既知の藩主(対象藩の一覧、または既に取得済みの他藩の藩主一覧)に行き着けば
-# そこで連鎖を止めて接続する。この世代数まで遡っても藩主に行き着かなければ、そこで遡るのを
-# やめる(=それ以上は追わず、系図上その先は孤立した扱いのままにする)。
+# 父を遡り、既知の藩主(対象藩の一覧、または既に取得済みの他藩の藩主一覧)、または
+# 藩主マスターリスト(まだ取得していない藩の藩主も含む。build_daimyo_master_list参照)に
+# 含まれる人物に行き着けば、そこで連鎖を止めて接続する(藩主マスターリストにしか
+# 含まれない人物の場合は、その人物自身も新規のスタブノードとして追加したうえで打ち切る)。
+# この世代数まで遡ってもどちらにも行き着かなければ、そこで遡るのをやめる
+# (=それ以上は追わず、直接の父親1人だけを単独のスタブノードとして表示する)。
 MAX_STUB_ANCESTOR_DEPTH = 5
 
 # 対象藩: 藩名 -> {"template": 継承テンプレート名, "slug": 出力ファイル名に使う英語表記スラッグ}
@@ -107,7 +111,29 @@ OUTPUT_DIR = Path(__file__).resolve().parent.parent / "data" / "raw"
 
 # 藩主マスターリストの取得元カテゴリと、キャッシュファイルの保存先。
 # build_daimyo_master_list() を参照。
-MASTER_LIST_CATEGORY = "Category:藩別の大名"
+#
+# MASTER_LIST_SUBCAT_CATEGORIES: 「Category:○○藩主」のような藩ごとのサブカテゴリを
+# 束ねる親カテゴリ。親カテゴリ自身の直属ページは対象外で、1階層下のサブカテゴリの
+# 直属ページ(ns=0)を集める(理由はbuild_daimyo_master_list冒頭のコメントを参照)。
+MASTER_LIST_SUBCAT_CATEGORIES = [
+    "Category:藩別の大名",
+]
+# MASTER_LIST_DIRECT_CATEGORIES: そのカテゴリ自身の直属ページ(ns=0)をそのまま藩主
+# マスターリストに追加する(下位カテゴリがあっても再帰しない)。
+MASTER_LIST_DIRECT_CATEGORIES = [
+    # 知藩事(版籍奉還〜廃藩置県の間、旧藩主がそのまま任じられた藩知事)。下位カテゴリなし。
+    # 2026-09時点で304ページ。「廃藩置県」「版籍奉還」「府藩県三治制」など人物ではない
+    # ページも直属ページとして混入しているが、マスターリストは候補の許可リストとして
+    # 使うだけなので実害はない(該当ページがテンプレートの候補リンクとして出てくることは
+    # 通常ない)。
+    "Category:知藩事",
+    # 江戸幕府の征夷大将軍(追贈された人物を含む)。下位カテゴリ4件
+    # (将軍の御台所・側室・子女・征夷大将軍別のトピックス)は将軍本人ではないため
+    # 再帰しない(実物をブラウザで確認済み)。
+    "Category:江戸幕府の征夷大将軍",
+    # 御三卿・清水徳川家の当主。下位カテゴリなし。
+    "Category:清水徳川家当主",
+]
 MASTER_LIST_CACHE_PATH = Path(__file__).resolve().parent.parent / "data" / "cache" / "daimyo_master_list.json"
 
 # Infoboxとして扱うテンプレート名のプレフィックス(表記揺れに対応するため前方一致で判定)
@@ -434,11 +460,10 @@ LIST_SECTION_RE = re.compile(
 
 
 # ---------------------------------------------------------------------------
-# 藩主マスターリスト(Category:藩別の大名 配下から構築)
+# 藩主マスターリスト(Category:藩別の大名 等から構築)
 # ---------------------------------------------------------------------------
 #
-# 実装前の構造調査(2026-09時点、ブラウザでCategory:藩別の大名およびその下位カテゴリを
-# 実際に確認して判明した事実):
+# 実装前の構造調査(2026-09時点、ブラウザで各カテゴリの実際のページを確認して判明した事実):
 #   - Category:藩別の大名 自体は、下位カテゴリ(Category:○○藩主。328件)のみを持ち、
 #     直属の記事ページは持たない。
 #   - 各「○○藩主」カテゴリは、その藩の藩主全員(藩主家が交代した場合、交代前後の家も
@@ -452,6 +477,17 @@ LIST_SECTION_RE = re.compile(
 #     カテゴリへは再帰しない(1階層のみ: 藩別の大名 → ○○藩主 → 直属ページ)**。
 #   - 「○○藩主」カテゴリの直属ページには Template:○○藩主 自体が混ざることがあるため、
 #     標準名前空間(ns=0)のみに絞って取得する。
+#   - 藩主一覧テンプレートだけではカバーしきれない人物(知藩事、江戸幕府の征夷大将軍、
+#     御三卿の当主など)を補うため、以下の3カテゴリも直属ページ(ns=0)のみをそのまま
+#     マスターリストに追加する(いずれも実物を確認済み)。
+#       - Category:知藩事: 下位カテゴリなし。304ページ(2026-09時点)。「廃藩置県」
+#         「版籍奉還」等、人物でないページも直属ページとして混在しているが、マスターリストは
+#         候補の許可リストとして使うだけなので実害はない。
+#       - Category:江戸幕府の征夷大将軍: 下位カテゴリ4件(将軍の御台所・側室・子女・
+#         征夷大将軍別のトピックス)は将軍本人ではないため再帰しない。追贈された人物
+#         (徳川綱重など)も直属ページに含まれる。
+#       - Category:清水徳川家当主: 下位カテゴリなし。御三卿・清水徳川家の当主7ページ
+#         (うちTemplate:清水徳川家はns=0フィルタで除外される)。
 
 
 def fetch_subcategories(category_title: str) -> list[str]:
@@ -523,11 +559,15 @@ def fetch_direct_page_qids(category_title: str) -> set[str]:
 
 def build_daimyo_master_list(force_refresh: bool = False) -> set[str]:
     """
-    藩主マスターリスト(実在の藩主として確認できる人物のID集合)を構築する。
+    藩主マスターリスト(実在の藩主・将軍・知藩事等として確認できる人物のID集合)を構築する。
 
-    MASTER_LIST_CATEGORY(Category:藩別の大名)の下位カテゴリ(Category:○○藩主)を
-    すべて取得し、各カテゴリに直属する記事(ns=0)のIDを集めて統合する。
-    1階層のみを辿る(理由は本セクション冒頭のコメントを参照)。
+    取得元は2種類ある(いずれもbuild_daimyo_master_list冒頭のコメントの調査結果に基づく)。
+      - MASTER_LIST_SUBCAT_CATEGORIES: 「Category:○○藩主」のような藩ごとのサブカテゴリを
+        束ねる親カテゴリ。下位カテゴリ(1階層のみ)を取得し、各下位カテゴリに直属する
+        記事(ns=0)のIDを集める。
+      - MASTER_LIST_DIRECT_CATEGORIES: そのカテゴリ自身に直属する記事(ns=0)を直接集める
+        (下位カテゴリがあっても再帰しない)。知藩事・江戸幕府の征夷大将軍・清水徳川家当主
+        など、藩主一覧テンプレートではカバーしきれない人物を補うために追加。
 
     一度構築した結果は MASTER_LIST_CACHE_PATH にキャッシュし、次回以降のスクリプト実行では
     再取得せずにそのまま使い回す(force_refresh=True、またはコマンドラインで
@@ -546,27 +586,37 @@ def build_daimyo_master_list(force_refresh: bool = False) -> set[str]:
         except (json.JSONDecodeError, OSError, KeyError) as e:
             warn(f"[藩主マスターリスト] キャッシュの読み込みに失敗したため再取得します: {e!r}")
 
-    print(f"[藩主マスターリスト] {MASTER_LIST_CATEGORY} の下位カテゴリを取得中...")
-    subcats = fetch_subcategories(MASTER_LIST_CATEGORY)
-    print(
-        f"[藩主マスターリスト] 下位カテゴリ{len(subcats)}件を検出しました。"
-        f"各カテゴリの直属ページを取得します(1件あたり約{REQUEST_INTERVAL_SEC:.0f}秒、"
-        f"合計で数分かかります)..."
-    )
-
     all_ids: set[str] = set()
-    for i, subcat_title in enumerate(subcats, start=1):
-        ids = fetch_direct_page_qids(subcat_title)
+    subcategory_counts: dict[str, int] = {}
+
+    for category in MASTER_LIST_SUBCAT_CATEGORIES:
+        print(f"[藩主マスターリスト] {category} の下位カテゴリを取得中...")
+        subcats = fetch_subcategories(category)
+        subcategory_counts[category] = len(subcats)
+        print(
+            f"[藩主マスターリスト] {category}: 下位カテゴリ{len(subcats)}件を検出しました。"
+            f"各カテゴリの直属ページを取得します(1件あたり約{REQUEST_INTERVAL_SEC:.0f}秒、"
+            f"合計で数分かかります)..."
+        )
+        for i, subcat_title in enumerate(subcats, start=1):
+            ids = fetch_direct_page_qids(subcat_title)
+            all_ids |= ids
+            if i % 20 == 0 or i == len(subcats):
+                print(f"  [{category}] [{i}/{len(subcats)}] {subcat_title} まで処理済み(累計{len(all_ids)}件)")
+
+    for category in MASTER_LIST_DIRECT_CATEGORIES:
+        print(f"[藩主マスターリスト] {category} の直属ページを取得中...")
+        ids = fetch_direct_page_qids(category)
         all_ids |= ids
-        if i % 20 == 0 or i == len(subcats):
-            print(f"  [{i}/{len(subcats)}] {subcat_title} まで処理済み(累計{len(all_ids)}件)")
+        print(f"  [{category}] {len(ids)}件を追加しました(累計{len(all_ids)}件)")
 
     MASTER_LIST_CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
     cache_data = {
         "generated_by": "scripts/fetch_daimyo_data.py:build_daimyo_master_list",
-        "source_category": MASTER_LIST_CATEGORY,
+        "source_subcat_categories": MASTER_LIST_SUBCAT_CATEGORIES,
+        "source_direct_categories": MASTER_LIST_DIRECT_CATEGORIES,
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "subcategory_count": len(subcats),
+        "subcategory_counts": subcategory_counts,
         "id_count": len(all_ids),
         "ids": sorted(all_ids),
     }
@@ -580,7 +630,9 @@ def build_daimyo_master_list(force_refresh: bool = False) -> set[str]:
 def is_candidate_in_master_list(title: str, master_ids: set[str]) -> bool:
     """
     テンプレートの一覧から拾った候補リンクが、藩主マスターリスト
-    (Category:藩別の大名 配下から構築。build_daimyo_master_list参照)に含まれているかを判定する。
+    (build_daimyo_master_list参照。Category:藩別の大名 配下の全「○○藩主」カテゴリに加え、
+    知藩事・江戸幕府の征夷大将軍・清水徳川家当主のカテゴリからも構築)に含まれているかを
+    判定する。
     QIDが解決できればQIDで、解決できなければ記事タイトル(フォールバックID)で照合する
     (get_qidがQID未登録時に記事名をIDとして使うのと同じ扱いに揃えるため。
     build_daimyo_master_list側も同じ規則でフォールバックIDを登録している)。
@@ -601,7 +653,7 @@ def extract_ordered_daimyo_from_template(
     行内に年数レンジ表記(例: '1590-1601')があれば、在位年(year_start/year_end)として
     合わせて抽出する(見つからなければ両方None。その場合はWikidataのP39からのフォールバックで
     埋める)。
-    候補として拾ったリンクは、藩主マスターリスト(master_ids。Category:藩別の大名から構築)に
+    候補として拾ったリンクは、藩主マスターリスト(master_ids。build_daimyo_master_list参照)に
     含まれているかを確認してから採用する。旧国名など藩主ではないリンク(例: 佐倉藩テンプレート内の
     「常陸国」)はマスターリストに含まれないため除外し、理由付きの警告を出す。
     """
@@ -637,8 +689,7 @@ def extract_ordered_daimyo_from_template(
             if not is_candidate_in_master_list(title, master_ids):
                 warn(
                     f"[{han_name}] ({section_name}) リンク『{title}』は藩主マスターリスト"
-                    f"(Category:藩別の大名 配下、{len(master_ids)}件)に含まれていないため、"
-                    f"藩主候補から除外しました: {line!r}"
+                    f"({len(master_ids)}件)に含まれていないため、藩主候補から除外しました: {line!r}"
                 )
                 continue
 
@@ -975,17 +1026,28 @@ def find_ancestor_chain_to_known_daimyo(
     start_id: str,
     known_daimyo_ids: set[str],
     all_nodes: dict[str, DaimyoNode],
+    master_ids: set[str],
     max_generations: int,
-) -> tuple[list[ResolvedPerson], Optional[str]]:
+) -> tuple[list[ResolvedPerson], Optional[str], bool]:
     """
-    start_id から父を最大 max_generations 世代分たどり、known_daimyo_ids(対象藩の藩主一覧、
-    または既に取得済みの他藩の藩主一覧)、または既に all_nodes に登録済みの人物に
-    行き着く経路を探す。
+    start_id から父を最大 max_generations 世代分たどり、
+      (a) known_daimyo_ids(対象藩の藩主一覧、または既に取得済みの他藩の藩主一覧)、
+      (b) 既に all_nodes に登録済みの人物、
+      (c) 藩主マスターリスト(master_ids。Category:藩別の大名 配下。まだ取得していない藩の
+          藩主も含む全藩主のID集合)
+    のいずれかに行き着く経路を探す。(a)(b)は「まだ取得していない藩の藩主」を含まないが、
+    行き着いた人物は既にどこかにノードとして存在する(または今回の実行内で存在する)ため、
+    参照するだけでよい。(c)のみに行き着いた場合は、その人物自身はまだどこにもノードとして
+    存在しない(その藩をまだ取得していない)ため、呼び出し側でその人物自身もスタブノードとして
+    新規に作る必要がある。
 
-    戻り値は (chain, matched_id)。
+    戻り値は (chain, matched_id, matched_needs_new_stub)。
       - 見つかった場合: chain は start_id から(行き着いた人物の手前までの)世代の若い順の
-        ResolvedPerson のリスト、matched_id は行き着いた既知の藩主のID。
-      - max_generations 世代たどっても見つからなかった場合: matched_id は None。
+        ResolvedPerson のリスト、matched_id は行き着いた藩主のID。
+        matched_needs_new_stub は、行き着いた人物が(a)(b)ではなく(c)のみで見つかった場合に
+        True(=その人物自身のノードをこれから作る必要がある)。
+      - max_generations 世代たどっても見つからなかった場合: matched_id は None
+        (matched_needs_new_stub は常にFalse)。
         chain には少なくとも start_id 自身(1人目)のResolvedPersonが入っている
         (呼び出し側が再度APIを叩かずに済むように、既に解決済みの情報として返す)。
     """
@@ -999,13 +1061,16 @@ def find_ancestor_chain_to_known_daimyo(
             determine_father(person.article_title, person.infobox, current_id)
             if person.article_title else None
         )
-        if next_father_id and (next_father_id in known_daimyo_ids or next_father_id in all_nodes):
-            return chain, next_father_id
+        if next_father_id:
+            if next_father_id in known_daimyo_ids or next_father_id in all_nodes:
+                return chain, next_father_id, False
+            if next_father_id in master_ids:
+                return chain, next_father_id, True
         if not next_father_id:
             break
         current_id = next_father_id
 
-    return chain, None
+    return chain, None, False
 
 
 def resolve_stub_tenure_years(person: "ResolvedPerson") -> tuple[Optional[int], Optional[int]]:
@@ -1023,26 +1088,34 @@ def add_stub_node(
     father_id: str,
     all_nodes: dict[str, DaimyoNode],
     known_daimyo_ids: set[str],
+    master_ids: set[str],
     max_generations: int,
 ) -> None:
     """
     father_id(QIDまたは記事名フォールバック)からスタブノードを登録する。
 
-    father_idの父をさらに最大max_generations世代分たどり、既知の藩主(known_daimyo_ids、
-    または既にall_nodesに登録済みの人物)に行き着く経路が見つかった場合のみ、
-    father_idからその手前までの人物すべてをスタブノードの連鎖として追加し、
-    最後の人物のfather_idを行き着いた藩主のIDに設定する。
-    行き着かなかった場合は、中間の世代は一切追加せず、father_id自身だけを
+    father_idの父をさらに最大max_generations世代分たどり、
+      (a) 既知の藩主(known_daimyo_ids、または既にall_nodesに登録済みの人物)、
+      (b) 藩主マスターリスト(master_ids)に含まれる人物(まだ取得していない藩の藩主も含む)
+    のいずれかに行き着く経路が見つかった場合、father_idからその手前までの人物すべてを
+    スタブノードの連鎖として追加する。
+      - (a)に行き着いた場合: その人物は既にどこかにノードとして存在するので、参照するだけで
+        新規ノードは作らない(最後の人物のfather_idを行き着いた藩主のIDに設定する)。
+      - (b)のみで行き着いた場合: その人物はまだどこにもノードとして存在しない(その藩を
+        まだ取得していない)ため、その人物自身も(父を持たない終端の)スタブノードとして
+        新規に追加した上で、そこで探索を打ち切る(藩主マスターリストに載っている=実在の
+        藩主だと確認できた時点で、それ以上遡らない)。
+    いずれにも行き着かなかった場合は、中間の世代は一切追加せず、father_id自身だけを
     (father_id=Noneの)単独のスタブノードとして追加する(=父親だけを表示する)。
     """
     if father_id in all_nodes:
         return
 
-    chain, matched_id = find_ancestor_chain_to_known_daimyo(
-        father_id, known_daimyo_ids, all_nodes, max_generations
+    chain, matched_id, matched_needs_new_stub = find_ancestor_chain_to_known_daimyo(
+        father_id, known_daimyo_ids, all_nodes, master_ids, max_generations
     )
 
-    if matched_id:
+    if matched_id and not matched_needs_new_stub:
         print(
             f"    -> {chain[0].name}の祖先が既知の藩主({matched_id})まで{len(chain)}世代でつながったため、"
             f"経路上の{len(chain)}名をスタブノードとして追加します"
@@ -1065,8 +1138,37 @@ def add_stub_node(
             )
         return
 
-    # max_generations世代たどっても藩主に行き着かなかった。中間の世代は表示せず、
-    # 父親(father_id)だけを単独のスタブノードとして追加する。
+    if matched_id and matched_needs_new_stub:
+        # 藩主マスターリストには含まれるが、まだ取得していない藩の藩主なのでノードが
+        # 存在しない。そこまでの中間世代をスタブとして連鎖させ、行き着いた人物自身も
+        # (父を持たない)終端のスタブノードとして追加し、そこで探索を打ち切る。
+        matched_person = resolve_person_info(matched_id)
+        full_chain = chain + [matched_person]
+        print(
+            f"    -> {chain[0].name}の祖先が藩主マスターリストに含まれる{matched_person.name}"
+            f"({matched_id}、未取得の藩の藩主)まで{len(chain)}世代でつながったため、"
+            f"経路上の{len(full_chain)}名をスタブノードとして追加し、そこで探索を打ち切ります"
+        )
+        for i, person in enumerate(full_chain):
+            next_id = full_chain[i + 1].id if i + 1 < len(full_chain) else None
+            year_start, year_end = resolve_stub_tenure_years(person)
+            all_nodes[person.id] = DaimyoNode(
+                id=person.id,
+                name=person.name,
+                positions=(
+                    [{"han": person.han_hint, "generation": None, "year_start": year_start, "year_end": year_end}]
+                    if person.han_hint
+                    else []
+                ),
+                wikipedia_url=person.wikipedia_url,
+                image_url=person.image_url,
+                father_id=next_id,
+                is_stub=True,
+            )
+        return
+
+    # max_generations世代たどっても(既知の藩主にも藩主マスターリストにも)行き着かなかった。
+    # 中間の世代は表示せず、父親(father_id)だけを単独のスタブノードとして追加する。
     person = chain[0]  # 既に解決済みなので再取得はしない
     warn(
         f"『{person.name}』: 父をさらに{max_generations}世代遡っても藩主に行き着かなかったため、"
@@ -1169,10 +1271,11 @@ def process_han(han_name: str, template_title: str, master_ids: set[str]) -> dic
         )
 
         # 父が対象藩の藩主一覧に含まれない場合はスタブノードとして追加
-        # (スタブノード側でも、既知の藩主に行き着くまで最大MAX_STUB_ANCESTOR_DEPTH世代分は遡る)
+        # (スタブノード側でも、既知の藩主または藩主マスターリストに行き着くまで
+        # 最大MAX_STUB_ANCESTOR_DEPTH世代分は遡る)
         if father_id and father_id not in id_set and father_id not in all_nodes:
             print(f"    -> 父({father_id})は{han_name}主一覧に含まれないため、スタブノードとして追加します")
-            add_stub_node(father_id, all_nodes, known_daimyo_ids, MAX_STUB_ANCESTOR_DEPTH)
+            add_stub_node(father_id, all_nodes, known_daimyo_ids, master_ids, MAX_STUB_ANCESTOR_DEPTH)
 
     return all_nodes
 
